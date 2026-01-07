@@ -134,9 +134,12 @@ nav li a:hover {
 }
 
 .about h1, .contact h1 {
+    font-family: 'Cinzel', serif;
+    font-weight: 700;
     font-size: 2em;
     margin-bottom: 20px;
     color: #ffffff;
+    letter-spacing: 1px;
 }
 
 .about p, .contact p {
@@ -208,50 +211,8 @@ img {
     font-size: 0.95em;
 }
 
-/* Base icon styling */
-.about-icons .icon {
-    position: absolute;
-    width: 40px;
-    height: auto;
-    opacity: 0.7;
-    transition: transform 0.3s, opacity 0.3s;
-}
-
-/* Right-side icons larger */
-.about-icons .icon:nth-child(2),
-.about-icons .icon:nth-child(4),
-.about-icons .icon:nth-child(6),
-.about-icons .icon:nth-child(8) {
-    transform: scale(1.75);
-    transform-origin: center;
-}
-
-/* Left-side icons remain normal */
-.about-icons .icon:nth-child(1),
-.about-icons .icon:nth-child(3),
-.about-icons .icon:nth-child(5),
-.about-icons .icon:nth-child(7) {
-    transform: scale(1);
-}
-
-/* Icon positions */
-.about-icons .icon:nth-child(1) { top: 20px; left: -40px; }
-.about-icons .icon:nth-child(2) { top: 70px; right: -80px; }
-.about-icons .icon:nth-child(3) { top: 120px; left: -60px; }
-.about-icons .icon:nth-child(4) { top: 160px; right: -40px; }
-.about-icons .icon:nth-child(5) { top: 230px; left: -75px; }
-.about-icons .icon:nth-child(6) { top: 290px; right: -65px; }
-.about-icons .icon:nth-child(7) { top: 370px; left: -50px; }
-.about-icons .icon:nth-child(8) { top: 450px; right: -90px; }
-
-.about-icons .icon:hover {
-    transform: scale(1.2);
-    opacity: 1;
-    z-index: 10;
-}
-
 /* =====================
-   PORTFOLIO PLACEHOLDER
+   PORTFOLIO SECTION
 ===================== */
 .portfolio-section {
     padding: 45px 20px;
@@ -261,46 +222,42 @@ img {
 }
 
 .portfolio-section h1 {
-    text-align: center;
-    font-family: 'Cinzel', serif;
+    font-family: 'Cinzel', serif !important; /* exact match */
+    font-weight: 700;
     font-size: 2em;
     margin-bottom: 20px;
     color: #ffffff;
+    text-align: center;
+    letter-spacing: 1px;
 }
 
-/* Future portfolio cards can be added here when ready */
-/* Ensure all social icons are same size and spacing */
-.contact-socials a img {
-    width: 30px;
-    height: 30px;
-    transition: transform 0.3s;
-}
-
-.contact-socials a:hover img {
-    transform: scale(1.2);
-}
 /* =====================
    PORTFOLIO ITEMS
 ===================== */
 .portfolio-item {
     background: #353535;
-    padding: 20px 20px 20px 80px;
+    padding: 25px 20px 25px 90px; /* space for number circle */
     border-radius: 12px;
     margin-bottom: 30px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.5);
     position: relative;
+    transition: transform 0.3s;
+}
+
+.portfolio-item:hover {
+    transform: translateY(-3px);
 }
 
 .portfolio-number {
     position: absolute;
-    top: 20px;
+    top: 25px;
     left: 20px;
-    width: 50px;
-    height: 50px;
+    width: 55px;
+    height: 55px;
     border-radius: 50%;
     color: #fff;
     font-weight: 700;
-    font-size: 1.5em;
+    font-size: 1.6em;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -309,6 +266,7 @@ img {
 .portfolio-item h2 {
     margin: 0 0 10px 0;
     font-size: 1.6em;
+    font-weight: 600;
 }
 
 .portfolio-item p {
@@ -316,3 +274,84 @@ img {
     font-size: 0.95em;
     line-height: 1.6;
 }
+
+/* Individual heading colors matching number circles */
+.portfolio-item:nth-child(1) h2 { color: #4caf50; }
+.portfolio-item:nth-child(2) h2 { color: #29b6f6; }
+.portfolio-item:nth-child(3) h2 { color: #fbc02d; }
+.portfolio-item:nth-child(4) h2 { color: #ab47bc; }
+.portfolio-item:nth-child(5) h2 { color: #8bc34a; }
+
+/* =====================
+   RESPONSIVE ADJUSTMENTS
+===================== */
+@media (max-width: 600px) {
+    .portfolio-item {
+        padding-left: 70px;
+    }
+    .portfolio-number {
+        width: 45px;
+        height: 45px;
+        font-size: 1.4em;
+    }
+    .portfolio-item h2 {
+        font-size: 1.4em;
+    }
+    .portfolio-item p {
+        font-size: 0.9em;
+    }
+}
+/* =====================
+   ABOUT SECTION ICONS FIX
+===================== */
+.about-icons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* centers icons horizontally */
+    gap: 20px;               /* spacing between icons */
+    margin-top: 30px;        /* space from text */
+}
+
+.about-icons .icon {
+    width: 50px;             /* fixed width */
+    height: 50px;            /* fixed height */
+    object-fit: contain;     /* preserves aspect ratio */
+    flex-shrink: 0;          /* prevents shrinking/stretching */
+    opacity: 0.8;
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+.about-icons .icon:hover {
+    transform: scale(1.2);
+    opacity: 1;
+}
+.references {
+    background: #2b2b2b;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 25px 0;
+    max-width: 850px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.references h2 {
+    font-family: 'Cinzel', serif;
+    color: #ffffff;
+    font-size: 1.6em;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.references ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.references li {
+    color: #dcdcdc;
+    font-size: 0.95em;
+    line-height: 1.5;
+    margin-bottom: 12px;
+}
+
