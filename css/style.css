@@ -74,11 +74,12 @@ nav li a.active {
     color: #c8e6c9;
 }
 
+/* Service cards container */
 .service-cards {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 22px;
+    gap: 28px;
 }
 
 /* =====================
@@ -86,42 +87,75 @@ nav li a.active {
 ===================== */
 .card {
     background: #353535;
-    padding: 18px;
+    padding: 22px 18px;
     border-radius: 12px;
     width: 235px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.5);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.4);
     color: #f1f1f1;
-    border-left: 4px solid transparent;
+    border-left: 5px solid transparent;
+    transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.6);
 }
 
 .card img {
     width: 86px;
     height: 86px;
     object-fit: contain;
+    margin-bottom: 12px;
 }
 
 .card h3 {
-    margin-top: 10px;
+    margin-top: 6px;
     font-size: 1.25em;
 }
 
 .card p {
     font-size: 0.78em;
     color: #dcdcdc;
+    text-align: center;
+    margin-top: 8px;
 }
 
-/* Card accent colors */
-.card.survey   { border-color: #4caf50; }
-.card.gis      { border-color: #29b6f6; }
-.card.research { border-color: #fbc02d; }
-.card.web      { border-color: #ab47bc; }
-.card.env      { border-color: #8bc34a; }
+/* Service accent borders and colors */
+.card.survey {
+    border-left-color: #4caf50;
+}
+.card.gis {
+    border-left-color: #29b6f6;
+}
+.card.research {
+    border-left-color: #fbc02d;
+}
+.card.web {
+    border-left-color: #ab47bc;
+}
+.card.env {
+    border-left-color: #8bc34a;
+}
 
-.card.survey h3   { color: #66bb6a; }
-.card.gis h3      { color: #4fc3f7; }
+.card.survey h3 { color: #66bb6a; }
+.card.gis h3 { color: #4fc3f7; }
 .card.research h3 { color: #ffd54f; }
-.card.web h3      { color: #ce93d8; }
-.card.env h3      { color: #aed581; }
+.card.web h3 { color: #ce93d8; }
+.card.env h3 { color: #aed581; }
+
+/* Optional: add subtle separator line under card title */
+.card h3::after {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 3px;
+    background-color: currentColor;
+    margin: 6px auto 0 auto;
+    border-radius: 2px;
+}
 
 /* =====================
    ABOUT & CONTACT
@@ -155,21 +189,19 @@ footer {
     background: transparent;
     color: #bdbdbd;
     font-size: 0.75em;
-    position: fixed;
-    bottom: 10px;
-    right: 15px;
-    padding: 0;
     text-align: right;
+    padding: 0 15px;
+    position: relative; /* safer than fixed */
+    margin-top: 2rem;
 }
 
-/* Contact & Socials */
-.contact-row img {
-    width: 22px;
-    height: 22px;
-    max-width: 22px;
-    max-height: 22px;
+/* =====================
+   IMAGES & SOCIALS
+===================== */
+.contact-row img,
+.contact-socials img,
+.about-icons .icon {
     object-fit: contain;
-    flex-shrink: 0;
 }
 
 .contact-socials {
@@ -182,10 +214,12 @@ footer {
 .contact-socials img {
     width: 30px;
     height: 30px;
-    max-width: 30px;
-    max-height: 30px;
-    object-fit: contain;
-    display: block;
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+.contact-socials img:hover {
+    transform: scale(1.1);
+    opacity: 0.85;
 }
 
 img {
@@ -239,10 +273,8 @@ img {
     background: #2b2b2b;
     padding: 20px;
     border-radius: 10px;
-    margin: 25px 0;
+    margin: 25px auto;
     max-width: 850px;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 .references h2 {
@@ -285,7 +317,6 @@ img {
     letter-spacing: 1px;
 }
 
-/* Portfolio Items */
 .portfolio-item {
     background: #353535;
     padding: 25px 20px 25px 90px;
@@ -298,6 +329,7 @@ img {
 
 .portfolio-item:hover {
     transform: translateY(-3px);
+    box-shadow: 0 8px 18px rgba(0,0,0,0.6);
 }
 
 .portfolio-number {
@@ -327,11 +359,13 @@ img {
     line-height: 1.6;
 }
 
-.portfolio-item:nth-child(1) h2 { color: #4caf50; }
-.portfolio-item:nth-child(2) h2 { color: #29b6f6; }
-.portfolio-item:nth-child(3) h2 { color: #fbc02d; }
-.portfolio-item:nth-child(4) h2 { color: #ab47bc; }
-.portfolio-item:nth-child(5) h2 { color: #8bc34a; }
+.portfolio-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-top: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.6);
+}
 
 /* =====================
    GIS SUB-PROJECTS
@@ -379,6 +413,73 @@ img {
 }
 
 /* =====================
+   TESTIMONIALS
+===================== */
+.testimonials {
+    margin: 4rem 0;
+}
+
+.testimonials h2 {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    font-family: 'Cinzel', serif;
+}
+
+.testimonial-card {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    border-radius: 12px;
+    background: #4d4444;
+}
+
+.testimonial-card img {
+    width: 110px;
+    height: 110px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid transparent; /* FIXED */
+}
+
+.testimonial-text h3 {
+    margin: 0;
+    font-size: 1.2rem; /* smaller than before */
+    font-weight: 600;
+}
+
+.testimonial-text span {
+    display: block;
+    font-size: 1rem; /* smaller */
+    color: #aee108;
+    margin-bottom: 0.4rem;
+}
+
+.testimonial-text p {
+    margin: 0;
+    line-height: 1.5;
+    font-size: 0.95rem;
+}
+
+/* Clickable links for testimonial images/names */
+.testimonial-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.testimonial-link img:hover {
+    opacity: 0.85;
+    transform: scale(1.03);
+    transition: 0.3s ease;
+}
+
+.testimonial-text h3 a:hover {
+    text-decoration: underline;
+    color: #222;
+}
+
+/* =====================
    RESPONSIVE
 ===================== */
 @media (max-width: 600px) {
@@ -396,60 +497,46 @@ img {
     .portfolio-item p {
         font-size: 0.9em;
     }
-}
-/* =====================
-   URBAN HEAT ISLAND IMAGE
-===================== */
-.portfolio-item img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
-    margin-top: 15px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.6);
-}
-
-/* Slight tweak for smaller screens */
-@media (max-width: 600px) {
-    .portfolio-item img {
-        max-width: 95%;
-        height: auto;
-        margin-left: auto;
-        margin-right: auto;
-        display: block;
+    .testimonial-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .testimonial-card img {
+        margin-bottom: 10px;
     }
 }
-.highlight-text {
-    color: white; /* changed to white */
-    font-size: 24px; /* increased size */
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-}
+/* =======================
+   LOAD MORE BUTTON
+======================= */
 .load-projects-container {
     text-align: center;
     margin: 40px 0;
-    font-family: Arial, sans-serif;
-    position: relative;
 }
 
 #loadBtn {
-    background-color: rgba(84, 108, 108, 0.8); /* very transparent teal */
-    color: white;
+    background-color: rgba(84, 108, 108, 0.8); /* subtle transparent teal */
+    color: #ffffff;
     border: none;
-    padding: 6px 18px; /* smaller button */
-    font-size: 14px;
+    padding: 8px 20px; /* button size */
+    font-size: 12px;
+    font-weight: 600;
     cursor: pointer;
     border-radius: 6px;
-    transition: background 0.3s, opacity 0.3s;
+    transition: background 0.3s, transform 0.2s, opacity 0.3s;
 }
 
 #loadBtn:hover {
-    background-color: rgba(0, 139, 139, 0.9); /* slightly transparent teal */
+    background-color: rgba(0, 139, 139, 0.9); /* slightly brighter teal */
+    transform: scale(0.85); /* subtle hover zoom */
+    opacity: 0.75;
 }
 
 #loadingText {
-    margin-top: 15px;
-    font-size: 16px;
-    color: #00ffff; /* bright cyan to show clearly on dark bg */
+    font-size: 12px;
     font-weight: bold;
+    color: #00ffff; /* bright cyan for contrast */
+    margin-top: 15px;
     display: none; /* hidden initially */
+    font-family: 'Poppins', Arial, sans-serif;
 }
