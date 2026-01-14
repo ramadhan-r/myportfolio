@@ -27,3 +27,23 @@ navLinks.forEach(link => {
         link.classList.remove('active');
     }
 });
+document.addEventListener('DOMContentLoaded', () => {
+    const loadBtn = document.getElementById('loadBtn');
+    const loadingText = document.getElementById('loadingText');
+
+    let dotCount = 0;
+
+    loadBtn.addEventListener('click', () => {
+        // hide the button
+        loadBtn.style.display = 'none';
+
+        // show loading text
+        loadingText.style.display = 'block';
+
+        // animate dots indefinitely
+        setInterval(() => {
+            dotCount = (dotCount + 1) % 4; // cycles 0..3
+            loadingText.textContent = 'retrieving' + '.'.repeat(dotCount);
+        }, 500);
+    });
+});

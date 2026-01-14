@@ -418,3 +418,38 @@ img {
         display: block;
     }
 }
+.highlight-text {
+    color: white; /* changed to white */
+    font-size: 24px; /* increased size */
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+.load-projects-container {
+    text-align: center;
+    margin: 40px 0;
+    font-family: Arial, sans-serif;
+    position: relative;
+}
+
+#loadBtn {
+    background-color: rgba(84, 108, 108, 0.8); /* very transparent teal */
+    color: white;
+    border: none;
+    padding: 6px 18px; /* smaller button */
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: background 0.3s, opacity 0.3s;
+}
+
+#loadBtn:hover {
+    background-color: rgba(0, 139, 139, 0.9); /* slightly transparent teal */
+}
+
+#loadingText {
+    margin-top: 15px;
+    font-size: 16px;
+    color: #00ffff; /* bright cyan to show clearly on dark bg */
+    font-weight: bold;
+    display: none; /* hidden initially */
+}

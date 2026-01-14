@@ -1,130 +1,383 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio | Rioba Mwita</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio | Rioba Mwita</title>
+<meta name="description" content="Rioba Mwita's portfolio showcasing Land Survey, GIS Mapping, Research Assistance, Web & App Development, and Environmental Services.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://riobamwita.vercel.app/portfolio">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 
-    <meta name="description" content="Rioba Mwita's portfolio showcasing Land Survey, GIS Mapping, Research Assistance, Web & App Development, and Environmental Services.">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://riobamwita.vercel.app/portfolio">
+<style>
+/* Base font for entire page */
+body, p, h1, h2, h3, h4, h5, h6, ul, li, a, table, th, td {
+  font-family: 'Poppins', Arial, sans-serif;
+  color: #000; /* default text color for visibility */
+  line-height: 1.6;
+}
 
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+/* Optional: headings slightly heavier */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Cinzel', 'Poppins', serif;
+}
+
+/* Reset default list styles */
+ul {
+  list-style: disc inside;
+  padding-left: 0;
+}
+
+/* Link styling */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Navigation active link */
+nav ul li a.active {
+  font-weight: 600;
+}
+
+/* Footer */
+footer {
+  font-family: 'Poppins', Arial, sans-serif;
+  font-size: 0.9rem;
+  color: #333;
+  text-align: center;
+  padding: 20px 0;
+}
+
+/* Load More button section */
+#loadBtn {
+  background-color: rgba(0, 128, 128, 0.8);
+  color: white;
+  border: none;
+  padding: 10px 25px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background 0.3s;
+}
+
+#loadBtn:hover {
+  background-color: rgba(0, 139, 139, 0.9);
+}
+
+#loadingText {
+  font-size: 18px;
+  font-weight: bold;
+  color: #2e3131;
+  margin-top: 20px;
+  display: none;
+}
+</style>
+
+<link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 
 <header>
-    <nav>
-        <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/about">About</a></li>
-            <li><a href="/portfolio" class="active">Portfolio</a></li>
-            <li><a href="/contact">Contact</a></li>
-        </ul>
-    </nav>
+<nav>
+<ul>
+<li><a href="/">Home</a></li>
+<li><a href="/about">About</a></li>
+<li><a href="/portfolio" class="active">Portfolio</a></li>
+<li><a href="/contact">Contact</a></li>
+</ul>
+</nav>
 </header>
 
 <section class="portfolio-section">
-    <h1>My Portfolio</h1>
+<h1>My Portfolio</h1>
 
-    <!-- LAND SURVEY -->
-    <div class="portfolio-item">
-        <div class="portfolio-number" style="background-color:#4caf50;">1</div>
-        <h2>Land Survey</h2>
-        <p>
-            Since 2022, while pursuing my Bachelor of Arts in Geography at Moi University, I have gained extensive
-            hands-on experience in land surveying through seasonal and part-time roles across multiple surveying firms.
-        </p>
-    </div>
+<!-- LAND SURVEY -->
+<div class="portfolio-item">
+<div class="portfolio-number" style="background-color:#4caf50;">1</div>
 
-    <!-- GIS MAPPING -->
-    <div class="portfolio-item">
-        <div class="portfolio-number" style="background-color:#29b6f6;">2</div>
-        <h2>GIS Mapping</h2>
+<h2>Land Survey</h2>
+<p>
+Since 2022, while pursuing my Bachelor of Arts in Geography at Moi University, I have gained extensive hands-on experience in land surveying through seasonal and part-time roles with professional surveying firms. My work has covered both field operations and technical documentation, giving me strong practical competence in real-world survey environments.
+</p>
 
-        <p>
-            I undertake GIS mapping and spatial analysis to support evidence-based decision-making
-            in planning, environmental management, disaster risk reduction, and urban development.
-        </p>
+<p>
+<strong>Homeland Surveyors (Seasonal)</strong><br>
+Feb 2022 – Nov 2025 | Nyeri, Kenya (On-site)
+</p>
 
-        <div class="gis-projects">
+<p>
+From my second year at university, I worked both part-time and full-time with Homeland Surveyors, gaining extensive experience in cadastral, geodetic, topographic, and plane surveys. I regularly operated RTK and GPS equipment and prepared survey drawings and reports using AutoCAD. This role strengthened my fieldwork skills and deepened my understanding of survey processes critical to land development, planning, and parcel mapping.
+</p>
 
-            <!-- AIR POLLUTION -->
-            <div class="gis-project">
-                <span class="gis-number">5</span>
-                <div class="gis-content">
-                    <h3>Air Pollution Exposure Mapping</h3>
-                    <p>
-                        Mapping and analysis of population exposure to air pollutants by integrating emission sources,
-                        land use patterns, meteorological data, and settlement distribution.
-                    </p>
+<p>
+<strong>Geolink Surveyors (Seasonal)</strong><br>
+Dec 2024 – Jan 2025 | Kenya (On-site)
+</p>
 
-                    <img src="/images/air-exposure.png" alt="Nakuru Air Pollution Exposure Map">
+<p>
+Participated in land and topographic survey projects, supporting field data collection, beacon identification, measurements, and preparation of survey records. Assisted in the use of GPS and total station equipment and contributed to accurate mapping and documentation for land administration purposes.
+</p>
 
-                    <p>
-                        The map shows that the central part of Nakuru County, particularly around the town center,
-                        exhibits high to very high exposure levels (red to purple), with PM2.5 concentrations exceeding
-                        approximately 36–48 µg/m³ and NO₂ levels above 15–20 µmol/m².
-                    </p>
-                </div>
-            </div>
+<p>
+<strong>Octa-Surveys and Engineering (Part-time)</strong><br>
+Nov 2025 – Dec 2025 | Kwale, Kenya (On-site)
+</p>
 
-            <!-- URBAN HEAT ISLAND -->
-            <div class="gis-project">
-                <span class="gis-number">6</span>
-                <div class="gis-content">
-                    <h3>Urban Heat Island Analysis</h3>
-                    <p>
-                        Assessment of temperature variations within urban environments using remote sensing
-                        and spatial analysis.
-                    </p>
+<p>
+Worked as a senior surveyor conducting land and topographic surveys to support mapping and land development projects. Responsibilities included field data collection, supervision of survey activities, and preparation of technical survey documentation to ensure accuracy and compliance with professional standards.
+</p>
 
-                    <p>
-                        The Land Surface Temperature (LST) map for the Winam Gulf region, focusing on Kisumu City,
-                        shows intense urban heat compared to surrounding rural areas.
-                        The mean urban temperature was 41.9°C versus 34.7°C in rural areas,
-                        resulting in a UHI intensity of 7.2°C.
-                    </p>
+<p>
+<strong>Key Skills:</strong><br>
+Land Surveying, Topographic Surveys, Cadastral Surveys, RTK & GPS Operations, Total Station, AutoCAD, Parcel Mapping
+</p>
+</div>
 
-                    <img src="/images/kisumulandsurfacetemperature.png" alt="Kisumu Land Surface Temperature Map">
-                </div>
-            </div>
+<!-- GIS MAPPING -->
+<div class="portfolio-item">
+<div class="portfolio-number" style="background-color:#29b6f6;">2</div>
 
-        </div>
-    </div>
+<h2>GIS Mapping</h2>
+<p>
+I undertake GIS mapping and spatial analysis to support evidence-based decision-making in planning, environmental management, disaster risk reduction, and urban development. My work combines academic research, government-linked projects, and practical field-based GIS applications.
+</p>
 
-    <!-- RESEARCH -->
-    <div class="portfolio-item">
-        <div class="portfolio-number" style="background-color:#fbc02d;">3</div>
-        <h2>Research Assistance</h2>
-        <p>
-            Extensive research support across environmental, agricultural, and spatial studies.
-        </p>
-    </div>
+<h3>GIS & Remote Sensing Trainee (Industrial Attachment)</h3>
+<p>
+<strong>Directorate of Resource Surveys and Remote Sensing (DRSRS)</strong><br>
+Apr 2024 – Jul 2024 | Nairobi County, Kenya (On-site)
+</p>
 
-    <!-- WEB -->
-    <div class="portfolio-item">
-        <div class="portfolio-number" style="background-color:#ab47bc;">4</div>
-        <h2>Web & App Development</h2>
-        <p>
-            Development of responsive websites and data-driven platforms.
-        </p>
-    </div>
+<p>
+Completed an industrial attachment at DRSRS, where I processed and interpreted satellite imagery for environmental monitoring and land use analysis. I participated in national GIS and Remote Sensing workshops, strengthening my understanding of spatial data management and government mapping standards. I also assisted in the preparation of maps and spatial datasets for land and environmental management, and supported road network mapping for infrastructure planning under technical supervision.
+</p>
 
-    <!-- ENVIRONMENT -->
-    <div class="portfolio-item">
-        <div class="portfolio-number" style="background-color:#8bc34a;">5</div>
-        <h2>Environmental Services</h2>
-        <p>
-            Environmental impact assessment, sustainability planning, and natural resource management.
-        </p>
-    </div>
+<h3>Projects & Practical Experience</h3>
+
+<p>
+<strong>Academic Research Project</strong><br>
+Determination of the Most Suitable Dumpsite Location in Kesses Subcounty, Uasin Gishu County, Kenya
+</p>
+
+<ul>
+<li>Conducted GIS-based suitability analysis integrating land use, slope, hydrology, settlement proximity, and environmental constraints.</li>
+<li>Produced environmental risk and hazard maps to support waste management decision-making.</li>
+</ul>
+
+<p>
+<strong>Government-Linked Project</strong><br>
+Kiambu County
+</p>
+
+<ul>
+<li>Conducted field data collection and spatial data processing for road updates and infrastructure planning.</li>
+</ul>
+
+<p><strong>Freelance GIS Projects</strong></p>
+
+<ul>
+<li>Environmental mapping, land fragmentation analysis, and land use change detection.</li>
+<li>Generated shapefiles, maps, spatial reports, and analytical outputs for researchers and stakeholders.</li>
+</ul>
+
+<p class="highlight-text">
+The examples below highlight just a few of the many mapping projects I have completed, and I can create custom maps on request.
+</p>
+
+<div class="gis-projects">
+
+<!-- AIR POLLUTION -->
+<div class="gis-project">
+<span class="gis-number">1</span>
+<div class="gis-content">
+<h3>Air Pollution Exposure Mapping</h3>
+<p>
+Mapping and analysis of population exposure to air pollutants by integrating emission sources, land use patterns, meteorological data, and settlement distribution.
+</p>
+<img src="/images/air-exposure.png" alt="Nakuru Air Pollution Exposure Map">
+<p>
+The map shows that the central part of Nakuru County, particularly around the town center, exhibits high to very high exposure levels, while surrounding rural areas show relatively low exposure levels.
+</p>
+</div>
+</div>
+
+<!-- LAND COVER -->
+<div class="gis-project">
+<span class="gis-number">2</span>
+<div class="gis-content">
+<h3>Land Use/Land Cover Mapping and Change Detection</h3>
+<p>
+Mapping and analysis of land cover patterns using satellite imagery to assess vegetation distribution and changes over time.
+</p>
+<img src="/images/Nyeri.png" alt="Nyeri Forest Cover Map">
+<p>
+The side-by-side vegetation cover maps for 2017 and 2025 show a broadly similar spatial distribution of dense, sparse, and non-vegetated areas across Nyeri County. Dense vegetation remains concentrated in high-altitude and protected forest zones, while sparse vegetation continues to dominate agricultural and transitional areas, and non-vegetated land is largely confined to urban centres and major infrastructure corridors. Although slight visual differences can be observed between the two maps, these alone are insufficient to accurately quantify gains or losses in vegetation cover. Meaningful interpretation of increases, decreases, or transitions in vegetation therefore requires a dedicated change detection map, which explicitly identifies areas of stability, degradation, and regeneration between the two time periods.
+</p>
+<img src="/images/Change.png" alt="Nyeri Forest Cover Change Map">
+<p>
+<table border="1" cellpadding="8" cellspacing="0" style="border-collapse: collapse; width: 100%;">
+  <thead>
+    <tr>
+      <th>Change Type</th>
+      <th>Area (ha)</th>
+      <th>Area (km²)</th>
+      <th>Interpretation</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Dense → Dense</td>
+      <td>192,042.99</td>
+      <td>1920.43</td>
+      <td>Stable dense vegetation</td>
+    </tr>
+    <tr>
+      <td>Sparse → Sparse</td>
+      <td>88,611.57</td>
+      <td>886.12</td>
+      <td>Stable sparse vegetation</td>
+    </tr>
+    <tr>
+      <td>Sparse → Dense</td>
+      <td>27,157.50</td>
+      <td>271.58</td>
+      <td>Vegetation regeneration</td>
+    </tr>
+    <tr>
+      <td>Dense → Sparse</td>
+      <td>17,501.13</td>
+      <td>175.01</td>
+      <td>Vegetation degradation</td>
+    </tr>
+    <tr>
+      <td>Dense → Other</td>
+      <td>430.92</td>
+      <td>4.31</td>
+      <td>Deforestation / land conversion</td>
+    </tr>
+    <tr>
+      <td>Sparse → Other</td>
+      <td>2,842.74</td>
+      <td>28.43</td>
+      <td>Loss of vegetation</td>
+    </tr>
+    <tr>
+      <td>Other → Sparse</td>
+      <td>1,304.28</td>
+      <td>13.04</td>
+      <td>New vegetation growth</td>
+    </tr>
+    <tr>
+      <td>Other → Dense</td>
+      <td>33.84</td>
+      <td>0.34</td>
+      <td>Afforestation</td>
+    </tr>
+    <tr>
+      <td>Other → Other</td>
+      <td>7,918.20</td>
+      <td>79.18</td>
+      <td>Stable non-vegetation</td>
+    </tr>
+  </tbody>
+</table>
+
+The post-classification change detection analysis revealed that Nyeri County experienced both vegetation gains and losses between 2017 and 2025. Stable vegetation dominated the landscape, with dense-to-dense transitions covering approximately 1,920 km², indicating minimal disturbance in protected and high-altitude forest areas. However, notable degradation was observed where dense vegetation transitioned to sparse vegetation (175 km²), particularly in agricultural and peri-urban zones. Vegetation regeneration was also evident, with sparse vegetation converting to dense vegetation over 272 km², suggesting successful natural regrowth and conservation efforts in some areas.
+</p>
+</div>
+</div>
+
+<!-- URBAN HEAT ISLAND -->
+<div class="gis-project">
+<span class="gis-number">3</span>
+<div class="gis-content">
+<h3>Urban Heat Island Analysis</h3>
+<p>
+Urban Heat Island (UHI) refers to the phenomenon where urban areas experience higher temperatures than surrounding rural areas due to human activities and built environments. This analysis helps inform urban planning and mitigation strategies.
+</p>
+<img src="/images/kisumulandsurfacetemperature.png" alt="Kisumu Land Surface Temperature Map">
+<p>
+The Land Surface Temperature (LST) map of Kisumu City reveals distinct temperature variations across different urban zones. The central business district and densely built-up areas exhibit higher temperatures, often exceeding 35°C, due to extensive concrete surfaces and limited vegetation. In contrast, peripheral areas with more green spaces and water bodies show lower temperatures, typically below 30°C. This spatial distribution highlights the impact of urbanization on local climate, emphasizing the need for green infrastructure and urban planning strategies to mitigate UHI effects.
+</p>
+</div>
+</div>
+
+<!-- LOAD MORE BUTTON -->
+<div style="text-align:center; margin: 30px 0;">
+<button id="loadBtn">view more projects</button>
+<p id="loadingText">retrieving...</p>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const loadBtn = document.getElementById('loadBtn');
+    const loadingText = document.getElementById('loadingText');
+    let dotCount = 0;
+
+    loadBtn.addEventListener('click', () => {
+      loadBtn.style.display = 'none';
+      loadingText.style.display = 'block';
+      setInterval(() => {
+        dotCount = (dotCount + 1) % 4;
+        loadingText.textContent = 'retrieving' + '.'.repeat(dotCount);
+      }, 500);
+    });
+  });
+</script>
+
+<!-- RESEARCH -->
+<div class="portfolio-item">
+<div class="portfolio-number" style="background-color:#fbc02d;">3</div>
+
+<h2>Research Assistance</h2>
+<p>
+I have contributed to a wide range of research projects, including agricultural studies, environmental assessments, water resource analyses, and urban agriculture research. My work spans locations such as Kericho, Machakos, Eldoret, Nyeri, and Kiambu, covering both private and public initiatives. I provide comprehensive support in field data collection, GIS mapping, spatial analysis, and the production of maps, shapefiles, and analytical reports. Across all projects, I combine practical field experience with technical GIS expertise to deliver accurate, actionable insights that support informed decision-making for researchers and stakeholders.
+</p>
+</div>
+
+<!-- WEB & APP DEVELOPMENT -->
+<div class="portfolio-item">
+<div class="portfolio-number" style="background-color:#ab47bc;">4</div>
+
+<h2>Web & App Development</h2>
+<p>
+I design and develop modern, functional web applications and database-driven websites for clients. My work combines clean user interfaces with efficient backend architecture, emphasizing usability, speed, and scalability. I handle full-stack development from concept to deployment, ensuring each project meets client goals and user needs. Recent work includes custom database systems, responsive web applications, and secure platforms for businesses and organizations.
+</p>
+
+<h3>Projects</h3>
+
+<div class="project-item">
+<h4>Homeland Surveyors Website</h4>
+<p class="project-date">Oct 2025 – Nov 2026 | Homeland Surveyors</p>
+<p>
+Developed a fully functional and secure website for Homeland Surveyors, enabling storage of client, land, and financial data. The platform streamlines workflow and transitions operations from paperwork to digital management, improving efficiency and record-keeping.
+</p>
+</div>
+
+<div class="project-item">
+<h4>Chandaria Logistics Platform</h4>
+<p class="project-date">Dec 2025 – Jan 2026 | Chandaria</p>
+<p>
+Built a web-based logistics system to manage operations and data for Chandaria, integrating user-friendly dashboards, tracking tools, and secure database management for smooth business operations.
+</p>
+</div>
+</div>
+
+<!-- ENVIRONMENTAL SERVICES -->
+<div class="portfolio-item">
+<div class="portfolio-number" style="background-color:#8bc34a;">5</div>
+
+<h2>Environmental Services</h2>
+<p>
+I provide comprehensive support in environmental services, including environmental impact assessments, sustainability planning, and natural resource management. My work involves evaluating environmental risks, analyzing resource use, and developing strategies to ensure sustainable practices across projects. By combining field data collection, GIS mapping, and analytical reporting, I help organizations, researchers, and stakeholders make informed decisions that balance development goals with environmental conservation.
+</p>
+</div>
 
 </section>
 
 <footer>
-    <p>&copy; 2025 Rioba Mwita | All rights reserved</p>
+<p>&copy; 2025 Rioba Mwita | All rights reserved</p>
 </footer>
 
 </body>
