@@ -563,7 +563,9 @@ img {
   border-radius: 6px;
   transition: background-color 0.3s ease;
 }
-
 .cv-button:hover {
   background-color: #046f6f;
+}
+.cv-container {
+  text-align: center;
 }
