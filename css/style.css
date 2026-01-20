@@ -420,7 +420,7 @@ footer {
     .card h3 { font-size: 1.2em; }
     .portfolio-item h2 { font-size: 1.4em; }
     .portfolio-number { width: 45px; height: 45px; font-size: 1.4em; }
-    .testimonial-img { width: 90px; height: 90px; }
+    .testimonial-img { width: 70px; height: 70px; }
     .testimonial-text h3 { font-size: 1.2rem; }
     .testimonial-text span { font-size: 1rem; }
     .testimonial-text p { font-size: 0.95rem; }
@@ -466,7 +466,7 @@ footer {
 ===================== */
 .cv-button {
     display: inline-block;
-    padding: 16px 30px;
+    padding: 8px 20px;
     background-color: #058585;
     color: #ffffff;
     text-decoration: none;
@@ -476,4 +476,102 @@ footer {
 }
 .cv-button:hover {
     background-color: #046f6f;
+}
+/* Contact section images */
+.contact-details img {
+    width: 40px;           /* sets uniform size for all icons */
+    height: 40px;
+    object-fit: contain;    /* keeps aspect ratio */
+    margin-right: 10px;     /* spacing between icons */
+    vertical-align: middle; /* aligns icon with text */
+}
+
+.contact-socials {
+    display: flex;
+    justify-content: center; /* centers the icons horizontally */
+    gap: 15px;               /* space between icons */
+    align-items: center;      /* vertical alignment */
+    margin-top: 10px;
+}
+.contact-row {
+    display: flex;
+    align-items: center;   /* aligns icon and text vertically */
+    justify-content: center; /* optional: center location horizontally */
+    gap: 10px;             /* space between icon and text */
+    margin-bottom: 15px;   /* space between location and socials */
+}
+
+.contact-details img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+/* Container for each project */
+.gis-project {
+    margin-bottom: 40px;  /* space between projects */
+}
+
+/* Header: number + title */
+.gis-header {
+    display: flex;
+    align-items: flex-start;  /* aligns number with top of title */
+    gap: 12px;                /* space between numeral and title */
+    margin-bottom: 15px;      /* space between header and content */
+}
+
+/* Roman numeral styling */
+.gis-number {
+    font-weight: bold;
+    font-size: 1.5rem;       /* adjust size as needed */
+    min-width: 25px;         /* keeps all numbers aligned vertically */
+    text-align: right;       /* aligns numeral nicely next to title */
+    line-height: 1.3;        /* improves vertical alignment with title */
+    color: #4da6ff;          /* subtle blue */
+    opacity: 0.85;           /* slightly faded */
+}
+
+/* Title styling */
+.gis-header h3 {
+    margin: 0;               /* remove default h3 margin */
+    font-size: 1.9rem;       /* adjust as needed */
+    color: #4da6ff;          /* same subtle blue */
+    opacity: 0.85;           /* slightly faded */
+}
+
+/* Content (paragraphs + images) */
+.gis-content p {
+    margin-bottom: 15px;     /* spacing between paragraphs */
+    color: #ffffff;          /* keep paragraphs white */
+}
+
+.gis-content img {
+    max-width: 100%;          /* responsive images */
+    display: block;
+    margin: 15px 0;           /* spacing around images */
+}
+/* Match portfolio h2 to its number circle color */
+.portfolio-section .portfolio-item:nth-of-type(1) h2 {
+    color: #4caf50; /* Land Survey */
+}
+
+.portfolio-section .portfolio-item:nth-of-type(2) h2 {
+    color: #29b6f6; /* GIS Mapping */
+}
+
+.portfolio-section .portfolio-item:nth-of-type(3) h2 {
+    color: #fbc02d; /* Research Assistance */
+}
+
+.portfolio-section .portfolio-item:nth-of-type(4) h2 {
+    color: #ab47bc; /* Web & App Development */
+}
+
+.portfolio-section .portfolio-item:nth-of-type(5) h2 {
+    color: #8bc34a; /* Environmental Services */
+}
+
+/* Optional: slightly fade them like your gis-header effect */
+.portfolio-section .portfolio-item h2 {
+    opacity: 0.85;
+    transition: color 0.3s;
 }

@@ -94,87 +94,88 @@
       The examples below highlight just a few of the many mapping projects I have completed, and I can create custom maps on request.
     </p>
 
-    <div class="gis-projects">
-      <!-- AIR POLLUTION -->
-      <div class="gis-project">
-        <span class="gis-number">1</span>
-        <div class="gis-content">
-          <h3>Air Pollution Exposure Mapping</h3>
-          <p>This section covers mapping and analysis of population exposure to air pollutants. The analysis integrates emission sources, land use patterns, meteorological data, and settlement distribution to understand exposure risks. For example, in Nakuru County:</p>
-          <img src="/images/air-exposure.png" alt="Nakuru Air Pollution Exposure Map">
-          <p>
-            In central Nakuru County, particularly in the town center, population exposure is high to very high due to dense traffic, industrial emissions, and frequent use of solid fuels for cooking. Concentrations of key pollutants such as PM₂.₅ reach up to 45–55 µg/m³, while NO₂ and CO levels are elevated near major roads. In contrast, rural areas of Nyandarua County, around Tumaini, show lower exposure levels (PM₂.₅ ~15–20 µg/m³) because of lower population density, fewer emission sources, and more open vegetation. This approach identifies vulnerable populations and informs public health and urban planning interventions to reduce air pollution impacts.
-          </p>
-        </div>
-      </div>
+<div class="gis-projects">
 
-      <!-- LAND COVER -->
-      <div class="gis-project">
-        <span class="gis-number">2</span>
-        <div class="gis-content">
-          <h3>Land Use/Land Cover Mapping and Change Detection</h3>
-          <p>This section presents an example mapping and analysis of land cover patterns using satellite imagery to assess vegetation distribution and changes over time. It includes GIS-based classification, post-classification change detection, and spatial analysis to identify stable vegetation, areas of degradation, and zones of regeneration. For example, the images show forest cover in 2017 and 2025, and the accompanying change detection map highlights areas of stable forest, deforestation, regeneration, and land conversion. These outputs—maps, shapefiles, and statistical summaries—help differentiate subtle changes in vegetation over time, providing actionable insights for environmental management, urban planning, and sustainable resource use.</p>
-          <img src="/images/Nyeri.png" alt="Nyeri Forest Cover Map">
-          <p>Change detection analysis is essential because it provides a precise, quantitative understanding of how land cover evolves over time, rather than relying on visual comparisons of two images side by side. While side-by-side satellite images can suggest areas of vegetation gain or loss, they do not provide exact measurements or classifications of the types and magnitude of change. Change detection maps systematically identify transitions—such as dense forest becoming sparse, or agricultural land converting to built-up areas—allowing planners, researchers, and environmental managers to accurately monitor degradation, regeneration, and stability. This approach supports evidence-based decision-making for resource management, conservation planning, and sustainable land use.</p>
-          <img src="/images/Change.png" alt="Nyeri Forest Cover Change Map">
-          <p>
-            <table border="1" cellpadding="8" cellspacing="0" style="border-collapse: collapse; width: 100%;">
-              <thead>
-                <tr>
-                  <th>Change Type</th>
-                  <th>Area (ha)</th>
-                  <th>Area (km²)</th>
-                  <th>Interpretation</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr><td>Dense → Dense</td><td>192,042.99</td><td>1920.43</td><td>Stable dense vegetation</td></tr>
-                <tr><td>Sparse → Sparse</td><td>88,611.57</td><td>886.12</td><td>Stable sparse vegetation</td></tr>
-                <tr><td>Sparse → Dense</td><td>27,157.50</td><td>271.58</td><td>Vegetation regeneration</td></tr>
-                <tr><td>Dense → Sparse</td><td>17,501.13</td><td>175.01</td><td>Vegetation degradation</td></tr>
-                <tr><td>Dense → Other</td><td>430.92</td><td>4.31</td><td>Deforestation / land conversion</td></tr>
-                <tr><td>Sparse → Other</td><td>2,842.74</td><td>28.43</td><td>Loss of vegetation</td></tr>
-                <tr><td>Other → Sparse</td><td>1,304.28</td><td>13.04</td><td>New vegetation growth</td></tr>
-                <tr><td>Other → Dense</td><td>33.84</td><td>0.34</td><td>Afforestation</td></tr>
-                <tr><td>Other → Other</td><td>7,918.20</td><td>79.18</td><td>Stable non-vegetation</td></tr>
-              </tbody>
-            </table>
-          </p>
-          The change detection analysis of Nyeri County between the two time periods highlights how different land cover types have transformed over time. Areas of dense vegetation that remained dense represent stable forested regions, while sparse areas that stayed the same indicate stable open or agricultural land. Some sparse areas transitioned to dense vegetation, showing vegetation regeneration, whereas portions of dense vegetation became sparse, reflecting vegetation degradation due to land clearing or human activities. Small sections of dense and sparse vegetation converted to non-vegetated land, indicating deforestation or land conversion, while areas previously non-vegetated that became sparse or dense reflect new growth and afforestation. Finally, areas that remained non-vegetated demonstrate stable bare land or urban zones. Overall, the analysis reveals the patterns of stability, degradation, and regeneration, providing critical insights for forest management, environmental planning, and sustainable land use decision-making in the county.
-          </p>
+  <!-- AIR POLLUTION -->
+  <div class="gis-project">
+    <div class="gis-header">
+      <span class="gis-number">i</span>
+      <h3>Air Pollution Exposure Mapping</h3>
+    </div>
+    <div class="gis-content">
+      <p>This section covers mapping and analysis of population exposure to air pollutants. The analysis integrates emission sources, land use patterns, meteorological data, and settlement distribution to understand exposure risks. For example, in Nakuru County:</p>
+      <img src="/images/air-exposure.png" alt="Nakuru Air Pollution Exposure Map">
+      <p>
+        In central Nakuru County, particularly in the town center, population exposure is high to very high due to dense traffic, industrial emissions, and frequent use of solid fuels for cooking. Concentrations of key pollutants such as PM₂.₅ reach up to 45–55 µg/m³, while NO₂ and CO levels are elevated near major roads. In contrast, rural areas of Nyandarua County, around Tumaini, show lower exposure levels (PM₂.₅ ~15–20 µg/m³) because of lower population density, fewer emission sources, and more open vegetation. This approach identifies vulnerable populations and informs public health and urban planning interventions to reduce air pollution impacts.
+      </p>
+    </div>
+  </div>
 
-        </div>
-      </div>
+  <!-- LAND COVER -->
+  <div class="gis-project">
+    <div class="gis-header">
+      <span class="gis-number">ii</span>
+      <h3>Land Use/Land Cover Mapping and Change Detection</h3>
+    </div>
+    <div class="gis-content">
+      <p>This section presents an example mapping and analysis of land cover patterns using satellite imagery to assess vegetation distribution and changes over time. It includes GIS-based classification, post-classification change detection, and spatial analysis to identify stable vegetation, areas of degradation, and zones of regeneration. For example, the images show forest cover in 2017 and 2025, and the accompanying change detection map highlights areas of stable forest, deforestation, regeneration, and land conversion. These outputs—maps, shapefiles, and statistical summaries—help differentiate subtle changes in vegetation over time, providing actionable insights for environmental management, urban planning, and sustainable resource use.</p>
+      <img src="/images/Nyeri.png" alt="Nyeri Forest Cover Map">
+      <p>Change detection analysis is essential because it provides a precise, quantitative understanding of how land cover evolves over time, rather than relying on visual comparisons of two images side by side. While side-by-side satellite images can suggest areas of vegetation gain or loss, they do not provide exact measurements or classifications of the types and magnitude of change. Change detection maps systematically identify transitions—such as dense forest becoming sparse, or agricultural land converting to built-up areas—allowing planners, researchers, and environmental managers to accurately monitor degradation, regeneration, and stability. This approach supports evidence-based decision-making for resource management, conservation planning, and sustainable land use.</p>
+      <img src="/images/Change.png" alt="Nyeri Forest Cover Change Map">
+      <p>
+        <table border="1" cellpadding="8" cellspacing="0" style="border-collapse: collapse; width: 100%;">
+          <thead>
+            <tr>
+              <th>Change Type</th>
+              <th>Area (ha)</th>
+              <th>Area (km²)</th>
+              <th>Interpretation</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Dense → Dense</td><td>192,042.99</td><td>1920.43</td><td>Stable dense vegetation</td></tr>
+            <tr><td>Sparse → Sparse</td><td>88,611.57</td><td>886.12</td><td>Stable sparse vegetation</td></tr>
+            <tr><td>Sparse → Dense</td><td>27,157.50</td><td>271.58</td><td>Vegetation regeneration</td></tr>
+            <tr><td>Dense → Sparse</td><td>17,501.13</td><td>175.01</td><td>Vegetation degradation</td></tr>
+            <tr><td>Dense → Other</td><td>430.92</td><td>4.31</td><td>Deforestation / land conversion</td></tr>
+            <tr><td>Sparse → Other</td><td>2,842.74</td><td>28.43</td><td>Loss of vegetation</td></tr>
+            <tr><td>Other → Sparse</td><td>1,304.28</td><td>13.04</td><td>New vegetation growth</td></tr>
+            <tr><td>Other → Dense</td><td>33.84</td><td>0.34</td><td>Afforestation</td></tr>
+            <tr><td>Other → Other</td><td>7,918.20</td><td>79.18</td><td>Stable non-vegetation</td></tr>
+          </tbody>
+        </table>
+      </p>
+      <p>The change detection analysis of Nyeri County between the two time periods highlights how different land cover types have transformed over time. Areas of dense vegetation that remained dense represent stable forested regions, while sparse areas that stayed the same indicate stable open or agricultural land. Some sparse areas transitioned to dense vegetation, showing vegetation regeneration, whereas portions of dense vegetation became sparse, reflecting vegetation degradation due to land clearing or human activities. Small sections of dense and sparse vegetation converted to non-vegetated land, indicating deforestation or land conversion, while areas previously non-vegetated that became sparse or dense reflect new growth and afforestation. Finally, areas that remained non-vegetated demonstrate stable bare land or urban zones. Overall, the analysis reveals the patterns of stability, degradation, and regeneration, providing critical insights for forest management, environmental planning, and sustainable land use decision-making in the county.</p>
+    </div>
+  </div>
 
-      <!-- URBAN HEAT ISLAND -->
-      <div class="gis-project">
-        <span class="gis-number">3</span>
-        <div class="gis-content">
-          <h3>Urban Heat Island Analysis</h3>
-          <p>This section highlights Urban Heat Island (UHI) analysis, which examines how built environments and human activities in cities lead to elevated surface and air temperatures compared to surrounding rural areas. Understanding UHI patterns is crucial for urban planning, as it helps identify hotspots, informs strategies to mitigate heat stress, and supports the design of greener, more climate-resilient cities.</p>
-          <img src="images/kisumu.png" alt="Kisumu Land Surface Temperature Map">
-          <p>
-            The Land Surface Temperature (LST) map of Kisumu City reveals that the central business district and densely built-up areas exhibit temperatures exceeding 35°C, with some hotspots reaching up to 37–38°C, while peripheral areas with more vegetation and water bodies register lower temperatures of 28–30°C. This spatial variation illustrates the Urban Heat Island (UHI) effect, where impervious surfaces, reduced vegetation cover, and high building density increase heat retention. The temperature difference of 7–10°C between urban cores and surrounding green or water-rich areas underscores the need for targeted urban planning interventions, including green infrastructure, urban tree planting, and reflective materials, to mitigate localized heat stress and improve urban thermal comfort.</p>
-        </div>
-      </div><!-- ROAD ACCIDENT HOTSPOT ANALYSIS -->
-      <div class="gis-project">
-        <span class="gis-number">4</span>
-        <div class="gis-content">
-          <h3>Road Accident Hotspot Analysis</h3>
+  <!-- URBAN HEAT ISLAND -->
+  <div class="gis-project">
+    <div class="gis-header">
+      <span class="gis-number">iii</span>
+      <h3>Urban Heat Island Analysis</h3>
+    </div>
+    <div class="gis-content">
+      <p>This section highlights Urban Heat Island (UHI) analysis, which examines how built environments and human activities in cities lead to elevated surface and air temperatures compared to surrounding rural areas. Understanding UHI patterns is crucial for urban planning, as it helps identify hotspots, informs strategies to mitigate heat stress, and supports the design of greener, more climate-resilient cities.</p>
+      <img src="images/kisumu.png" alt="Kisumu Land Surface Temperature Map">
+      <p>
+        The Land Surface Temperature (LST) map of Kisumu City reveals that the central business district and densely built-up areas exhibit temperatures exceeding 35°C, with some hotspots reaching up to 37–38°C, while peripheral areas with more vegetation and water bodies register lower temperatures of 28–30°C. This spatial variation illustrates the Urban Heat Island (UHI) effect, where impervious surfaces, reduced vegetation cover, and high building density increase heat retention. The temperature difference of 7–10°C between urban cores and surrounding green or water-rich areas underscores the need for targeted urban planning interventions, including green infrastructure, urban tree planting, and reflective materials, to mitigate localized heat stress and improve urban thermal comfort.
+      </p>
+    </div>
+  </div>
 
-          <p>
-            This section presents a Road Accident Hotspot Analysis, focusing on the spatial distribution and concentration of traffic accidents within the study area. The analysis is intended to support road safety planning by identifying high-risk locations that require targeted interventions.
-          </p>
-
-          <img src="images/distribution.png" alt="Road Accident Distribution Map">
-
-          <p>
-            The accident distribution map displays the spatial locations of road traffic accident points recorded in Kenya during the year 2016, plotted along the road network and classified by severity (fatal (loss of life), serious (severe injury), and minor (slight injury or property damage)). These points are derived from actual traffic accident records, and their clustering along major road corridors and intersections highlights patterns in incident occurrence relative to the existing road network. While this map primarily illustrates where accidents occurred, it establishes a clear spatial foundation that can be further enhanced by integrating additional datasets — such as traffic volumes, land use, and population distribution — to more comprehensively understand the underlying risk factors influencing accident occurrence.</p>
-
-          <img src="images/kernel.png" alt="Road Accident Hotspot Map (Kernel Density)">
-          <p>
-            The kernel density hotspot map identifies areas with a high concentration of road traffic accidents, revealing significant hotspots along major highways and urban centers. These hotspots indicate locations where accidents are more frequent, suggesting underlying risk factors such as high traffic volumes, complex intersections, or inadequate road infrastructure. By pinpointing these high-risk areas, the analysis provides critical insights for road safety planning, enabling authorities to prioritize interventions such as improved signage, traffic calming measures, and enhanced enforcement to reduce accident rates and enhance overall road safety.
-          </p>
+  <!-- ROAD ACCIDENT HOTSPOT ANALYSIS -->
+  <div class="gis-project">
+    <div class="gis-header">
+      <span class="gis-number">iv</span>
+      <h3>Road Accident Hotspot Analysis</h3>
+    </div>
+    <div class="gis-content">
+      <p>This section presents a Road Accident Hotspot Analysis, focusing on the spatial distribution and concentration of traffic accidents within the study area. The analysis is intended to support road safety planning by identifying high-risk locations that require targeted interventions.</p>
+      <img src="images/distribution.png" alt="Road Accident Distribution Map">
+      <p>The accident distribution map displays the spatial locations of road traffic accident points recorded in Kenya during the year 2016, plotted along the road network and classified by severity (fatal (loss of life), serious (severe injury), and minor (slight injury or property damage)). These points are derived from actual traffic accident records, and their clustering along major road corridors and intersections highlights patterns in incident occurrence relative to the existing road network. While this map primarily illustrates where accidents occurred, it establishes a clear spatial foundation that can be further enhanced by integrating additional datasets — such as traffic volumes, land use, and population distribution — to more comprehensively understand the underlying risk factors influencing accident occurrence.</p>
+      <img src="images/kernel.png" alt="Road Accident Hotspot Map (Kernel Density)">
+      <p>The kernel density hotspot map identifies areas with a high concentration of road traffic accidents, revealing significant hotspots along major highways and urban centers. These hotspots indicate locations where accidents are more frequent, suggesting underlying risk factors such as high traffic volumes, complex intersections, or inadequate road infrastructure. By pinpointing these high-risk areas, the analysis provides critical insights for road safety planning, enabling authorities to prioritize interventions such as improved signage, traffic calming measures, and enhanced enforcement to reduce accident rates and enhance overall road safety.</p>
         </div>
       </div>
     </div>
