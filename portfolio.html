@@ -169,14 +169,13 @@
           <img src="images/distribution.png" alt="Road Accident Distribution Map">
 
           <p>
-            The accident distribution map displays the spatial locations of road traffic accident points recorded in Kenya during the year 2016, plotted along the road network and classified by severity (fatal, serious, and minor). These points are derived from actual traffic accident records, and their clustering along major road corridors and intersections highlights patterns in incident occurrence relative to the existing road network. While this map primarily illustrates where accidents occurred, it establishes a clear spatial foundation that can be further enhanced by integrating additional datasets — such as traffic volumes, land use, and population distribution — to more comprehensively understand the underlying risk factors influencing accident occurrence.</p>
+            The accident distribution map displays the spatial locations of road traffic accident points recorded in Kenya during the year 2016, plotted along the road network and classified by severity (fatal (loss of life), serious (severe injury), and minor (slight injury or property damage)). These points are derived from actual traffic accident records, and their clustering along major road corridors and intersections highlights patterns in incident occurrence relative to the existing road network. While this map primarily illustrates where accidents occurred, it establishes a clear spatial foundation that can be further enhanced by integrating additional datasets — such as traffic volumes, land use, and population distribution — to more comprehensively understand the underlying risk factors influencing accident occurrence.</p>
 
           <img src="images/kernel.png" alt="Road Accident Hotspot Map (Kernel Density)">
           <p>
             The kernel density hotspot map identifies areas with a high concentration of road traffic accidents, revealing significant hotspots along major highways and urban centers. These hotspots indicate locations where accidents are more frequent, suggesting underlying risk factors such as high traffic volumes, complex intersections, or inadequate road infrastructure. By pinpointing these high-risk areas, the analysis provides critical insights for road safety planning, enabling authorities to prioritize interventions such as improved signage, traffic calming measures, and enhanced enforcement to reduce accident rates and enhance overall road safety.
           </p>
         </div>
-      </div>
       </div>
     </div>
 <!-- LOAD MORE BUTTON -->
@@ -222,6 +221,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   <!-- WEB & APP DEVELOPMENT -->
   <div class="portfolio-item">
+    <div class="matrix-overlay"></div>
     <div class="portfolio-number" style="background-color:#ab47bc;">4</div>
     <h2>Web & App Development</h2>
     <p>
@@ -266,6 +266,61 @@ document.addEventListener('DOMContentLoaded', () => {
 <footer>
   <p>&copy; 2025 Rioba Mwita | All rights reserved</p>
 </footer>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const cards = document.querySelectorAll('.portfolio-item');
+
+  cards.forEach(card => {
+    if (card.textContent.includes('Web & App Development')) {
+      const overlay = card.querySelector('.matrix-overlay');
+
+      card.addEventListener('click', () => {
+        card.classList.add('matrix-active');
+
+        // Create canvas inside overlay
+        const canvas = document.createElement('canvas');
+        overlay.appendChild(canvas);
+        canvas.width = overlay.offsetWidth;
+        canvas.height = overlay.offsetHeight;
+        const ctx = canvas.getContext('2d');
+
+        const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+        const fontSize = 16;
+        const columns = Math.floor(canvas.width / fontSize);
+        const drops = Array(columns).fill(1);
+
+        ctx.font = fontSize + "px monospace";
+
+        function draw() {
+          // Fade the canvas slightly to create trail effect
+          ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+          ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+          ctx.fillStyle = '#0F0';
+          for (let i = 0; i < drops.length; i++) {
+            const text = letters.charAt(Math.floor(Math.random() * letters.length));
+            ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+            if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+              drops[i] = 0;
+            }
+
+            drops[i]++;
+          }
+        }
+
+        const interval = setInterval(draw, 50);
+
+        setTimeout(() => {
+          clearInterval(interval);
+          card.classList.remove('matrix-active');
+          overlay.innerHTML = ''; // remove canvas
+        }, 2500);
+      });
+    }
+  });
+});
+</script>
 
 </body>
 </html>
