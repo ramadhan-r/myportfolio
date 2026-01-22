@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Order Services | Rioba Mwita</title>
+<link rel="icon" href="images/favicon.png" type="image/png">
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Poppins:wght@500;600&display=swap" rel="stylesheet">
+
+<!-- CSS -->
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- Header -->
+<header>
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/portfolio">Portfolio</a></li>
+            <li><a href="/services.html" class="active">Order Services</a></li>
+            <li><a href="/contact">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- Service Order Card -->
+<section class="services-order">
+    <h1>Request Services / Ask Questions</h1>
+    <p>Use the form below to request services or submit an enquiry. I’ll respond promptly.</p>
+
+    <form id="serviceOrderForm">
+
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" placeholder="John Doe" required>
+
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" placeholder="you@example.com" required>
+
+        <label for="phone">WhatsApp Number (optional for faster response):</label>
+        <input type="text" id="phone" name="phone" placeholder="07XXXXXXXX or 01XXXXXXXX">
+
+        <label for="service">Service (optional if just asking a question):</label>
+        <select id="service" name="service">
+            <option value="">--Select Service--</option>
+            <option value="gis-mapping">GIS Mapping</option>
+            <option value="environmental-research">Research Assistance</option>
+            <option value="web-development">Web & App Development</option>
+            <option value="land-surveying">Land Surveying</option>
+            <option value="other">Other</option>
+        </select>
+
+        <label for="details">Project Details / Question:</label>
+        <textarea id="details" name="details" rows="4" placeholder="Briefly describe your project or question..." required></textarea>
+
+        <div class="enquiry-checkbox">
+            <input type="checkbox" id="justQuestion" name="justQuestion">
+            <label for="justQuestion">This is just a question / enquiry</label>
+        </div>
+
+        <button type="submit">Submit</button>
+    </form>
+</section>
+
+<!-- Footer -->
+<footer>
+    <p>&copy; 2025 Rioba Mwita | All rights reserved</p>
+</footer>
+
+<!-- JS -->
+<script>
+document.getElementById('serviceOrderForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+    const serviceSelect = document.getElementById('service');
+    const service = serviceSelect.value || 'General Enquiry';
+    const details = document.getElementById('details').value.trim();
+    const justQuestion = document.getElementById('justQuestion').checked;
+
+    const typeText = justQuestion ? 'Enquiry Only' : 'Service Request';
+    const message = `Hi Rioba, I have a ${typeText}.\n\nName: ${name}\nEmail: ${email}\nPhone: ${phone || 'N/A'}\nService/Question: ${service}\nDetails: ${details}`;
+
+    if(phone.match(/^(07|01)\d{8}$/)) {
+        // WhatsApp link
+        const waLink = `https://wa.me/254729709807?text=${encodeURIComponent(message)}`;
+        window.open(waLink, '_blank');
+    } else {
+        // Fallback email
+        const mailtoLink = `mailto:riobaramadhan@gmail.com?subject=${encodeURIComponent(typeText)}&body=${encodeURIComponent(message)}`;
+        window.location.href = mailtoLink;
+    }
+
+    alert("Your request/enquiry is ready! Follow the prompt to complete it.");
+    this.reset();
+});
+</script>
+</body>
+</html>
