@@ -977,6 +977,6 @@ input.valid {
 
     .portfolio-item h2 {
         margin: 0 0 15px 0;  /* space below title */
-        text-align: justified;  /* center title */
+        text-align: center;  /* center title */
     }
 }
