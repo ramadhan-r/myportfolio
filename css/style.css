@@ -591,3 +591,127 @@ footer {
         padding: 20px;          /* adjust padding for mobile */
     }
 }
+/* =====================
+   TIP ME SECTION
+===================== */
+.tip-box {
+    margin-top: 35px;
+    padding: 25px;
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+    background: #2b2b2b;
+    border-radius: 12px;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.5);
+    text-align: center;
+}
+
+.tip-icon {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+    margin-bottom: 12px;
+    opacity: 0.9;
+}
+
+.tip-text {
+    font-size: 0.95em;
+    color: #dcdcdc;
+    margin-bottom: 18px;
+}
+
+.tip-btn {
+    background: linear-gradient(135deg, #43a047, #2e7d32);
+    color: #ffffff;
+    border: none;
+    padding: 10px 26px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: transform 0.2s, opacity 0.3s;
+}
+
+.tip-btn:hover {
+    transform: scale(0.95);
+    opacity: 0.85;
+}
+
+/* =====================
+   TIP MODAL
+===================== */
+.tip-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.75);
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.tip-modal-content {
+    background: #1f1f1f;
+    padding: 25px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 380px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.7);
+}
+
+.tip-modal-content h3 {
+    margin-bottom: 15px;
+    color: #66bb6a;
+}
+
+.tip-modal-content input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    border: none;
+    font-size: 14px;
+}
+
+.tip-modal-content button {
+    width: 100%;
+    padding: 10px;
+    background: #43a047;
+    border: none;
+    color: #fff;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.tip-note {
+    margin-top: 10px;
+    font-size: 0.85em;
+    color: #bbbbbb;
+}
+
+.close-tip {
+    float: right;
+    font-size: 22px;
+    cursor: pointer;
+    color: #aaa;
+}
+/* =====================
+   CONTACT ROW IMPROVEMENT
+===================== */
+.contact-row {
+    display: inline-flex;       /* inline-flex keeps it tight like text */
+    align-items: center;        /* vertically centers icon and text */
+    gap: 6px;                   /* small gap between icon and text */
+    font-size: 1em;
+    color: #f1f1f1;
+}
+
+.contact-row img {
+    width: 24px;                /* smaller icon for professional look */
+    height: 24px;
+    object-fit: contain;
+    display: inline-block;
+    vertical-align: middle;
+}

@@ -68,11 +68,61 @@
     </div>
 
 </section>
+<!-- Tip Me Section -->
+<div class="tip-box">
+    <img src="images/tip.png" alt="Support my work" class="tip-icon">
+
+    <p class="tip-text">
+        If you like what you see here, you can support the time and tools behind my work. Tips help me keep building practical, reliable solutions.
+    </p>
+
+    <button class="tip-btn" onclick="openTipModal()">Tip via M-Pesa</button>
+</div>
+
+<!-- Tip Modal -->
+<div id="tipModal" class="tip-modal">
+    <div class="tip-modal-content">
+        <span class="close-tip" onclick="closeTipModal()">&times;</span>
+        <h3>Support My Work</h3>
+
+        <input type="text" id="mpesaPhone" placeholder="07XXXXXXXX or 01XXXXXXXX">
+        <button onclick="sendTip()">Send Tip</button>
+
+        <p class="tip-note">You’ll receive an M-Pesa prompt on your phone.</p>
+    </div>
+</div>
 
 <!-- Footer -->
 <footer>
     <p>&copy; 2025 Rioba Mwita | All rights reserved</p>
 </footer>
+<script>
+function openTipModal() {
+    document.getElementById("tipModal").style.display = "flex";
+}
+
+function closeTipModal() {
+    document.getElementById("tipModal").style.display = "none";
+}
+
+function sendTip() {
+    const phone = document.getElementById("mpesaPhone").value;
+
+    if (!phone.match(/^(07|01)\d{8}$/)) {
+        alert("Enter a valid Safaricom number");
+        return;
+    }
+
+    fetch("/stkpush", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ phone })
+    })
+    .then(res => res.json())
+    .then(data => alert("Check your phone to complete the tip"))
+    .catch(() => alert("Something went wrong. Try again."));
+}
+</script>
 
 </body>
 </html>
