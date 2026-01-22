@@ -97,8 +97,8 @@ document.getElementById('serviceOrderForm').addEventListener('submit', function(
         const mailtoLink = `mailto:riobaramadhan@gmail.com?subject=${encodeURIComponent(typeText)}&body=${encodeURIComponent(message)}`;
         window.location.href = mailtoLink;
     }
-    // Clear the form
-    form.reset();
+    // ✅ Clear the form
+    this.reset();
 });
 </script>
 </body>
