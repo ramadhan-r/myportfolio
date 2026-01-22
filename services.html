@@ -29,7 +29,7 @@
 
 <!-- Service Order Card -->
 <section class="services-order">
-    <h1>Request Services / Ask Questions</h1>
+    <h1>Request Services</h1>
     <p>Use the form below to request services or submit an enquiry. I’ll respond promptly.</p>
 
     <form id="serviceOrderForm">
@@ -97,9 +97,6 @@ document.getElementById('serviceOrderForm').addEventListener('submit', function(
         const mailtoLink = `mailto:riobaramadhan@gmail.com?subject=${encodeURIComponent(typeText)}&body=${encodeURIComponent(message)}`;
         window.location.href = mailtoLink;
     }
-
-    alert("Your request/enquiry is ready! Follow the prompt to complete it.");
-    this.reset();
 });
 </script>
 </body>

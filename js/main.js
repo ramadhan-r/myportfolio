@@ -27,6 +27,3 @@ navLinks.forEach(link => {
         link.classList.remove('active');
     }
 });
-const formMessage = document.getElementById("formMessage");
-formMessage.textContent = "Your request/enquiry is ready! Follow the prompt.";
-formMessage.style.display = "block";
