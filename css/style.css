@@ -810,9 +810,9 @@ footer {
 }
 /* Reduce space between hero and services */
 .hero {
-    padding-bottom: 45px; /* half of the original 70px */
+    padding-bottom: 30px; /* half of the original 70px */
 }
 
 .services {
-    padding-top: 30px; /* reduce top padding if needed */
+    padding-top: 20px; /* reduce top padding if needed */
 }
