@@ -963,3 +963,20 @@ input.valid {
         display: block;
     }
 }
+/* Center number + title on portfolio cards */
+@media (max-width: 600px) {
+    .portfolio-item {
+        text-align: center; /* center all content inside the card */
+        padding-top: 30px;  /* add some top padding for the number/title */
+    }
+
+    .portfolio-number {
+        display: inline-block; /* allow centering */
+        margin: 0 auto 10px auto; /* center circle with spacing below */
+    }
+
+    .portfolio-item h2 {
+        margin: 0 0 15px 0;  /* space below title */
+        text-align: center;  /* center title */
+    }
+}
