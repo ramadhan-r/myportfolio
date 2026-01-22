@@ -30,7 +30,7 @@
 <!-- Service Order Card -->
 <section class="services-order">
     <h1>Request Services</h1>
-    <p>Use the form below to request services or submit an enquiry. I’ll respond promptly.</p>
+    <p>Use the form below to request services or submit an enquiry.</p>
 
     <form id="serviceOrderForm">
 
@@ -58,7 +58,7 @@
 
         <div class="enquiry-checkbox">
             <input type="checkbox" id="justQuestion" name="justQuestion">
-            <label for="justQuestion">This is just a question / enquiry</label>
+            <label for="justQuestion">This is a question / enquiry</label>
         </div>
 <!-- This is the message area -->
     <p id="formMessage" style="color:#aee108; text-align:center; display:none;"></p>
@@ -85,7 +85,7 @@ document.getElementById('serviceOrderForm').addEventListener('submit', function(
     const details = document.getElementById('details').value.trim();
     const justQuestion = document.getElementById('justQuestion').checked;
 
-    const typeText = justQuestion ? 'Enquiry Only' : 'Service Request';
+    const typeText = justQuestion ? 'Enquiry' : 'Service Request';
     const message = `Hi Rioba, I have a ${typeText}.\n\nName: ${name}\nEmail: ${email}\nPhone: ${phone || 'N/A'}\nService/Question: ${service}\nDetails: ${details}`;
 
     if(phone.match(/^(07|01)\d{8}$/)) {
