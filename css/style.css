@@ -837,3 +837,58 @@ input.invalid {
 input.valid {
     border-color: #66bb6a !important; /* green */
 }
+/* =====================
+   CONTACT ICONS
+===================== */
+.contact-socials a img {
+    width: 36px;           /* smaller icons */
+    height: 36px;
+    object-fit: contain;
+    margin: 0;             /* remove extra margins */
+}
+
+.contact-socials {
+    display: flex;
+    justify-content: center;
+    gap: 12px;             /* smaller gap between social icons */
+    align-items: center;
+    margin-top: 12px;
+}
+
+/* =====================
+   LOCATION ICON
+===================== */
+.contact-location {
+    display: flex;
+    justify-content: center; /* center horizontally */
+    align-items: center;     /* vertical alignment */
+    gap: 4px;                /* very close to the text */
+    margin-top: 8px;         /* spacing from socials */
+}
+
+.contact-location img {
+    width: 20px;             /* smaller, in line with text */
+    height: 20px;
+    object-fit: contain;
+    display: inline-block;
+    vertical-align: middle;
+}
+/* =====================
+   CONTACT TOOLTIP (FIXED)
+===================== */
+#contactTooltip {
+    position: fixed;
+    bottom: 110px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.9);
+    color: #ffffff;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 0.85em;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 9999;
+}
