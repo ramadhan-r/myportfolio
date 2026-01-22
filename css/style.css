@@ -985,6 +985,6 @@ input.valid {
 
     /* Paragraphs remain justified */
     .portfolio-item p {
-        text-align: justify;
+        text-align: left;
     }
 }
