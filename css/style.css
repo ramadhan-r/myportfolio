@@ -1023,3 +1023,78 @@ footer {
 
   position: relative;
 }
+.hero h1,
+.merch h2,
+.services h2,
+.contact h2 {
+  font-family: "Cinzel", serif;
+  font-size: 2.1rem;
+  margin-bottom: 14px;
+  position: relative;
+}
+
+.hero h1::after,
+.merch h2::after,
+.services h2::after,
+.contact h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  margin-top: 8px;
+  border-radius: 4px;
+  background: linear-gradient(
+    90deg,
+    var(--accent),
+    var(--accent-strong)
+  );
+}
+.hero {
+  align-items: center;
+}
+
+.hero-content {
+  background: transparent;
+}
+
+.hero-img {
+  align-self: center;
+}
+.merch-grid,
+.services-grid {
+  margin-top: 26px;
+}
+.contact form {
+  background: rgba(0,0,0,0.25);
+  padding: 22px;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.06);
+
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,0.02);
+}
+@media (max-width: 720px) {
+  .hero,
+  .merch,
+  .services,
+  .contact {
+    padding: 20px 18px;
+    border-radius: 18px;
+  }
+
+  .hero h1,
+  .merch h2,
+  .services h2,
+  .contact h2 {
+    font-size: 1.6rem;
+    text-align: center;
+  }
+
+  .hero h1::after,
+  .merch h2::after,
+  .services h2::after,
+  .contact h2::after {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
