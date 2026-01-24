@@ -87,7 +87,7 @@
     </div>
     <div class="project-text">
       <span>REMOTE SENSING</span>
-      <h2>PATTERN RECOGNITION</h2>
+      <h2>LAND COVER</h2>
       <p>
         Satellite-based classification and change detection for vegetation monitoring,
         deforestation tracking, regeneration analysis, urban expansion and sustainable
@@ -96,21 +96,21 @@
     </div>
   </div>
 
-  <!-- WEB MAP -->
-  <div class="project-card">
-    <div class="project-text">
-      <span>INTERACTIVE</span>
-      <h2>Interactive Web Mapping</h2>
-      <p>
-        Development of interactive web maps using spatial data visualization,
-        real-time mapping, user interaction layers, spatial storytelling,
-        and decision-support interfaces for planning and infrastructure analysis.
-      </p>
-    </div>
-    <div class="project-image gis-map">
-      <img src="assets/images/web-map.png" alt="Web Map">
-    </div>
+<!-- WEB MAP -->
+<div class="project-card tappable" onclick="openWebMapModal()">
+  <div class="project-text">
+    <span>INTERACTIVE</span>
+    <h2>Interactive Web Mapping</h2>
+    <p>
+      Development of interactive web maps using spatial data visualization,
+      real-time mapping, user interaction layers, spatial storytelling,
+      and decision-support interfaces for planning and infrastructure analysis.
+    </p>
   </div>
+  <div class="project-image gis-map">
+    <img src="assets/images/web-map.png" alt="Web Map">
+  </div>
+</div>
 
   <!-- ROAD SAFETY -->
   <div class="project-card reverse">
@@ -221,6 +221,29 @@
     <button class="modal-close-btn" onclick="closeLandSurveyModal()">Close</button>
   </div>
 </div>
+<!-- WEB MAP MODAL -->
+<div id="webMapModal" class="modal-overlay">
+  <div class="modal-content">
+    <h2>Example Interactive Web Map</h2>
+
+    <p>
+        This is an example of an interactive web map I developed to visualize spatial data dynamically. 
+  It demonstrates real-time data layers, user interaction, and spatial storytelling to support analysis and decision-making. 
+  I can create fully customized interactive maps tailored to your specific project requirements or any other application where spatial insights are needed</p>
+
+    <!-- Embed the web map -->
+    <iframe 
+      src="assets/maps/Kenya_Ferry_Ports_Map_WORKING.html" 
+      width="100%" 
+      height="500px" 
+      style="border:1px solid #ccc;"
+      title="Interactive Web Map">
+    </iframe>
+
+    <button class="modal-close-btn" onclick="closeWebMapModal()">Close</button>
+  </div>
+</div>
+
 <script src="js/main.js"></script>
 
 </body>

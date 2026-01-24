@@ -44,3 +44,12 @@ function closeLandSurveyModal() {
   document.getElementById("landSurveyModal").style.display = "none";
   document.body.style.overflow = "";
 }
+// ================= WEB MAP MODAL =================
+
+function openWebMapModal() {
+  document.getElementById("webMapModal").style.display = "flex";
+}
+
+function closeWebMapModal() {
+  document.getElementById("webMapModal").style.display = "none";
+}
