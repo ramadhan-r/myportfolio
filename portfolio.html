@@ -32,21 +32,21 @@
 
   <h1>Selected Work</h1>
 
-  <!-- LAND SURVEY -->
-  <div class="project-card">
-    <div class="project-text">
-      <span>SERVICE</span>
-      <h2>Land Survey</h2>
-      <p>
-        Professional land surveying services covering cadastral, geodetic, plane and topographic surveys.
-        Extensive field experience with RTK, GPS, Total Station, AutoCAD mapping, and technical documentation.
-        Work delivered for land development, parcel mapping, infrastructure planning, and property registration.
-      </p>
-    </div>
-    <div class="project-image">
-      <img src="assets/images/land-survey.jpg" alt="Land Survey">
-    </div>
+<!-- LAND SURVEY -->
+<div class="project-card tappable" onclick="openLandSurveyModal()">
+  <div class="project-text">
+    <span>SERVICE</span>
+    <h2>Land Survey</h2>
+    <p>
+      Professional land surveying services covering cadastral, geodetic, plane and topographic surveys.
+      Extensive field experience with RTK, GPS, Total Station, AutoCAD mapping, and technical documentation.
+      Work delivered for land development, parcel mapping, infrastructure planning, and property registration.
+    </p>
   </div>
+  <div class="project-image">
+    <img src="assets/images/land-survey.jpg" alt="Land Survey">
+  </div>
+</div>
 
   <!-- GIS -->
   <div class="project-card reverse">
@@ -180,7 +180,48 @@
 <footer>
   <p>© 2025 Rioba Mwita | All rights reserved</p>
 </footer>
+    <!-- LAND SURVEY MODAL -->
+<div id="landSurveyModal" class="modal-overlay">
+  <div class="modal-content">
+    <h2>Work Experience – Land Survey</h2>
 
+    <h3>Survey Assistant</h3>
+    <p><strong>Homeland Surveyors</strong>, Nyeri County<br>
+       <em>February 2022 – October 2025</em></p>
+    <ul>
+      <li>Undertook seasonal survey assignments including cadastral, geodetic, and plane surveys.</li>
+      <li>Operated RTK GNSS, GPS, and Total Station equipment for accurate field data collection.</li>
+      <li>Prepared survey plans, site layouts, and coordinate computations using AutoCAD.</li>
+      <li>Conducted boundary verification, topographic mapping, and basic utility mapping.</li>
+      <li>Maintained survey records, supported field logistics, and assisted with client deliverables.</li>
+    </ul>
+
+    <h3>Survey Assistant</h3>
+    <p><strong>GeoLink Surveyors</strong>, Nyeri County<br>
+       <em>December 2024 – January 2025</em></p>
+    <ul>
+      <li>Participated in RTK GNSS surveys for land subdivision and boundary identification.</li>
+      <li>Assisted in field data collection, beacon identification, and boundary re-establishment.</li>
+      <li>Supported cadastral survey operations, including measurements and recording of field observations.</li>
+      <li>Contributed to preparation of subdivision layouts and basic survey documentation.</li>
+      <li>Worked under licensed surveyors to ensure compliance with survey standards and procedures.</li>
+    </ul>
+
+    <h3>Surveyor</h3>
+    <p><strong>Octa-Surveys and Engineering</strong>, Kwale County<br>
+       <em>October 2025 – November 2025</em></p>
+    <ul>
+      <li>Assisted in conducting land surveys and general field operations.</li>
+      <li>Collected field data using survey instruments and supported survey control establishment.</li>
+      <li>Participated in boundary surveys and topographic mapping exercises.</li>
+      <li>Assisted in preparation and checking of technical survey documents and drawings.</li>
+      <li>Supported general survey activities, including field coordination and data organization.</li>
+    </ul>
+
+    <button class="modal-close-btn" onclick="closeLandSurveyModal()">Close</button>
+  </div>
+</div>
 <script src="js/main.js"></script>
+
 </body>
 </html>

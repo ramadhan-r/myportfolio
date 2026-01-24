@@ -35,3 +35,12 @@ function typeLoop() {
 typeLoop();
 // Simulate backend not connected
 showToast("Payment failed. M-Pesa service not connected.", "error");
+function openLandSurveyModal() {
+  document.getElementById("landSurveyModal").style.display = "flex";
+  document.body.style.overflow = "hidden";
+}
+
+function closeLandSurveyModal() {
+  document.getElementById("landSurveyModal").style.display = "none";
+  document.body.style.overflow = "";
+}
