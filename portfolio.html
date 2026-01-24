@@ -34,6 +34,7 @@
 
   <!-- LAND SURVEY -->
   <div class="project-card">
+    <div class="project-card tappable" data-report="land-survey">
     <div class="project-text">
       <span>SERVICE</span>
       <h2>Land Survey</h2>
@@ -46,10 +47,11 @@
     <div class="project-image">
       <img src="assets/images/land-survey.jpg" alt="Land Survey">
     </div>
-  </div>
+  
 
   <!-- GIS -->
   <div class="project-card reverse">
+    <div class="project-card reverse tappable" data-report="gis-analysis">
     <div class="project-image gis-map">
       <img src="assets/images/heat-island-map.png" alt="GIS Mapping">
     </div>
@@ -62,7 +64,7 @@
         hydrology, climate analysis, urban planning and decision-support systems.
       </p>
     </div>
-  </div>
+  
 
   <!-- AIR POLLUTION -->
   <div class="project-card">
@@ -78,7 +80,7 @@
     <div class="project-image gis-map">
       <img src="assets/images/air-exposure-map.png" alt="Air Pollution Map">
     </div>
-  </div>
+  
 
   <!-- LAND COVER -->
   <div class="project-card reverse">
@@ -94,7 +96,7 @@
         land management planning.
       </p>
     </div>
-  </div>
+  
 
   <!-- WEB MAP -->
   <div class="project-card">
@@ -110,7 +112,7 @@
     <div class="project-image gis-map">
       <img src="assets/images/web-map.png" alt="Web Map">
     </div>
-  </div>
+  
 
   <!-- ROAD SAFETY -->
   <div class="project-card reverse">
@@ -125,7 +127,7 @@
         high-risk corridors and accident hotspots for road safety planning and infrastructure intervention.
       </p>
     </div>
-  </div>
+  
 
   <!-- RESEARCH -->
   <div class="project-card">
@@ -141,7 +143,7 @@
     <div class="project-image">
       <img src="assets/images/research.jpg" alt="Research Assistance">
     </div>
-  </div>
+  
 
   <!-- WEB DEV -->
   <div class="project-card reverse">
@@ -157,7 +159,7 @@
         for institutions, firms and research organizations.
       </p>
     </div>
-  </div>
+  
 
   <!-- ENVIRONMENT -->
   <div class="project-card">
@@ -173,7 +175,7 @@
     <div class="project-image">
       <img src="assets/images/environment.jpg" alt="Environmental Services">
     </div>
-  </div>
+  
 
 </section>
 
@@ -182,5 +184,12 @@
 </footer>
 
 <script src="js/main.js"></script>
+<div class="modal" id="reportModal">
+  <div class="modal-content">
+    <span class="close-btn">&times;</span>
+    <div id="modalBody"></div>
+  </div>
+</div>
+
 </body>
 </html>

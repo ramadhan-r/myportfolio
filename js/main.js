@@ -33,3 +33,50 @@ function typeLoop() {
 }
 
 typeLoop();
+const reports = {
+  "land-survey": `
+    <h2>Land Survey – Detailed Report</h2>
+    <p>
+      This work involved cadastral, topographic, and engineering surveys
+      using RTK GNSS and Total Station instruments.
+    </p>
+    <ul>
+      <li>Boundary re-establishment and parcel verification</li>
+      <li>Topographic mapping for land development</li>
+      <li>Control establishment and coordinate referencing</li>
+      <li>AutoCAD and GIS map production</li>
+    </ul>
+    <p>
+      Deliverables supported land registration, planning approvals,
+      and infrastructure layout.
+    </p>
+  `,
+
+  "gis-analysis": `
+    <h2>GIS & Spatial Analysis</h2>
+    <p>
+      Advanced spatial analysis integrating remote sensing,
+      vector datasets, and statistical modeling to support
+      environmental and urban planning decisions.
+    </p>
+  `
+};
+
+const modal = document.getElementById("reportModal");
+const modalBody = document.getElementById("modalBody");
+
+document.querySelectorAll(".project-card.tappable").forEach(card => {
+  card.addEventListener("click", () => {
+    const key = card.dataset.report;
+    modalBody.innerHTML = reports[key];
+    modal.style.display = "block";
+  });
+});
+
+document.querySelector(".close-btn").onclick = () => {
+  modal.style.display = "none";
+};
+
+window.onclick = e => {
+  if (e.target === modal) modal.style.display = "none";
+};
