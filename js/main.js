@@ -53,3 +53,32 @@ function openWebMapModal() {
 function closeWebMapModal() {
   document.getElementById("webMapModal").style.display = "none";
 }
+function openResearchModal() {
+  document.getElementById("researchModal").style.display = "flex";
+}
+
+function closeResearchModal() {
+  document.getElementById("researchModal").style.display = "none";
+}
+
+function openLandCoverModal() {
+  document.getElementById("landCoverModal").style.display = "flex";
+}
+
+function closeLandCoverModal() {
+  document.getElementById("landCoverModal").style.display = "none";
+}
+function openRiskAssessmentModal() {
+  document.getElementById('riskAssessmentModal').style.display = 'flex';
+}
+
+function closeRiskAssessmentModal() {
+  document.getElementById('riskAssessmentModal').style.display = 'none';
+}
+function openSpatialModellingModal() {
+  document.getElementById('spatialModellingModal').style.display = 'flex';
+}
+
+function closeSpatialModellingModal() {
+  document.getElementById('spatialModellingModal').style.display = 'none';
+}

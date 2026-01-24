@@ -1197,3 +1197,32 @@ footer {
   font-weight: 600;
   cursor: pointer;
 }
+/* Modal content scrollable */
+.modal-content {
+  background: #1a0530; /* or whatever your modal background is */
+  color: #f4efff;
+  padding: 20px;
+  border-radius: 10px;
+  max-height: 90vh;       /* limit height to 90% of viewport */
+  overflow-y: auto;       /* enable vertical scrolling */
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+/* Optional: side-by-side image styling */
+.side-by-side-images {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin: 1rem 0;
+}
+
+.side-by-side-images .image-box {
+  flex: 1 1 45%;
+  text-align: center;
+}
+
+.side-by-side-images img {
+  width: 100%;
+  height: auto;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}

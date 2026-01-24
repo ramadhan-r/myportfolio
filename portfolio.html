@@ -64,37 +64,37 @@
     </div>
   </div>
 
-  <!-- AIR POLLUTION -->
-  <div class="project-card">
-    <div class="project-text">
-      <span>CASE STUDIES</span>
-      <h2>SPATIAL MODELLING</h2>
-      <p>
-        Spatial modeling of population exposure to air pollutants using emission sources,
-        land use data, meteorological inputs and settlement distribution to identify
-        vulnerable populations and guide public health interventions.
-      </p>
-    </div>
-    <div class="project-image gis-map">
-      <img src="assets/images/air-exposure-map.png" alt="Air Pollution Map">
-    </div>
+<!-- SPATIAL MODELLING -->
+<div class="project-card tappable" onclick="openSpatialModellingModal()">
+  <div class="project-text">
+    <span>GIS APPLICATIONS</span>
+    <h2>SPATIAL MODELLING</h2>
+    <p>
+      GIS-driven spatial modelling to analyze geographic data, identify patterns, and generate actionable insights for environmental monitoring, urban planning, and risk assessment. 
+      Tap to view detailed examples including air pollution exposure and urban heat mapping.
+    </p>
   </div>
+  <div class="project-image gis-map">
+    <img src="assets/images/air-exposure-map.png" alt="Spatial Modelling Example">
+  </div>
+</div>
 
-  <!-- LAND COVER -->
-  <div class="project-card reverse">
-    <div class="project-image gis-map">
-      <img src="assets/images/change-detection-map.png" alt="Land Cover Change">
-    </div>
-    <div class="project-text">
-      <span>REMOTE SENSING</span>
-      <h2>LAND COVER</h2>
-      <p>
-        Satellite-based classification and change detection for vegetation monitoring,
-        deforestation tracking, regeneration analysis, urban expansion and sustainable
-        land management planning.
-      </p>
-    </div>
+
+<!-- LAND COVER CARD -->
+<div class="project-card reverse tappable" onclick="openLandCoverModal()">
+  <div class="project-image gis-map">
+    <img src="assets/images/remote-sensing.jpg" alt="Remote Sensing">
   </div>
+  <div class="project-text">
+    <span>REMOTE SENSING</span>
+    <h2>LAND COVER</h2>
+    <p>
+      Satellite-based classification and change detection for vegetation monitoring,
+      deforestation tracking, regeneration analysis, urban expansion and sustainable
+      land management planning.
+    </p>
+  </div>
+</div>
 
 <!-- WEB MAP -->
 <div class="project-card tappable" onclick="openWebMapModal()">
@@ -112,36 +112,34 @@
   </div>
 </div>
 
-  <!-- ROAD SAFETY -->
-  <div class="project-card reverse">
-    <div class="project-image gis-map">
-      <img src="assets/images/kernel-density-map.png" alt="Road Safety">
-    </div>
-    <div class="project-text">
-      <span>SPATIAL ANALYTICS</span>
-      <h2>GEO-SPATIAL Analysis</h2>
-      <p>
-        GIS-based accident distribution mapping and kernel density analysis to identify
-        high-risk corridors and accident hotspots for road safety planning and infrastructure intervention.
-      </p>
-    </div>
+<!-- ROAD SAFETY -->
+<div class="project-card reverse tappable" onclick="openRiskAssessmentModal()">
+  <div class="project-image gis-map">
+    <img src="assets/images/risk.png" alt="Road Safety">
   </div>
+  <div class="project-text">
+    <span>SPATIAL ANALYTICS</span>
+    <h2>RISK ASSESSMENT</h2>
+    <p>
+      GIS-driven spatial risk assessments and hotspot analysis to identify vulnerable areas, evaluate potential hazards, and support informed planning for safety and infrastructure management and intervention.
+    </p>
+  </div>
+</div>
 
-  <!-- RESEARCH -->
-  <div class="project-card">
-    <div class="project-text">
-      <span>ACADEMIC & FIELD</span>
-      <h2>Research Assistance</h2>
-      <p>
-        GIS-supported research in agriculture, climate, hydrology, urban systems and
-        environmental management including field data collection, spatial modeling,
-        mapping, analysis and reporting for academic and applied research projects.
-      </p>
-    </div>
-    <div class="project-image">
-      <img src="assets/images/research.jpg" alt="Research Assistance">
-    </div>
+<!-- RESEARCH ASSISTANCE -->
+<div class="project-card tappable" onclick="openResearchModal()">
+  <div class="project-text">
+    <span>ACADEMIC & FIELD</span>
+    <h2>Research Assistance</h2>
+    <p>
+      GIS-supported research in agriculture, climate, hydrology, urban systems, and environmental management,
+      including field data collection, spatial modeling, mapping, analysis, and reporting for academic and applied research projects.
+    </p>
   </div>
+  <div class="project-image">
+    <img src="assets/images/research.jpg" alt="Research Assistance">
+  </div>
+</div>
 
   <!-- WEB DEV -->
   <div class="project-card reverse">
@@ -183,7 +181,7 @@
     <!-- LAND SURVEY MODAL -->
 <div id="landSurveyModal" class="modal-overlay">
   <div class="modal-content">
-    <h2>Work Experience – Land Survey</h2>
+    <h2>Work Experience</h2>
 
     <h3>Survey Assistant</h3>
     <p><strong>Homeland Surveyors</strong>, Nyeri County<br>
@@ -224,7 +222,7 @@
 <!-- WEB MAP MODAL -->
 <div id="webMapModal" class="modal-overlay">
   <div class="modal-content">
-    <h2>Example Interactive Web Map</h2>
+    <h2>Interactive Web Mapping</h2>
 
     <p>
         This is an example of an interactive web map I developed to visualize spatial data dynamically. 
@@ -241,6 +239,146 @@
     </iframe>
 
     <button class="modal-close-btn" onclick="closeWebMapModal()">Close</button>
+  </div>
+</div>
+<!-- RESEARCH MODAL -->
+<div id="researchModal" class="modal-overlay">
+  <div class="modal-content">
+    <h2>Research Projects</h2>
+
+    <h3>Academic Project</h3>
+    <p><strong>Determination of the Most Suitable Dumpsite Location in Kesses Subcounty, Uasin Gishu County, Kenya</strong></p>
+    <ul>
+      <li>Conducted GIS-based suitability analysis integrating land use, slope, hydrology, settlement proximity, and environmental constraints.</li>
+      <li>Produced environmental risk and hazard maps to guide waste management decision-making.</li>
+    </ul>
+
+    <h3>Government-Linked Project</h3>
+    <ul>
+      <li>Field data collection and spatial data processing for road updates and infrastructure planning in Kiambu County.</li>
+    </ul>
+
+    <h3>Client Projects</h3>
+    <ul>
+      <li>Environmental and spatial analysis support, including forest cover change detection, land use and land cover change analysis, and land fragmentation studies in Uasin Gishu County.</li>
+      <li>Spatiotemporal analysis focusing on the interaction between climate variability and water availability in Machakos County.</li>
+      <li>Agro-spatial analysis, including tea farming suitability and productivity assessment in Kericho County and urban agriculture mapping in Eldoret Town.</li>
+      <li>Land use planning and site suitability analysis for industrial development in Nyeri County.</li>
+      <li>Urban Expansion and Land Use Change Analysis in Eldoret Town.</li>
+      <li>Generation of shapefiles, thematic maps, spatial datasets, spatial reports, and analytical outputs to support academic and non-academic research clients across multiple study areas.</li>
+    </ul>
+
+    <button class="modal-close-btn" onclick="closeResearchModal()">Close</button>
+  </div>
+</div>
+<!-- LAND COVER MODAL -->
+<div id="landCoverModal" class="modal-overlay">
+  <div class="modal-content" style="overflow-y: auto; max-height: 90vh;">
+    <h2>Remote Sensing</h2>
+
+    <p>
+      This example demonstrates how Remote Sensing and GIS can be applied to monitor
+      land cover changes over time, such as vegetation loss or urban expansion. By
+      analyzing satellite imagery from different years, we can quantify changes and
+      generate actionable insights for environmental planning, conservation, and land
+      management.
+    </p>
+
+    <h3>Example: Forest Cover Change in Nyeri County</h3>
+    <p>
+      Using satellite imagery from 2017 and 2025, we can observe forest cover dynamics
+      over time. The side-by-side comparison highlights areas of deforestation and
+      regeneration.
+    </p>
+
+    <div class="side-by-side-images">
+      <div class="image-box">
+        <img src="assets/images/2017-2025-map.png" alt="Forest Cover 2017">
+        <p>2017&2025</p>
+      </div>
+      <div class="image-box">
+        <img src="assets/images/change-detection-map.png" alt="Forest Cover Change 2025">
+        <p>2025 – Change Detection</p>
+      </div>
+    </div>
+
+    <p>
+      Change detection is performed by comparing pixel values or classified land cover
+      classes from the two images. Statistics can then be generated to quantify the
+      extent of forest loss, gain, or regeneration. This methodology can be applied to
+      a wide range of applications, including urban expansion monitoring, agricultural
+      land change, and environmental risk assessment.
+    </p>
+
+    <p>
+      In my professional projects for clients, I have used similar techniques to provide
+      actionable spatial analyses, maps, and statistics for decision-making in land
+      management, environmental studies, and resource monitoring.
+    </p>
+
+    <button class="modal-close-btn" onclick="closeLandCoverModal()">Close</button>
+  </div>
+</div>
+<!-- ROAD SAFETY MODAL -->
+<div id="riskAssessmentModal" class="modal-overlay">
+  <div class="modal-content" style="overflow-y: auto; max-height: 90vh;">
+    <h2>Risk Analysis</h2>
+
+    <p>
+      This is an example of GIS-based spatial risk assessment applied to road accidents in Nairobi County. 
+      Using accident records, I generated a distribution map and applied kernel density analysis to identify high-risk corridors and accident hotspots. 
+      The red-yellow-green color scale indicates areas of high, medium, and low accident intensity, providing actionable insights for urban safety planning and infrastructure intervention.
+    </p>
+
+    <h3>Distribution Map</h3>
+    <img src="assets/images/accident-distribution-map.png" alt="Accident Distribution Map" style="width:100%; margin-bottom:20px; border:1px solid #ccc;">
+
+    <h3>Kernel Density Map</h3>
+    <img src="assets/images/kernel-density-map.png" alt="Kernel Density Map" style="width:100%; margin-bottom:20px; border:1px solid #ccc;">
+
+    <p>
+      Similar GIS-based risk assessment workflows can be applied to other hazards such as flood risk, environmental hazards, and urban vulnerability studies. 
+      Additional project examples in these areas will be posted soon.
+    </p>
+
+    <button class="modal-close-btn" onclick="closeRiskAssessmentModal()">Close</button>
+  </div>
+</div>
+<!-- SPATIAL MODELLING / AIR & URBAN HEAT MODAL -->
+<div id="spatialModellingModal" class="modal-overlay">
+  <div class="modal-content" style="overflow-y:auto; max-height:90vh;">
+    <h2>Spatial Modelling in GIS</h2>
+
+    <p>
+      Spatial modelling in GIS is a powerful tool for analyzing geographic data and identifying patterns across both environmental and urban contexts. 
+      Here are two examples demonstrating its application:
+    </p>
+
+    <h3>Air Pollution Exposure – Central Nakuru County</h3>
+    <p>
+      This map illustrates air pollution exposure across Central Nakuru County. 
+      The Central Nakuru CBD is highlighted in purple and red, indicating high pollutant concentrations due to dense urban activities and traffic emissions. 
+      In contrast, rural areas to the east in Nyandarua County are shown in yellow and green, reflecting lower pollution levels and cleaner air. 
+      Spatial modelling allows integration of emission sources, land use, population distribution, and meteorological data to assess exposure, guide public health interventions, and support planning decisions.
+    </p>
+    <img src="assets/images/air-exposure-map.png" alt="Air Pollution Exposure Map" style="width:100%; border:1px solid #ccc; margin-top:1rem;">
+
+    <h3>Urban Heat / Winam Gulf – Kisumu City</h3>
+    <p>
+      The second example demonstrates urban heat intensity in the Kisumu City area, particularly around residential zones and the CBD. 
+      The heat island map shows "intense" red and purple areas where built-up infrastructure and dense human activity raise surface temperatures. 
+      Surrounding rural and vegetated areas appear green, indicating lower temperature intensity. 
+      This type of spatial modelling is valuable for urban planning, environmental management, and identifying zones vulnerable to climate-related risks.
+    </p>
+    <img src="assets/images/heat-island-map.png" alt="Urban Heat Map – Kisumu City" style="width:100%; border:1px solid #ccc; margin-top:1rem;">
+
+    <p>
+      Spatial modelling can be applied across environmental monitoring, urban growth studies, disaster risk assessment, and resource management. 
+      Through GIS, predictive analyses can be produced, hazards or exposures quantified, and informed decisions facilitated. 
+      More detailed projects—including flood risk mapping, urban expansion, and environmental impact assessments—will be shared soon.
+    </p>
+
+    <button class="modal-close-btn" onclick="closeSpatialModellingModal()">Close</button>
   </div>
 </div>
 
