@@ -1267,3 +1267,82 @@ body {
     border-radius: 10px;
   }
 }
+/* ===================== TERMS CARD ===================== */
+.terms {
+  padding: 40px 20px;
+  background: var(--bg-main); /* page background stays dark purple */
+}
+
+.terms-card {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 30px 28px;
+  background: var(--card-bg); /* slightly lighter dark purple for card interior */
+  border-radius: 22px;
+  border: 1px solid var(--card-border);
+  box-shadow: 0 12px 40px var(--shadow-dark);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.terms-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 50px var(--shadow-dark);
+}
+
+.terms-card h2 {
+  font-family: "Cinzel", serif;
+  font-size: 2rem;
+  margin-bottom: 18px;
+  color: var(--text-main); /* deep white/purple contrast */
+  text-align: center;
+  position: relative;
+}
+
+.terms-card h2::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 3px;
+  margin: 10px auto 0 auto;
+  border-radius: 4px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-strong));
+}
+
+.terms-content h3 {
+  font-size: 1.4rem;
+  color: var(--text-main);
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.terms-content ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  margin-bottom: 15px;
+  line-height: 1.7;
+  color: var(--muted); /* soft muted purple for text */
+}
+
+.terms-content ul li {
+  margin-bottom: 6px;
+  font-size: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .terms-card {
+    padding: 22px 18px;
+  }
+
+  .terms-card h2 {
+    font-size: 1.6rem;
+  }
+
+  .terms-content h3 {
+    font-size: 1.2rem;
+  }
+
+  .terms-content ul li {
+    font-size: 0.95rem;
+  }
+}
