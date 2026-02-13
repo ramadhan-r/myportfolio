@@ -4,8 +4,8 @@
 :root {
   --bg-main: #0d021a;
   --bg-deep: #06010f;       /* darker deep background */
-  --card-bg: #120423;       /* darker card background */
-  --card-border: #2a1460;   /* slightly darker border */
+  --card-bg: #15032c;       /* darker card background */
+  --card-border: #29146046;   /* slightly darker border */
   --text-main: #f4efff;
   --text-soft: #cbbdff;
   --accent: #b388ff;
@@ -1351,4 +1351,13 @@ body {
   width: 100%;            /* keeps images responsive */
   max-width: 600px;       /* optional max width */
   border-radius: 12px;
+}
+.service-row {
+  text-decoration: none;
+  color: inherit;
+}
+.service-info h3 {
+  text-decoration: underline;
+  text-decoration-color: var(--accent);
+  text-underline-offset: 6px;
 }
