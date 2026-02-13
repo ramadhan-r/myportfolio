@@ -2,8 +2,8 @@
    ROOT VARIABLES
 ===================== */
 :root {
-  --bg-main: #1a0530;       /* darker background */
-  --bg-deep: #0f0220;       /* darker deep background */
+  --bg-main: #0d021a;
+  --bg-deep: #06010f;       /* darker deep background */
   --card-bg: #120423;       /* darker card background */
   --card-border: #2a1460;   /* slightly darker border */
   --text-main: #f4efff;
@@ -127,7 +127,7 @@ footer {
    INTRO / HERO
 ===================== */
 .intro {
-  padding: 70px 20px 35px;
+  padding: 20px 20px 35px;
 }
 
 .intro-wrapper {
@@ -239,18 +239,7 @@ footer {
 
 /* UNDERLINE — TITLE ONLY */
 .service-info h3::after {
-  content: "";
-  display: block;
-  width: 46px;
-  height: 3px;
-  margin-top: 6px;
-  border-radius: 3px;
-
-  background: linear-gradient(
-    90deg,
-    #131413,  /* light green accent */
-    #32a852   /* strong green accent */
-  );
+  display: none;
 }
 
 .service-info p {
@@ -734,9 +723,14 @@ footer {
     align-items: center;
   }
 
-  .project-card,
+  .project-card {
+    grid-template-columns: 1.1fr 1fr;   /* keep two columns */
+    gap: 20px;                          /* slightly tighter for small screens */
+    padding: 20px;
+  }
+
   .project-card.reverse {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1.1fr;   /* maintain reverse layout */
   }
 
   .portfolio-section h1 {
