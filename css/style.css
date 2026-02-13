@@ -1423,3 +1423,15 @@ body {
   letter-spacing: 0.6px;
   color: var(--text-main);
 }
+.testimonial-divider {
+  margin: 18px 0;
+  border: none;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--accent),
+    transparent
+  );
+  opacity: 0.6;
+}
