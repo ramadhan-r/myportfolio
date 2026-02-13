@@ -127,7 +127,7 @@ footer {
    INTRO / HERO
 ===================== */
 .intro {
-  padding: 20px 20px 35px;
+  padding: 10px 20px 1px;
 }
 
 .intro-wrapper {
@@ -137,7 +137,7 @@ footer {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  gap: 26px;
+  gap: 10px;
 }
 
 .intro-image {
@@ -174,7 +174,7 @@ footer {
    SERVICES
 ===================== */
 .services {
-  padding: 25px 20px 55px;
+  padding: 5px 20px 55px;
 }
 
 /* Typing line */
@@ -203,7 +203,7 @@ footer {
   grid-template-columns: 72px 1fr;
   gap: 20px;
 
-  padding: 22px 24px; /* slightly bigger padding */
+  padding: 15px 24px; /* slightly bigger padding */
   border-radius: 16px;
 
   background: #121914;        /* dark green base */
