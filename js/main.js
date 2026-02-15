@@ -14,21 +14,22 @@ let charIndex = 0;
 let deleting = false;
 
 function getArticle(word) {
-  return /^[aeiou]/i.test(word) ? "an" : "a";
+  const firstLetter = word.trim().charAt(0).toLowerCase();
+  return ["a", "e", "i", "o", "u"].includes(firstLetter) ? "an" : "a";
 }
 
 function typeLoop() {
   const currentRole = roles[roleIndex];
   const article = getArticle(currentRole);
-  const baseText = `I am ${article} `;
+  const prefix = "I am " + article + " ";
 
   if (!deleting) {
-    typingEl.textContent = baseText + currentRole.slice(0, charIndex++);
+    typingEl.textContent = prefix + currentRole.slice(0, charIndex++);
     if (charIndex > currentRole.length) {
       setTimeout(() => deleting = true, 200);
     }
   } else {
-    typingEl.textContent = baseText + currentRole.slice(0, charIndex--);
+    typingEl.textContent = prefix + currentRole.slice(0, charIndex--);
     if (charIndex === 0) {
       deleting = false;
       roleIndex = (roleIndex + 1) % roles.length;
