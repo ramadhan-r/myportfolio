@@ -20,7 +20,7 @@ function typeLoop() {
   if (!deleting) {
     typingEl.textContent = baseText + currentRole.slice(0, charIndex++);
     if (charIndex > currentRole.length) {
-      setTimeout(() => deleting = true, 1200);
+      setTimeout(() => deleting = true, 400);
     }
   } else {
     typingEl.textContent = baseText + currentRole.slice(0, charIndex--);
@@ -30,7 +30,7 @@ function typeLoop() {
     }
   }
 
-  setTimeout(typeLoop, deleting ? 50 : 90);
+  setTimeout(typeLoop, deleting ? 25 : 40);
 }
 
 typeLoop();
