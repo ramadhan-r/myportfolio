@@ -1454,3 +1454,8 @@ body {
   );
   opacity: 0.6;
 }
+body.modal-open {
+  overflow: hidden;
+  position: fixed; /* Optional: prevents the page from shifting horizontally */
+  width: 100%;
+}
