@@ -43,63 +43,84 @@ typeLoop();
 
 // Simulate backend not connected
 showToast("Payment failed. M-Pesa service not available.", "error");
+
+
 function openLandSurveyModal() {
   document.getElementById("landSurveyModal").style.display = "flex";
-  document.body.style.overflow = "hidden";
+  document.body.style.overflow = "hidden";  // Prevent page scroll
 }
 
 function closeLandSurveyModal() {
   document.getElementById("landSurveyModal").style.display = "none";
-  document.body.style.overflow = "";
+  document.body.style.overflow = "";  // Restore page scroll
 }
-// ================= WEB MAP MODAL =================
 
 function openWebMapModal() {
   document.getElementById("webMapModal").style.display = "flex";
+  document.body.style.overflow = "hidden";  // Prevent page scroll
 }
 
 function closeWebMapModal() {
   document.getElementById("webMapModal").style.display = "none";
+  document.body.style.overflow = "";  // Restore page scroll
 }
+
 function openResearchModal() {
   document.getElementById("researchModal").style.display = "flex";
+  document.body.style.overflow = "hidden";  // Prevent page scroll
 }
 
 function closeResearchModal() {
   document.getElementById("researchModal").style.display = "none";
+  document.body.style.overflow = "";  // Restore page scroll
 }
 
 function openLandCoverModal() {
   document.getElementById("landCoverModal").style.display = "flex";
+  document.body.style.overflow = "hidden";  // Prevent page scroll
 }
 
 function closeLandCoverModal() {
   document.getElementById("landCoverModal").style.display = "none";
+  document.body.style.overflow = "";  // Restore page scroll
 }
+
 function openRiskAssessmentModal() {
   document.getElementById('riskAssessmentModal').style.display = 'flex';
+  document.body.style.overflow = "hidden";  // Prevent page scroll
 }
 
 function closeRiskAssessmentModal() {
   document.getElementById('riskAssessmentModal').style.display = 'none';
+  document.body.style.overflow = "";  // Restore page scroll
 }
+
 function openSpatialModellingModal() {
   document.getElementById('spatialModellingModal').style.display = 'flex';
+  document.body.style.overflow = "hidden";  // Prevent page scroll
 }
 
 function closeSpatialModellingModal() {
   document.getElementById('spatialModellingModal').style.display = 'none';
+  document.body.style.overflow = "";  // Restore page scroll
 }
+
 function openWebDevModal() {
   document.getElementById("webDevModal").style.display = "flex";
+  document.body.style.overflow = "hidden";  // Prevent page scroll
 }
 
 function closeWebDevModal() {
   document.getElementById("webDevModal").style.display = "none";
+  document.body.style.overflow = "";  // Restore page scroll
 }
+
 function openEnvironmentModal() {
   document.getElementById('environmentModal').style.display = 'flex';
+  document.body.style.overflow = "hidden";  // Prevent page scroll
 }
+
 function closeEnvironmentModal() {
   document.getElementById('environmentModal').style.display = 'none';
+  document.body.style.overflow = "";  // Restore page scroll
 }
