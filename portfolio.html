@@ -33,7 +33,7 @@
   <h1>Selected Work</h1>
 
 <!-- LAND SURVEY -->
-<div class="project-card tappable" onclick="openLandSurveyModal()">
+<div class="project-card tappable" onclick="openLandSurveyModal()" data-service="land-survey">
   <div class="project-text">
     <span>SERVICE</span>
     <h2>Land Survey</h2>
@@ -47,7 +47,7 @@
 </div>
 
 <!-- LANDSCAPE & FLOOR PLANS -->
-<div class="project-card reverse">
+<div class="project-card reverse" data-service="land-survey">
   <div class="project-image gis-map">
     <img src="assets/images/landscape.jpg" alt="Landscape & Floor Plans" loading="lazy">
   </div>
@@ -60,7 +60,7 @@
 </div>
 
 <!-- SPATIAL MODELLING -->
-<div class="project-card tappable" onclick="openSpatialModellingModal()">
+<div class="project-card tappable" onclick="openSpatialModellingModal()" data-service="gis-mapping">
   <div class="project-text">
     <span>GIS APPLICATIONS</span>
     <h2>SPATIAL MODELLING</h2>
@@ -75,7 +75,7 @@
 
 
 <!-- LAND COVER CARD -->
-<div class="project-card reverse tappable" onclick="openLandCoverModal()">
+<div class="project-card reverse tappable" onclick="openLandCoverModal()" data-service="gis-mapping">
   <div class="project-image gis-map">
     <img src="assets/images/remote-sensing.jpg" alt="Remote Sensing" loading="lazy">
   </div>
@@ -89,7 +89,7 @@
 </div>
 
 <!-- WEB MAP -->
-<div class="project-card tappable" onclick="openWebMapModal()">
+<div class="project-card tappable" onclick="openWebMapModal()" data-service="gis-mapping">
   <div class="project-text">
     <span>INTERACTIVE</span>
     <h2>Interactive Web Mapping</h2>
@@ -104,7 +104,7 @@
 </div>
 
 <!-- ROAD SAFETY -->
-<div class="project-card reverse tappable" onclick="openRiskAssessmentModal()">
+<div class="project-card reverse tappable" onclick="openRiskAssessmentModal()" data-service="gis-mapping">
   <div class="project-image gis-map">
     <img src="assets/images/risk.png" alt="Road Safety" loading="lazy">
   </div>
@@ -118,7 +118,7 @@
 </div>
 
 <!-- RESEARCH ASSISTANCE -->
-<div class="project-card tappable" onclick="openResearchModal()">
+<div class="project-card tappable" onclick="openResearchModal()" data-service="research-assistance">
   <div class="project-text">
     <span>ACADEMIC & FIELD</span>
     <h2>Research Assistance</h2>
@@ -132,7 +132,7 @@
 </div>
 
 <!-- WEB DEV -->
-<div class="project-card reverse tappable" onclick="openWebDevModal()">
+<div class="project-card reverse tappable" onclick="openWebDevModal()" data-service="web-development">
   <div class="project-image">
     <img src="assets/images/web-dev.jpg" alt="Web Development" loading="lazy">
   </div>
@@ -147,7 +147,7 @@
 
 
   <!-- ENVIRONMENT -->
-  <div class="project-card">
+  <div class="project-card tappable" onclick="openEnvironmentModal()" data-service="environmental-services">
     <div class="project-text">
       <span>SUSTAINABILITY</span>
       <h2>Environmental Services</h2>
@@ -161,11 +161,55 @@
     </div>
   </div>
 
+<!-- VIEW ALL SERVICES LINK -->
+<p id="viewMoreServices" 
+   style="cursor:pointer; text-align:center; color: var(--accent); display:none;" 
+   onclick="showServiceCards('all')">
+  View all services
+</p>
+
 </section>
 
 <footer>
   <p>© 2025 Rioba Mwita | All rights reserved</p>
 </footer>
+
+<!-- ENVIRONMENTAL SERVICES MODAL -->
+<div id="environmentModal" class="modal-overlay">
+  <div class="modal-content" style="overflow-y:auto; max-height:90vh;">
+    <h2>Environmental Services</h2>
+
+    <p>
+      I support community-based organizations (CBOs) and youth-led initiatives like the Gongoni Environmental Action Network (GEAN) to tackle environmental challenges and promote sustainable livelihoods. 
+      My work includes GIS-based waste management, ecosystem restoration, environmental monitoring, and structured youth engagement programs.
+    </p>
+
+    <h3>How I Help</h3>
+    <ul>
+      <li><strong>Waste Management & Sanitation:</strong> Designing structured waste collection, GIS mapping of routes, and reporting for improved service delivery.</li>
+      <li><strong>Community Clean-Ups & Restoration:</strong> Organizing tree planting, habitat restoration, and public space clean-ups with youth participation.</li>
+      <li><strong>GIS & Environmental Monitoring:</strong> Collecting spatial data, generating maps, and producing reports for evidence-based environmental planning.</li>
+      <li><strong>Skills Training & Capacity Building:</strong> Providing training in GIS, surveying, environmental management, sustainable agriculture, ICT, and entrepreneurship.</li>
+      <li><strong>Youth Engagement Programs:</strong> Setting up rotational employment models, internships, and hands-on projects to build skills and create green jobs.</li>
+    </ul>
+
+    <h3>Impact</h3>
+    <ul>
+      <li>Empowered youth with practical skills and work experience.</li>
+      <li>Stronger community participation in environmental initiatives.</li>
+      <li>Improved sanitation, recycling, and ecosystem health.</li>
+      <li>Actionable spatial data to guide planning and decision-making.</li>
+    </ul>
+
+    <h3>Collaboration & Sustainability</h3>
+    <p>
+      I work closely with CBOs, local authorities, youth polytechnics, and NGOs to ensure training, certification, and project sustainability. 
+      Programs are monitored using measurable indicators such as youth participation, training completion, waste collection coverage, and environmental improvement.
+    </p>
+
+    <button class="modal-close-btn" onclick="closeEnvironmentModal()">Close</button>
+  </div>
+</div>
 
     <!-- LAND SURVEY MODAL -->
 <div id="landSurveyModal" class="modal-overlay">
@@ -480,6 +524,39 @@
 </div>
 
 <script src="js/main.js"></script>
+<script>
+  // Function to show specific service cards
+  function showServiceCards(service) {
+    const allCards = document.querySelectorAll('.project-card');
+    allCards.forEach(card => {
+      if (service === 'all' || card.dataset.service === service) {
+        card.style.display = 'flex'; // or 'block', depending on your layout
+      } else {
+        card.style.display = 'none';
+      }
+    });
+    // Show 'view more services' link only if not showing all
+    const viewMore = document.getElementById('viewMoreServices');
+    if (service !== 'all') {
+      viewMore.style.display = 'block';
+    } else {
+      viewMore.style.display = 'none';
+    }
+  }
+
+  // On page load, check if a service is in URL hash
+  document.addEventListener('DOMContentLoaded', () => {
+    const hash = window.location.hash.slice(1); // remove #
+    if (hash) {
+      showServiceCards(hash);
+      // Scroll to first card
+      const firstCard = document.querySelector(`.project-card[data-service="${hash}"]`);
+      if (firstCard) firstCard.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      showServiceCards('all'); // default: show all
+    }
+  });
+</script>
 
 </body>
 </html>

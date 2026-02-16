@@ -97,3 +97,9 @@ function openWebDevModal() {
 function closeWebDevModal() {
   document.getElementById("webDevModal").style.display = "none";
 }
+function openEnvironmentModal() {
+  document.getElementById('environmentModal').style.display = 'flex';
+}
+function closeEnvironmentModal() {
+  document.getElementById('environmentModal').style.display = 'none';
+}
