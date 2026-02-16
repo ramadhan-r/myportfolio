@@ -709,6 +709,8 @@ footer {
    MOBILE RESPONSIVENESS
 ===================== */
 @media (max-width: 720px) {
+
+  /* Contact Section */
   .contact-socials {
     justify-content: center;
   }
@@ -716,22 +718,6 @@ footer {
   .contact-socials-location {
     flex-direction: column;
     align-items: center;
-  }
-
-@media (max-width: 720px) {
-  .project-card,
-  .project-card.reverse {
-    grid-template-columns: 1fr;
-  }
-
-  .project-card {
-    gap: 20px;
-    padding: 20px;
-  }
-}
-
-  .portfolio-section h1 {
-    font-size: 2.2rem;
   }
 
   .contact form {
@@ -744,10 +730,36 @@ footer {
     font-size: 0.9rem;
   }
 
+  /* Portfolio Section */
+  .portfolio-section h1 {
+    font-size: 2.2rem;
+  }
+
+  .project-card,
+  .project-card.reverse {
+    grid-template-columns: 1fr;
+  }
+
+  .project-card {
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .project-text h2 {
+    margin: 6px 0 2px;
+  }
+
+  .project-text p {
+    margin: 0;
+  }
+
+  /* Footer */
   footer {
     text-align: center;
   }
+
 }
+
 /* ===================== HERO / TIP ===================== */
 .hero {
   display: flex;
