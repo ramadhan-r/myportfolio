@@ -1459,27 +1459,5 @@ body.modal-open {
   position: fixed; /* Optional: prevents the page from shifting horizontally */
   width: 100%;
 }
-/* Make html & body fill full height */
-html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
 
-/* Make body a flex column */
-body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100%;
-}
-
-/* Portfolio section should grow to fill available space */
-.portfolio-section {
-  flex: 1; /* this pushes footer down */
-}
-
-/* Optional: footer styling */
-footer {
-  flex-shrink: 0; /* ensure footer doesn’t collapse */
-}
 
