@@ -1502,3 +1502,6 @@ body.modal-open {
   cursor: pointer;
   border-radius: 4px;
 }
+.cv-btn + .cv-btn {
+  margin-left: 12px;
+}
