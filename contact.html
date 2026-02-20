@@ -66,7 +66,7 @@
 <!-- ================= SERVICES ================= -->
 <section class="services" id="services">
   <h2>Services & Pricing</h2>
-<div class="services-grid" id="servicesGrid">
+<div class="services-grid collapsed" id="servicesGrid">
 
 <div class="service-card">
   <h3>Abstract & Executive Summary Writing</h3>
@@ -280,7 +280,7 @@
 <section class="merch" id="merch">
   <h2>Merchandise</h2>
   <p>Available color: Black | Delivery anywhere</p>
-  <div class="merch-grid" id="merchGrid">
+  <div class="merch-grid collapsed" id="merchGrid">
     <div class="merch-card">
       <img src="assets/images/merch1.jpg" alt="Merch 1">
       <p>T-Shirt #1</p>
@@ -469,6 +469,7 @@ document.getElementById('serviceOrderForm').addEventListener('submit', function(
 });
 
 </script>
+
 <script>
 document.addEventListener("DOMContentLoaded", function () {
   document.getElementById("servicesGrid").classList.add("collapsed");
@@ -487,6 +488,7 @@ function toggleServices() {
   }
 }
 </script>
+
 <script>
 document.addEventListener("DOMContentLoaded", function () {
   document.getElementById("merchGrid").classList.add("collapsed");
@@ -505,6 +507,7 @@ function toggleMerch() {
   }
 }
 </script>
+
 <!-- ================= FOOTER ================= -->
 <footer>
   <p>&copy; 2025 Rioba Mwita | All rights reserved</p>

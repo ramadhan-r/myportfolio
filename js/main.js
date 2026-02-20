@@ -140,3 +140,14 @@ function updateTipVisibility() {
 
 toggleTips.addEventListener('change', updateTipVisibility);
 updateTipVisibility(); // initialize on modal open
+document.addEventListener("DOMContentLoaded", function () {
+  const servicesGrid = document.getElementById("servicesGrid");
+  const merchGrid = document.getElementById("merchGrid");
+
+  if (!servicesGrid.classList.contains("collapsed")) {
+    servicesGrid.classList.add("collapsed");
+  }
+  if (!merchGrid.classList.contains("collapsed")) {
+    merchGrid.classList.add("collapsed");
+  }
+});
