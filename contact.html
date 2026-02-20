@@ -66,7 +66,7 @@
 <!-- ================= SERVICES ================= -->
 <section class="services" id="services">
   <h2>Services & Pricing</h2>
-<div class="services-grid">
+<div class="services-grid" id="servicesGrid">
 
 <div class="service-card">
   <h3>Abstract & Executive Summary Writing</h3>
@@ -231,7 +231,9 @@
 </div>
 
 </div>
-
+<div class="services-toggle">
+    <button id="toggleServicesBtn" onclick="toggleServices()">View More</button>
+  </div>
 </section>
 
 <!-- ================= TERMS, PAYMENT & DURATION ================= -->
@@ -278,7 +280,7 @@
 <section class="merch" id="merch">
   <h2>Merchandise</h2>
   <p>Available color: Black | Delivery anywhere</p>
-  <div class="merch-grid">
+  <div class="merch-grid" id="merchGrid">
     <div class="merch-card">
       <img src="assets/images/merch1.jpg" alt="Merch 1">
       <p>T-Shirt #1</p>
@@ -316,6 +318,9 @@
       <button onclick="showMerchNotice()">Buy Now</button>
     </div>
   </div>
+  <div class="merch-toggle">
+  <button id="toggleMerchBtn" onclick="toggleMerch()">View More</button>
+</div>
 </section>
 
 <!-- ================= CONTACT / ENQUIRY ================= -->
@@ -464,7 +469,42 @@ document.getElementById('serviceOrderForm').addEventListener('submit', function(
 });
 
 </script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  document.getElementById("servicesGrid").classList.add("collapsed");
+});
 
+function toggleServices() {
+  const grid = document.getElementById("servicesGrid");
+  const btn = document.getElementById("toggleServicesBtn");
+
+  grid.classList.toggle("collapsed");
+
+  if (grid.classList.contains("collapsed")) {
+    btn.textContent = "View More";
+  } else {
+    btn.textContent = "View Less";
+  }
+}
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  document.getElementById("merchGrid").classList.add("collapsed");
+});
+
+function toggleMerch() {
+  const grid = document.getElementById("merchGrid");
+  const btn = document.getElementById("toggleMerchBtn");
+
+  grid.classList.toggle("collapsed");
+
+  if (grid.classList.contains("collapsed")) {
+    btn.textContent = "View More";
+  } else {
+    btn.textContent = "View Less";
+  }
+}
+</script>
 <!-- ================= FOOTER ================= -->
 <footer>
   <p>&copy; 2025 Rioba Mwita | All rights reserved</p>

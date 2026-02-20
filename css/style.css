@@ -1505,3 +1505,79 @@ body.modal-open {
 .cv-btn + .cv-btn {
   margin-left: 12px;
 }
+/* Hide extra services by default */
+.services-grid.collapsed .service-card:nth-child(n+7) {
+  display: none;
+}
+
+/* Toggle button styling */
+.services-toggle {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.services-toggle button {
+  background-color: #69175f;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s;
+}
+
+.services-toggle button:hover {
+  background-color: #681d5b;
+}
+/* Hide extra merch by default */
+.merch-grid.collapsed .merch-card:nth-child(n+5) {
+  display: none;
+}
+
+/* Toggle button styling */
+.merch-toggle {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.merch-toggle button {
+  background-color: #621559;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s;
+}
+
+.merch-toggle button:hover {
+  background-color: #218838;
+}
+.youtube-section {
+  margin-top: 4rem;
+  text-align: center;
+}
+
+.youtube-description {
+  max-width: 750px;
+  margin: 0 auto 1.5rem auto;
+  line-height: 1.6;
+}
+
+.video-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.video-wrapper iframe {
+  width: 100%;
+  height: 500px; /* rectangular */
+  border-radius: 12px;
+  border: 1px solid #ccc;
+}
+
+.youtube-link {
+  margin-top: 1rem;
+}
