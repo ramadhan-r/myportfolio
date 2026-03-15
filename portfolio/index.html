@@ -636,7 +636,15 @@ function setupModalClose(modalId){
   const topBtn = modal.querySelector(".modal-top-close");
   const bottomBtn = modal.querySelector(".modal-close-btn");
 
-  topBtn.onclick = () => modal.style.display = "none";
+  topBtn.onclick = () => {
+    modal.style.display = "none";
+    document.body.style.overflow = "";
+  };
+
+  bottomBtn.onclick = () => {
+    modal.style.display = "none";
+    document.body.style.overflow = "";
+  };
 
   function checkButton(){
     const rect = bottomBtn.getBoundingClientRect();
