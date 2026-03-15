@@ -529,6 +529,15 @@ function toggleMerch() {
     btn.textContent = "View Less";
   }
 }
+// Close modal when clicking outside the modal content
+window.addEventListener("click", function(event) {
+  const modal = document.getElementById("tipModal");
+  const content = document.querySelector(".tip-modal-content");
+
+  if (event.target === modal) {
+    closeTipModal();
+  }
+});
 </script>
 
 <!-- ================= FOOTER ================= -->
