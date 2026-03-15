@@ -1605,3 +1605,20 @@ body.modal-open {
   font-weight:bold;
   cursor:pointer;
 }
+/* =====================
+   FONT SCALE CONTROL
+===================== */
+
+html {
+  font-size: clamp(14px, 1vw, 16px);
+}
+
+/* Prevent extreme heading scaling */
+h1 { font-size: clamp(1.8rem, 3vw, 2.4rem); }
+h2 { font-size: clamp(1.4rem, 2.5vw, 2rem); }
+h3 { font-size: clamp(1.1rem, 2vw, 1.5rem); }
+
+/* Prevent paragraph overflow */
+p {
+  font-size: clamp(0.9rem, 1.1vw, 1.15rem);
+}
