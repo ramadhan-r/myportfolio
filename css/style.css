@@ -759,8 +759,11 @@ footer {
   }
 
   .contact-socials-location {
-    flex-direction: column;
+    flex-direction: row;     /* keep everything in one row */
     align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;       /* prevent wrapping */
+    gap: 12px;
   }
 
   .contact form {
