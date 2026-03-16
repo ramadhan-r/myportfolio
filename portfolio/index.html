@@ -41,7 +41,7 @@
 
 <section class="portfolio-section">
 
-  <h1>Selected Work</h1>
+  <h1 id="portfolioTitle">Selected Work</h1>
 
 <!-- WEB MAP -->
 <div class="project-card tappable" onclick="openWebMapModal()" data-service="cartography">
@@ -199,11 +199,10 @@
 </div>
 
 <!-- VIEW ALL SERVICES LINK -->
-<p id="viewMoreServices" 
-   style="cursor:pointer; text-align:center; color: var(--accent); display:none;" 
-   onclick="showServiceCards('all')">
+<button id="viewMoreServices" class="floating-services-btn"
+        onclick="showServiceCards('all')">
   View all services
-</p>
+</button>
 
 </section>
 
@@ -618,17 +617,36 @@
   }
 
   // On page load, check if a service is in URL hash
-  document.addEventListener('DOMContentLoaded', () => {
-    const hash = window.location.hash.slice(1); // remove #
-    if (hash) {
-      showServiceCards(hash);
-      // Scroll to first card
-      const firstCard = document.querySelector(`.project-card[data-service="${hash}"]`);
-      if (firstCard) firstCard.scrollIntoView({ behavior: 'smooth' });
-    } else {
-      showServiceCards('all'); // default: show all
+document.addEventListener('DOMContentLoaded', () => {
+
+  const hash = window.location.hash.replace('#','');
+  const title = document.getElementById("portfolioTitle");
+
+  const serviceNames = {
+    "cartography": "Cartography",
+    "environmental-services": "Environmental Services",
+    "land-survey": "Land Survey",
+    "research-assistance": "Research Assistance",
+    "web-development": "Web Development"
+  };
+
+  if(hash){
+
+    showServiceCards(hash);
+
+    window.scrollTo(0,0);
+
+    if(serviceNames[hash]){
+      title.textContent = "Selected Work — " + serviceNames[hash];
     }
-  });
+
+  }else{
+
+    showServiceCards('all');
+
+  }
+
+});
 </script>
 <script>
 
@@ -732,6 +750,38 @@ document.addEventListener('DOMContentLoaded', () => {
   ];
 
   modalIds.forEach(id => setupModalWithLoader(id));
+});
+// Floating View Services button
+const floatingBtn = document.getElementById("viewMoreServices");
+
+let openedFromService = false;
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  const hash = window.location.hash;
+
+  if(hash){
+    openedFromService = true;
+  }
+
+});
+
+window.addEventListener("scroll", () => {
+
+  if(!openedFromService) return; // stop if not opened from homepage service
+
+  const scrollTop = window.scrollY;
+  const windowHeight = window.innerHeight;
+  const documentHeight = document.documentElement.scrollHeight;
+
+  const distanceFromBottom = documentHeight - (scrollTop + windowHeight);
+
+  if(distanceFromBottom < 200){
+    floatingBtn.style.display = "block";
+  } else {
+    floatingBtn.style.display = "none";
+  }
+
 });
 </script>
 

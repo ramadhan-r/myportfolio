@@ -1829,3 +1829,31 @@ footer,
   border: none !important;
   box-shadow: none !important;
 }
+/* Floating View Services Button */
+.floating-services-btn{
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+
+  padding: 12px 18px;
+  border-radius: 30px;
+  border: none;
+
+  background: #2f80ed;
+  color: #fff;
+
+  font-weight: 600;
+  cursor: pointer;
+
+  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+
+  display: none;
+  z-index: 5000;
+
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.floating-services-btn:hover{
+  background: #1c6ed5;
+  transform: translateY(-3px);
+}
