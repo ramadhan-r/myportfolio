@@ -28,7 +28,7 @@ header{
   display:flex;
   justify-content:space-between;
   align-items:center;
-  padding:20px 60px;
+  padding:20px 5%;
   background:rgba(2,6,23,0.6);
   backdrop-filter:blur(12px);
   z-index:1000;
@@ -46,7 +46,7 @@ nav a:hover{color:#22d3ee}
 
 /* HERO */
 .hero{
-  height:100vh;
+  min-height: 70vh;
   display:flex;
   flex-direction:column;
   justify-content:center;
@@ -71,6 +71,7 @@ nav a:hover{color:#22d3ee}
 
 .btn{
   padding:14px 28px;
+  min-height: 48px;
   border:none;
   border-radius:30px;
   background:linear-gradient(90deg,#6366f1,#22d3ee);
@@ -86,7 +87,7 @@ nav a:hover{color:#22d3ee}
 
 /* SECTION */
 section{
-  padding:100px 60px;
+  padding:100px 5%;
 }
 
 /* CARDS */
@@ -179,6 +180,92 @@ footer{
   text-align:center;
   padding:20px;
   color:#64748b;
+}
+@media (max-width: 768px){
+
+/* HEADER */
+header{
+  flex-direction: column;
+  padding: 15px 20px;
+  text-align: center;
+}
+
+nav{
+  margin-top: 10px;
+}
+
+nav a{
+  margin: 0 10px;
+  font-size: 14px;
+}
+
+/* HERO */
+.hero{
+  height: auto;
+  padding: 120px 20px 60px;
+}
+
+.hero h1{
+  font-size: 32px;
+  line-height: 1.2;
+}
+
+.hero p{
+  font-size: 15px;
+}
+
+/* BUTTON */
+.btn{
+  width: 100%;
+  padding: 14px;
+}
+
+/* SECTIONS */
+section{
+  padding: 60px 20px;
+}
+
+/* CARDS */
+.cards{
+  flex-direction: column;
+  align-items: center;
+}
+
+.card{
+  width: 100%;
+  max-width: 320px;
+}
+
+/* TESTIMONIAL CHAT */
+.chat{
+  padding: 0 10px;
+}
+
+.bubble{
+  max-width: 85%;
+  font-size: 14px;
+}
+
+/* CTA */
+.cta{
+  margin: 30px 15px;
+  padding: 40px 20px;
+}
+
+.cta h2{
+  font-size: 22px;
+}
+
+/* MODAL */
+.modal-content{
+  width: 90%;
+  padding: 25px;
+}
+
+/* CONTACT */
+#contact p{
+  font-size: 14px;
+}
 }
 </style>
 </head>

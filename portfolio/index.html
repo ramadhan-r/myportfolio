@@ -561,7 +561,7 @@
                                    position:relative; color:white; 
                                    background: url('assets/images/developer.png') center center no-repeat; 
                                    background-size: contain;">
-    <div style="position:relative; z-index:5; padding:1rem; background: rgba(0,0,0,0.6); border-radius:8px;">
+    <div style="position:relative; z-index:5; padding:1rem; background: rgba(3, 1, 6, 0.916); border-radius:8px;">
 
 <button class="modal-top-close">✕</button>
 
@@ -594,9 +594,9 @@
       <hr style="border-color:#22d3ee; margin: 1rem 0;">
 
     <!-- Cars Shop Demo Image with Tap Button Overlay -->
-    <h3>All Sales Shops & Organisations Demo</h3>
+    <h3>Sales Shops/ Organisations Demo</h3>
     <p>
-This example showcases a car dealership website with filtering and modal details. Fully responsive for desktop, tablets, and mobile devices. 
+This example showcases a car dealership website with filtering and modal details. 
 The same layout and functionality can easily be applied to real estate, clothing stores, electronics shops, book stores, furniture outlets and any other sales.
 </p>
 
@@ -610,22 +610,20 @@ The same layout and functionality can easily be applied to real estate, clothing
         onclick="window.open('/assets/demos/cars.html', '_blank')"
       >
 
-      <!-- Tap Button Overlay -->
-      <button
-        class="tap-interact" 
-        id="activate3DButton"
-        style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
-               background: rgba(0,0,0,0.6); color: white; border: none; padding: 10px 20px; 
-               border-radius: 8px; cursor: pointer; font-size: 1rem;"
-        onclick="window.open('/assets/demos/cars.html', '_blank')"
-      >
-        Tap to Interact
-      </button>
+<!-- Tap Button Overlay -->
+<button
+  class="tap-interact"
+  data-target="/assets/demos/cars.html"
+  style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+         background: rgb(111, 113, 9); color: white; border: none; padding: 10px 20px; 
+         border-radius: 8px; cursor: pointer; font-size: 1rem;">
+  Tap to Interact
+</button>
     </div>
     <!-- Therapist Demo Image with Tap Button Overlay -->
-<h3>Personal Business Demo</h3>
+<h3>Personal Businesses Demo</h3>
 <p>
-This example showcases a personal therapist website with booking and service details. Fully responsive for desktop, tablets, and mobile devices. 
+This example showcases a personal therapist website with booking and service details. 
 The same design can be adapted for coaches, engineers, quantity surveyors, graphic designers, personal trainers, consultants, tutors, wellness professionals, and many other personal businesses.
 </p>
 
@@ -640,20 +638,27 @@ The same design can be adapted for coaches, engineers, quantity surveyors, graph
   >
 
   <!-- Tap Button Overlay -->
-  <button
-    class="tap-interact" 
-    style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
-           background: rgba(0,0,0,0.6); color: white; border: none; padding: 10px 20px; 
-           border-radius: 8px; cursor: pointer; font-size: 1rem;"
-    onclick="window.open('/assets/demos/therapist.html', '_blank')"
-  >
-    Tap to Interact
-  </button>
+<button
+  class="tap-interact"
+  data-target="/assets/demos/therapist.html"
+  style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+         background: rgb(87, 107, 7); color: white; border: none; padding: 10px 20px; 
+         border-radius: 8px; cursor: pointer; font-size: 1rem;">
+  Tap to Interact
+</button>
 </div>
   </div>
 </div>
 
 <script>
+  document.querySelectorAll('.tap-interact').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const target = btn.dataset.target;
+    if (target) {
+      window.open(target, '_blank');
+    }
+  });
+});
 // Modal open/close functions
 function openWebDevModal() {
   document.getElementById('webDevModal').style.display = 'flex';

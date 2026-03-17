@@ -4,119 +4,221 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>FirmSys Dashboard</title>
-<!-- Google Fonts -->
+
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
 <style>
-/* RESET & BASE */
-* { margin:0; padding:0; box-sizing:border-box; font-family:'Inter', sans-serif; }
-body { display:flex; min-height:100vh; background:#f0f2f5; }
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif;}
+
+body{
+  display:flex;
+  min-height:100vh;
+  background:#f0f2f5;
+}
 
 /* SIDEBAR */
-.sidebar {
+.sidebar{
   width:220px;
   background:linear-gradient(180deg,#1f2a38,#34495e);
   color:#fff;
-  padding:30px 20px;
-  display:flex;
-  flex-direction:column;
-  justify-content:space-between;
+  padding:25px;
 }
-.sidebar h2 {
-  font-size:26px;
-  font-weight:700;
-  margin-bottom:40px;
-  background:linear-gradient(90deg,#22d3ee,#3b82f6,#ff3d00,#ffea00);
-  -webkit-background-clip:text;
-  color:transparent;
-}
-.sidebar p {
-  margin:15px 0;
-  cursor:pointer;
-  padding:8px 12px;
-  border-radius:8px;
-  transition:0.3s;
-}
-.sidebar p:hover { background:rgba(255,255,255,0.1); }
 
-/* MAIN CONTENT */
-.main {
-  flex:1;
-  padding:40px;
-  display:flex;
-  flex-direction:column;
-}
-.main h1 {
-  font-size:36px;
+.sidebar h2{
   margin-bottom:30px;
-  color:#2c3e50;
 }
+
+.sidebar p{
+  padding:10px;
+  margin-bottom:10px;
+  cursor:pointer;
+  border-radius:6px;
+}
+
+.sidebar p:hover{background:rgba(255,255,255,0.1);}
+
+/* MAIN */
+.main{
+  flex:1;
+  padding:30px;
+}
+
+h1{margin-bottom:20px;color:#2c3e50;}
 
 /* CARDS */
-.card {
-  background: rgba(255,255,255,0.15);
-  backdrop-filter: blur(15px);
-  padding:30px 25px;
-  margin-bottom:25px;
-  border-radius:15px;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-  transition: transform 0.3s, box-shadow 0.3s;
-  position: relative;
-  overflow:hidden;
-}
-.card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 15px 40px rgba(0,0,0,0.2);
-}
-.card::before {
-  content:"";
-  position:absolute;
-  width:150%;
-  height:150%;
-  background:linear-gradient(45deg, #22d3ee,#3b82f6,#ff3d00,#ffea00);
-  top:-50%; left:-50%;
-  filter: blur(100px);
-  opacity:0.3;
-  z-index:0;
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:20px;
 }
 
-/* CARD CONTENT */
-.card span {
-  position:relative;
-  font-size:22px;
-  font-weight:700;
-  z-index:1;
+.card{
+  background:#fff;
+  padding:20px;
+  border-radius:12px;
+  box-shadow:0 5px 15px rgba(0,0,0,0.08);
+}
+
+.card span{
+  font-size:20px;
+  font-weight:600;
+}
+
+/* LIST */
+.list{
+  margin-top:20px;
+}
+
+.item{
+  background:#fff;
+  padding:15px;
+  margin-bottom:10px;
+  border-radius:10px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+button{
+  padding:8px 12px;
+  border:none;
+  border-radius:6px;
+  cursor:pointer;
+  background:#3b82f6;
   color:#fff;
 }
 
-/* RESPONSIVE */
-@media(max-width:900px){
-  body { flex-direction:column; }
-  .sidebar { width:100%; height:auto; flex-direction:row; justify-content:space-around; padding:15px; }
-  .main { padding:20px; }
-}
+/* MOBILE */
+@media(max-width:768px){
+  body{flex-direction:column;}
 
+  .sidebar{
+    width:100%;
+    display:flex;
+    justify-content:space-around;
+  }
+
+  .sidebar div{display:flex;gap:10px;}
+
+  .main{padding:20px;}
+}
 </style>
 </head>
+
 <body>
 
-<!-- SIDEBAR -->
 <div class="sidebar">
   <h2>FirmSys</h2>
   <div>
-    <p>Dashboard</p>
-    <p>Projects</p>
-    <p>Reports</p>
+    <p onclick="renderDashboard()">Dashboard</p>
+    <p onclick="renderProjects()">Projects</p>
+    <p onclick="renderReports()">Reports</p>
   </div>
 </div>
 
-<!-- MAIN -->
-<div class="main">
-  <h1>Dashboard</h1>
-  <div class="card"><span>Active Projects: 12</span></div>
-  <div class="card"><span>Clients: 8</span></div>
-  <div class="card"><span>Revenue: $48,000</span></div>
-  <div class="card"><span>Pending Tasks: 5</span></div>
-</div>
+<div class="main" id="main"></div>
+
+<script>
+// STORAGE
+const loadData = () => JSON.parse(localStorage.getItem('firmsys')) || {
+  projects: [
+    {name:"Road Survey", status:"Active"},
+    {name:"GIS Mapping", status:"Completed"}
+  ],
+  clients: 8,
+  revenue: 48000,
+  tasks: [
+    {name:"Prepare report", done:false},
+    {name:"Call client", done:true}
+  ]
+};
+
+const saveData = (data)=>localStorage.setItem('firmsys',JSON.stringify(data));
+
+let data = loadData();
+
+// DASHBOARD
+function renderDashboard(){
+  const activeProjects = data.projects.filter(p=>p.status==="Active").length;
+  const completedProjects = data.projects.length - activeProjects;
+  const completionRate = data.projects.length ? 
+    Math.round((completedProjects/data.projects.length)*100) : 0;
+
+  document.getElementById('main').innerHTML = `
+    <h1>Dashboard</h1>
+
+    <div class="grid">
+      <div class="card"><span>Active Projects: ${activeProjects}</span></div>
+      <div class="card"><span>Total Projects: ${data.projects.length}</span></div>
+      <div class="card"><span>Clients: ${data.clients}</span></div>
+      <div class="card"><span>Revenue: $${data.revenue.toLocaleString()}</span></div>
+      <div class="card"><span>Completion Rate: ${completionRate}%</span></div>
+      <div class="card"><span>Pending Tasks: ${data.tasks.filter(t=>!t.done).length}</span></div>
+    </div>
+  `;
+}
+
+// PROJECTS
+function renderProjects(){
+  let html = `<h1>Projects</h1>
+  <button onclick="addProject()">Add Project</button>
+  <div class="list">`;
+
+  data.projects.forEach((p,i)=>{
+    html += `
+    <div class="item">
+      <span>${p.name} (${p.status})</span>
+      <div>
+        <button onclick="toggleProject(${i})">Toggle</button>
+        <button onclick="deleteProject(${i})">Delete</button>
+      </div>
+    </div>`;
+  });
+
+  html += `</div>`;
+  document.getElementById('main').innerHTML = html;
+}
+
+function addProject(){
+  const name = prompt("Project name:");
+  if(!name) return;
+  data.projects.push({name, status:"Active"});
+  saveData(data);
+  renderProjects();
+}
+
+function toggleProject(i){
+  data.projects[i].status = data.projects[i].status==="Active"?"Completed":"Active";
+  saveData(data);
+  renderProjects();
+}
+
+function deleteProject(i){
+  data.projects.splice(i,1);
+  saveData(data);
+  renderProjects();
+}
+
+// REPORTS
+function renderReports(){
+  const totalRevenue = data.revenue;
+  const avgRevenue = data.projects.length ? Math.round(totalRevenue/data.projects.length) : 0;
+
+  document.getElementById('main').innerHTML = `
+    <h1>Reports</h1>
+
+    <div class="grid">
+      <div class="card"><span>Total Revenue: $${totalRevenue.toLocaleString()}</span></div>
+      <div class="card"><span>Avg Revenue/Project: $${avgRevenue}</span></div>
+      <div class="card"><span>Total Clients: ${data.clients}</span></div>
+      <div class="card"><span>Total Tasks: ${data.tasks.length}</span></div>
+    </div>
+  `;
+}
+
+// INIT
+renderDashboard();
+</script>
 
 </body>
 </html>
