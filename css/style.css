@@ -1859,3 +1859,13 @@ footer,
   background: #1c6ed5;
   transform: translateY(-3px);
 }
+@media (max-width: 720px) {
+  .contact-page {
+    padding-top: 48px;
+  }
+
+  .contact-page .hero {
+    padding-top: 0;
+    margin-top: 0;
+  }
+}
