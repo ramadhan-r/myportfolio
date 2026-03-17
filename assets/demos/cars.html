@@ -175,7 +175,7 @@ body{
 /* CARD */
 .card{
   background:rgba(255,255,255,0.05);
-  border-radius:20px;
+  border-radius: 15px;
   overflow:hidden;
   backdrop-filter:blur(10px);
   transition:.4s;
@@ -189,7 +189,7 @@ body{
 
 .card img{
   width:100%;
-  height:180px;
+  aspect-ratio: 16 / 10;
   object-fit:cover;
   transition:.4s;
 }
@@ -353,7 +353,8 @@ footer{
 
 /* GRID FIX (CRITICAL) */
 .grid{
-  grid-template-columns: 1fr;   /* single column */
+  grid-template-columns: repeat(2, 1fr); /* ✅ 2 columns */
+  gap: 15px;   /* single column */
   padding: 0 15px 40px;
   justify-content: center;
 }
