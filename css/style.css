@@ -1896,11 +1896,12 @@ footer,
   font-size: 0.9rem;
   white-space: nowrap;
 
-  /* REMOVE DEFAULT MOBILE STYLES */
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
   outline: none;
+
+  transition: all 0.2s ease;
 }
 
 /* Hover */
@@ -1915,7 +1916,9 @@ footer,
   color: black;
 }
 
-/* MOBILE */
+/* =====================
+   MOBILE (75% SCALE)
+===================== */
 @media (max-width: 600px) {
 
   .filter-bar {
@@ -1923,6 +1926,7 @@ footer,
     flex-wrap: nowrap;
     justify-content: flex-start;
     padding-bottom: 5px;
+    gap: 8px; /* slightly tighter */
   }
 
   .filter-bar::-webkit-scrollbar {
@@ -1932,7 +1936,12 @@ footer,
   .filter-bar button {
     flex: 0 0 auto;
 
-    /* FORCE CONSISTENT COLORS */
+    /* 75% sizing */
+    padding: 6px 10px;     /* was 8px 14px */
+    font-size: 0.7rem;     /* was 0.9rem */
+    border-radius: 8px;    /* slightly smaller */
+
+    /* keep colors consistent */
     background-color: transparent !important;
     color: white !important;
   }
