@@ -1012,18 +1012,18 @@ document.querySelectorAll('.filter-bar button').forEach(btn => {
 
   });
 });
-// NEVER show floating button when any modal is open
+// Check if any modal is open
 function isAnyModalOpen() {
   return [...document.querySelectorAll('.modal-overlay')]
     .some(modal => modal.style.display === 'flex');
 }
 
-// Override scroll behavior safely
-window.addEventListener("scroll", () => {
+// Control button visibility (reusable)
+function updateFloatingButton() {
 
   if (!openedFromService) return;
 
-  // 🚫 STOP if modal is open
+  // 🚫 Hide if modal open
   if (isAnyModalOpen()) {
     floatingBtn.style.display = "none";
     return;
@@ -1040,15 +1040,15 @@ window.addEventListener("scroll", () => {
   } else {
     floatingBtn.style.display = "none";
   }
+}
 
-});
+// Scroll listener
+window.addEventListener("scroll", updateFloatingButton);
 
-// ALSO force hide immediately when modal opens
+// Watch modals (open + close)
 document.querySelectorAll('.modal-overlay').forEach(modal => {
   const observer = new MutationObserver(() => {
-    if (modal.style.display === "flex") {
-      floatingBtn.style.display = "none";
-    }
+    updateFloatingButton(); // ✅ handles BOTH open & close
   });
 
   observer.observe(modal, { attributes: true, attributeFilter: ['style'] });
