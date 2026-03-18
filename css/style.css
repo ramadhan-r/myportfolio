@@ -1979,6 +1979,7 @@ footer,
   justify-content: flex-start;
 }
 
+/* Base Button */
 .filter-bar button {
   padding: 8px 14px;
   border: 1px solid #22d3ee;
@@ -2003,11 +2004,34 @@ footer,
   color: black;
 }
 
-/* Active */
+/* Active (ONLY for non-"All") */
 .filter-bar button.active {
   background: #22d3ee;
   color: black;
 }
+
+/* =========================
+   "ALL" BUTTON (DEFAULT STATE)
+========================= */
+
+/* Make "All" visually different */
+.filter-bar button:first-child {
+  border-color: #64748b;
+  color: #94a3b8;
+}
+
+/* Hover for "All" */
+.filter-bar button:first-child:hover {
+  background: #64748b;
+  color: white;
+}
+
+/* When no filter is active → highlight "All" */
+.filter-bar.no-active button:first-child {
+  background: #64748b;
+  color: white;
+}
+
 
 /* =====================
    MOBILE (75% SCALE)
@@ -2019,7 +2043,7 @@ footer,
     flex-wrap: nowrap;
     justify-content: flex-start;
     padding-bottom: 5px;
-    gap: 8px; /* slightly tighter */
+    gap: 8px;
   }
 
   .filter-bar::-webkit-scrollbar {
@@ -2029,13 +2053,23 @@ footer,
   .filter-bar button {
     flex: 0 0 auto;
 
-    /* 75% sizing */
-    padding: 6px 10px;     /* was 8px 14px */
-    font-size: 0.7rem;     /* was 0.9rem */
-    border-radius: 8px;    /* slightly smaller */
+    padding: 6px 10px;
+    font-size: 0.7rem;
+    border-radius: 8px;
 
-    /* keep colors consistent */
     background-color: transparent !important;
+    color: white !important;
+  }
+
+  /* Keep active visible on mobile */
+  .filter-bar button.active {
+    background: #22d3ee !important;
+    color: black !important;
+  }
+
+  /* Keep "All" default visible on mobile */
+  .filter-bar.no-active button:first-child {
+    background: #64748b !important;
     color: white !important;
   }
 }

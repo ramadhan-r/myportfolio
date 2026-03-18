@@ -1003,19 +1003,26 @@ window.addEventListener("scroll", () => {
   }
 
 });
+
+const filterBar = document.querySelector('.filter-bar');
+
 document.querySelectorAll('.filter-bar button').forEach(btn => {
   btn.addEventListener('click', () => {
 
-    document.querySelectorAll('.filter-bar button')
-      .forEach(b => b.classList.remove('active'));
+    const buttons = document.querySelectorAll('.filter-bar button');
 
-    // only add active if NOT "All"
+    buttons.forEach(b => b.classList.remove('active'));
+
     if (btn.textContent !== "All") {
       btn.classList.add('active');
+      filterBar.classList.remove('no-active');
+    } else {
+      filterBar.classList.add('no-active');
     }
 
   });
 });
+
 function isAnyModalOpen() {
   return [...document.querySelectorAll('.modal-overlay')]
     .some(modal => {
