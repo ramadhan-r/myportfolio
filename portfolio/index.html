@@ -1012,6 +1012,47 @@ document.querySelectorAll('.filter-bar button').forEach(btn => {
 
   });
 });
+// NEVER show floating button when any modal is open
+function isAnyModalOpen() {
+  return [...document.querySelectorAll('.modal-overlay')]
+    .some(modal => modal.style.display === 'flex');
+}
+
+// Override scroll behavior safely
+window.addEventListener("scroll", () => {
+
+  if (!openedFromService) return;
+
+  // 🚫 STOP if modal is open
+  if (isAnyModalOpen()) {
+    floatingBtn.style.display = "none";
+    return;
+  }
+
+  const scrollTop = window.scrollY;
+  const windowHeight = window.innerHeight;
+  const documentHeight = document.documentElement.scrollHeight;
+
+  const distanceFromBottom = documentHeight - (scrollTop + windowHeight);
+
+  if (distanceFromBottom < 200) {
+    floatingBtn.style.display = "block";
+  } else {
+    floatingBtn.style.display = "none";
+  }
+
+});
+
+// ALSO force hide immediately when modal opens
+document.querySelectorAll('.modal-overlay').forEach(modal => {
+  const observer = new MutationObserver(() => {
+    if (modal.style.display === "flex") {
+      floatingBtn.style.display = "none";
+    }
+  });
+
+  observer.observe(modal, { attributes: true, attributeFilter: ['style'] });
+});
 </script>
 
 </body>
