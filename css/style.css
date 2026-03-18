@@ -1874,18 +1874,30 @@ footer,
   gap: 10px;
   flex-wrap: wrap;
   margin: 20px 0;
-  justify-content: left;
+  justify-content: flex-start;
 }
 
 .filter-bar button {
   padding: 8px 14px;
   border: 1px solid #22d3ee;
-  background: transparent;
+  background-color: transparent;
   color: white;
   border-radius: 10px;
   cursor: pointer;
   font-size: 0.9rem;
   white-space: nowrap;
+
+  /* REMOVE DEFAULT MOBILE STYLES */
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  outline: none;
+}
+
+/* Hover */
+.filter-bar button:hover {
+  background: #22d3ee;
+  color: black;
 }
 
 /* Active */
@@ -1894,7 +1906,7 @@ footer,
   color: black;
 }
 
-/* MOBILE IMPROVEMENT */
+/* MOBILE */
 @media (max-width: 600px) {
 
   .filter-bar {
@@ -1910,5 +1922,9 @@ footer,
 
   .filter-bar button {
     flex: 0 0 auto;
+
+    /* FORCE CONSISTENT COLORS */
+    background-color: transparent !important;
+    color: white !important;
   }
 }
