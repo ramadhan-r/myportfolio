@@ -2083,3 +2083,20 @@ footer,
   max-height: 2000px; /* large enough */
   transition: max-height 0.4s ease;
 }
+.services-stats {
+  display: flex;
+  justify-content: space-around;
+  margin: 40px 0;
+  text-align: center;
+}
+
+.services-stats .stat h3 {
+  font-size: 2rem;
+  color: #1a1a1a;
+}
+
+.services-stats .stat p {
+  font-size: 1rem;
+  color: #555;
+  margin-top: 4px;
+}

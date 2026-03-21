@@ -151,3 +151,22 @@ document.addEventListener("DOMContentLoaded", function () {
     merchGrid.classList.add("collapsed");
   }
 });
+// Counter animation starts immediately on page load
+(function() {
+  const counters = document.querySelectorAll('.counter');
+
+  counters.forEach(counter => {
+    const target = parseInt(counter.getAttribute('data-target'), 10);
+    let current = 0;
+    const duration = 1500; // total animation duration in ms
+    const stepTime = Math.abs(Math.floor(duration / target));
+
+    const timer = setInterval(() => {
+      current += 1;
+      counter.innerText = current;
+      if (current >= target) {
+        clearInterval(timer);
+      }
+    }, stepTime);
+  });
+})();
