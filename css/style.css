@@ -2083,20 +2083,71 @@ footer,
   max-height: 2000px; /* large enough */
   transition: max-height 0.4s ease;
 }
+
+/* ===== SERVICES STATS (LINE CARD, NO FILL) ===== */
 .services-stats {
+  max-width: 900px;
+  margin: 20px auto 20px;
+
   display: flex;
-  justify-content: space-around;
-  margin: 40px 0;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+
+  padding: 18px 24px;
+  border-radius: 16px;
+
+  background: transparent; /* ❌ no fill */
+  border: 1px solid rgba(0, 0, 0, 0.5);
+
+  box-shadow:
+    0 8px 25px rgba(0,0,0,0.4); /* depth only */
+}
+
+/* Each stat */
+.services-stats .stat {
+  flex: 1;
   text-align: center;
 }
 
+/* Numbers */
 .services-stats .stat h3 {
-  font-size: 2rem;
-  color: #1a1a1a;
+  font-size: 2.1rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin: 0;
 }
 
+/* Labels */
 .services-stats .stat p {
-  font-size: 1rem;
-  color: #555;
-  margin-top: 4px;
+  font-size: 0.9rem;
+  color: var(--text-soft);
+  margin-top: 6px;
+}
+
+/* Divider lines */
+.services-stats .stat:not(:last-child) {
+  border-right: 1px solid rgba(255,255,255,0.08);
+}
+
+/* ===== MOBILE (KEEP HORIZONTAL) ===== */
+@media (max-width: 768px) {
+  .services-stats {
+    flex-wrap: nowrap;        /* 🔥 force horizontal */
+    overflow-x: auto;         /* allow scroll if needed */
+    gap: 16px;
+  }
+
+  .services-stats .stat {
+    min-width: 80px;          /* keeps items compact */
+  }
+
+  /* thinner text on mobile */
+  .services-stats .stat h3 {
+    font-size: 1.6rem;
+  }
+
+  .services-stats .stat p {
+    font-size: 0.8rem;
+  }
 }
