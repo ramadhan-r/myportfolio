@@ -497,25 +497,6 @@ document.getElementById('serviceOrderForm').addEventListener('submit', function(
 
 <script>
 document.addEventListener("DOMContentLoaded", function () {
-  document.getElementById("servicesGrid").classList.add("collapsed");
-});
-
-function toggleServices() {
-  const grid = document.getElementById("servicesGrid");
-  const btn = document.getElementById("toggleServicesBtn");
-
-  grid.classList.toggle("collapsed");
-
-  if (grid.classList.contains("collapsed")) {
-    btn.textContent = "View More";
-  } else {
-    btn.textContent = "View Less";
-  }
-}
-</script>
-
-<script>
-document.addEventListener("DOMContentLoaded", function () {
   document.getElementById("merchGrid").classList.add("collapsed");
 });
 
@@ -540,25 +521,30 @@ window.addEventListener("click", function(event) {
     closeTipModal();
   }
 });
-function toggleTerms() {
-  const content = document.getElementById("termsContent");
-  content.classList.toggle("collapsed");
-}
+</script>
+
+<!-- ================= FINAL TOGGLE FIX ================= -->
+<script>
+let servicesScrollPosition = 0;
+let merchScrollPosition = 0;
+
 function toggleServices() {
   const grid = document.getElementById("servicesGrid");
   const btn = document.getElementById("toggleServicesBtn");
 
-  // Store scroll position before toggling
-  const scrollBefore = window.scrollY;
-
-  grid.classList.toggle("collapsed");
-
   if (grid.classList.contains("collapsed")) {
-    btn.textContent = "View More";
-    // Restore scroll position after collapse
-    window.scrollTo({ top: scrollBefore, behavior: "instant" });
-  } else {
+    servicesScrollPosition = window.scrollY;
+
+    grid.classList.remove("collapsed");
     btn.textContent = "View Less";
+  } else {
+    grid.classList.add("collapsed");
+    btn.textContent = "View More";
+
+    window.scrollTo({
+      top: servicesScrollPosition,
+      behavior: "instant"
+    });
   }
 }
 
@@ -566,17 +552,34 @@ function toggleMerch() {
   const grid = document.getElementById("merchGrid");
   const btn = document.getElementById("toggleMerchBtn");
 
-  const scrollBefore = window.scrollY;
-
-  grid.classList.toggle("collapsed");
-
   if (grid.classList.contains("collapsed")) {
-    btn.textContent = "View More";
-    window.scrollTo({ top: scrollBefore, behavior: "instant" });
-  } else {
+    merchScrollPosition = window.scrollY;
+
+    grid.classList.remove("collapsed");
     btn.textContent = "View Less";
+  } else {
+    grid.classList.add("collapsed");
+    btn.textContent = "View More";
+
+    window.scrollTo({
+      top: merchScrollPosition,
+      behavior: "instant"
+    });
   }
 }
+
+function toggleTerms() {
+  const content = document.getElementById("termsContent");
+  content.classList.toggle("collapsed");
+}
+
+window.addEventListener("click", function(event) {
+  const modal = document.getElementById("tipModal");
+
+  if (event.target === modal) {
+    closeTipModal();
+  }
+});
 </script>
 
 <!-- ================= FOOTER ================= -->
