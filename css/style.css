@@ -2134,7 +2134,6 @@ footer,
 @media (max-width: 768px) {
   .services-stats {
     flex-wrap: nowrap;        /* 🔥 force horizontal */
-    overflow-x: auto;         /* allow scroll if needed */
     gap: 16px;
   }
 
