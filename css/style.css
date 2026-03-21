@@ -2130,52 +2130,36 @@ footer,
   border-right: 1px solid rgba(255,255,255,0.08);
 }
 
-/* ===== MOBILE (KEEP HORIZONTAL) ===== */
+/* ===== MOBILE (FORCED SINGLE LINE + PRIORITY SPACE) ===== */
 @media (max-width: 768px) {
   .services-stats {
-    flex-wrap: wrap;        /* 🔥 force horizontal */
-    gap: 16px;
+    flex-wrap: nowrap;     /* ❗ force one line */
+    overflow: hidden;      /* ❗ no scrolling */
+    gap: 10px;
+    padding: 14px 12px;
   }
 
   .services-stats .stat {
-    min-width: 80px;          /* keeps items compact */
+    flex: 1 1 0;           /* equal base */
+    min-width: 0;          /* critical for shrinking */
   }
 
-  /* thinner text on mobile */
+  /* 🔥 Give "Years Experience" more room */
+  .services-stats .stat:last-child {
+    flex: 1.6 1 0;         /* takes more space than others */
+  }
+
+  /* Slightly shrink others to compensate */
+  .services-stats .stat:not(:last-child) {
+    flex: 0.9 1 0;
+  }
+
   .services-stats .stat h3 {
-    font-size: 1.6rem;
+    font-size: 1.3rem;
   }
 
   .services-stats .stat p {
-    font-size: 0.8rem;
-  }
-}
-/* Prevent wrapping inside each stat */
-.services-stats .stat h3,
-.services-stats .stat p {
-  white-space: nowrap;
-}
-
-/* MOBILE FIX */
-@media (max-width: 768px) {
-  .services-stats {
-    flex-wrap: wrap;
-    overflow-x: auto;
-    gap: 14px;
-    padding: 16px 18px;
-  }
-
-  .services-stats .stat {
-    flex: 0 0 auto;   /* 🔥 prevents shrinking weirdly */
-    min-width: 95px;  /* 🔥 gives enough room for "Years Experience" */
-  }
-
-  /* Slightly smaller text to fit everything */
-  .services-stats .stat h3 {
-    font-size: 1.5rem;
-  }
-
-  .services-stats .stat p {
-    font-size: 0.75rem;
+    font-size: 0.7rem;
+    white-space: nowrap;   /* keep "Years Experience" on one line */
   }
 }
