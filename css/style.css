@@ -2151,3 +2151,32 @@ footer,
     font-size: 0.8rem;
   }
 }
+/* Prevent wrapping inside each stat */
+.services-stats .stat h3,
+.services-stats .stat p {
+  white-space: nowrap;
+}
+
+/* MOBILE FIX */
+@media (max-width: 768px) {
+  .services-stats {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 14px;
+    padding: 16px 18px;
+  }
+
+  .services-stats .stat {
+    flex: 0 0 auto;   /* 🔥 prevents shrinking weirdly */
+    min-width: 95px;  /* 🔥 gives enough room for "Years Experience" */
+  }
+
+  /* Slightly smaller text to fit everything */
+  .services-stats .stat h3 {
+    font-size: 1.5rem;
+  }
+
+  .services-stats .stat p {
+    font-size: 0.75rem;
+  }
+}
