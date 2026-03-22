@@ -2155,11 +2155,11 @@ footer,
   }
 
   .services-stats .stat h3 {
-    font-size: 1.3rem;
+    font-size: 1.7rem;
   }
 
   .services-stats .stat p {
-    font-size: 0.7rem;
+    font-size: 1rem;
     white-space: nowrap;   /* keep "Years Experience" on one line */
   }
 }
