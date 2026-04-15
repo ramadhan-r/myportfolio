@@ -20,188 +20,245 @@ body{
   width:100%;
   display:flex;
   justify-content:space-between;
-  padding:20px 50px;
-  background:rgba(0,0,0,0.6);
-  backdrop-filter:blur(12px);
+  align-items:center;
+  padding:18px 50px;
+  background:rgba(0,0,0,0.5);
+  backdrop-filter:blur(16px);
+  border-bottom:1px solid rgba(255,255,255,0.05);
   z-index:1000;
+}
+
+.navbar h2{
+  font-weight:700;
+  letter-spacing:1px;
 }
 
 .nav-links a{
   margin-left:25px;
   color:#94a3b8;
   text-decoration:none;
+  font-size:15px;
+  position:relative;
+}
+
+.nav-links a::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-6px;
+  width:0%;
+  height:2px;
+  background:#22d3ee;
+  transition:0.3s;
+}
+
+.nav-links a:hover::after{
+  width:100%;
 }
 
 .nav-links a:hover{color:#22d3ee}
 
-/* HERO FEATURE - NATURAL IMAGE SLIDESHOW WITH TEXT OVERLAY */
-.hero {
-  width: 100%;
-  min-height: 80vh;              /* Use 80% of viewport height for natural image display */
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: left;
-  color: black;                  /* text color black for visibility on white cars */
-  padding: 50px 20px;            /* spacing from top/bottom */
-  overflow: visible;
+/* HERO */
+.hero{
+  width:100%;
+  height:100vh;
+  position:relative;
+  display:flex;
+  align-items:center;
+  padding:0 60px;
+  overflow:hidden;
 }
 
-.hero-slideshow {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%; /* make container match hero height */
-  overflow: hidden;
-  z-index: 0; /* behind text */
+.hero-slideshow{
+  position:absolute;
+  width:100%;
+  height:100%;
+  top:0;
+  left:0;
 }
 
-.hero-slideshow img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0;
-  transition: opacity 1s ease-in-out, transform 6s ease;
+.hero-slideshow img{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100vw;
+  height:100vh;
+  object-fit:cover;
+  object-position:center;
+  opacity:0;
+  transition:opacity 1s ease, transform 6s ease;
 }
 
-.hero-slideshow img.active {
-  opacity: 1;
-  transform: scale(1.05);
+.hero-slideshow img.active{
+  opacity:1;
+  transform:scale(1.08);
 }
 
-.hero::before {
-  content: "";
-  position: absolute;
-  top: 0; 
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(255, 255, 255, 0.15); /* light overlay for contrast */
-  z-index: 1;
+.hero::before{
+  content:"";
+  position:absolute;
+  width:100%;
+  height:100%;
+  background:linear-gradient(to right, rgba(0,0,0,0.6), rgba(0,0,0,0.1));
+  z-index:1;
 }
 
-.hero-content {
-  position: relative;
-  z-index: 2;
-  max-width: 900px;
-  background: transparent; /* slightly transparent box behind text */
-  padding: 30px;
-  border-radius: 15px;
-  box-shadow: transparent;
-  animation: fadeInUp 1s ease forwards;
+.hero-content{
+  position:relative;
+  z-index:2;
+  max-width:600px;
+  backdrop-filter:blur(10px);
+  background:rgba(255,255,255,0.05);
+  padding:35px;
+  border-radius:20px;
+  border:1px solid rgba(255,255,255,0.08);
+  animation:fadeInUp 1s ease forwards;
 }
 
-.hero h1 {
-  font-size: 48px;
-  font-weight: 700;
-  margin-bottom: 20px;
-  line-height: 1.2;
+.hero h1{
+  font-size:50px;
+  margin-bottom:20px;
 }
 
-.hero p {
-  font-size: 18px;
-  line-height: 1.6;
-  margin-bottom: 25px;
+.hero p{
+  font-size:18px;
+  color:#cbd5f5;
+  margin-bottom:25px;
 }
 
-.hero .btn {
-  padding: 14px 28px;
-  font-size: 16px;
-  border-radius: 30px;
-  background: linear-gradient(90deg,#22d3ee,#3b82f6);
-  color: #fff;
-  cursor: pointer;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.hero .btn:hover {
-  transform: scale(1.1);
-  box-shadow: 0 10px 30px rgba(34,211,238,0.4);
-}
-
-@keyframes fadeInUp {
-  0% { opacity: 0; transform: translateY(30px); }
-  100% { opacity: 1; transform: translateY(0); }
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .hero h1 { font-size: 36px; }
-  .hero p { font-size: 16px; }
-  .hero-content { padding: 20px; }
-}
-
+/* BUTTON */
 .btn{
-  padding:12px 25px;
+  padding:14px 28px;
   border:none;
-  border-radius:30px;
+  border-radius:40px;
   background:linear-gradient(90deg,#22d3ee,#3b82f6);
   color:#fff;
   cursor:pointer;
-  transition:.3s;
+  font-weight:500;
+  transition:0.3s;
 }
 
 .btn:hover{
-  transform:scale(1.1);
-  box-shadow:0 10px 30px rgba(34,211,238,0.4);
+  transform:scale(1.08);
+  box-shadow:0 12px 35px rgba(34,211,238,0.5);
 }
 
-/* FILTERS */
+/* SCROLL */
+.scroll-wrap{
+  position:absolute;
+  bottom:25px;
+  left:50%;
+  transform:translateX(-50%);
+  text-align:center;
+  font-size:13px;
+  letter-spacing:2px;
+  color:#fff;
+  opacity:0.8;
+}
+
+.scroll-line{
+  width:2px;
+  height:40px;
+  background:linear-gradient(to bottom,#22d3ee,transparent);
+  margin:8px auto 0;
+  position:relative;
+  overflow:hidden;
+}
+
+#inventory {
+  scroll-margin-top: 100px;
+}
+
+html {
+  scroll-padding-top: 100px;
+}
+
+.scroll-line::after{
+  content:"";
+  position:absolute;
+  top:-20px;
+  left:0;
+  width:100%;
+  height:20px;
+  background:#22d3ee;
+  animation:scrollMove 1.6s infinite;
+}
+
+@keyframes scrollMove{
+  0%{top:-20px;opacity:0;}
+  50%{opacity:1;}
+  100%{top:40px;opacity:0;}
+}
+
+/* FILTER BAR */
 .action-bar{
   display:flex;
   justify-content:center;
-  gap:10px;
-  margin:40px 0;
+  flex-wrap:wrap;
+  gap:12px;
+  margin:50px 0;
+  padding:0 20px;
 }
 
-.action-bar .btn{
-  background:#111;
-  border:1px solid #333;
+.filter-btn{
+  padding:10px 20px;
+  border-radius:30px;
+  border:1px solid rgba(255,255,255,0.1);
+  background:rgba(255,255,255,0.03);
+  color:#94a3b8;
+  cursor:pointer;
+  backdrop-filter:blur(10px);
+  transition:0.3s;
+}
+
+.filter-btn:hover{
+  color:#fff;
+  border-color:#22d3ee;
+}
+
+.filter-btn.active{
+  background:linear-gradient(90deg,#22d3ee,#3b82f6);
+  color:#000;
+  font-weight:600;
+  box-shadow:0 5px 20px rgba(34,211,238,0.4);
 }
 
 /* GRID */
 .grid{
   display:grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); /* keeps cards left-aligned */
-  gap:25px;
-  padding:0 50px 60px;
+  grid-template-columns:repeat(auto-fill,minmax(240px,1fr));
+  gap:22px;
+  padding:0 40px 60px;
 }
 
 /* CARD */
 .card{
   background:rgba(255,255,255,0.05);
-  border-radius: 15px;
+  border-radius:18px;
   overflow:hidden;
-  backdrop-filter:blur(10px);
-  transition:.4s;
-  position:relative;
+  backdrop-filter:blur(14px);
+  border:1px solid rgba(255,255,255,0.06);
+  transition:0.4s;
 }
 
 .card:hover{
-  transform:translateY(-10px) scale(1.03);
+  transform:translateY(-12px) scale(1.03);
   box-shadow:0 25px 60px rgba(0,0,0,0.8);
 }
 
 .card img{
   width:100%;
-  aspect-ratio: 16 / 10;
+  height:160px;
   object-fit:cover;
-  transition:.4s;
+  transition:0.4s;
 }
 
 .card:hover img{transform:scale(1.1);}
 
-/* BADGE */
 .badge{
   position:absolute;
-  top:10px;
-  left:10px;
-  padding:6px 12px;
+  margin:10px;
+  padding:5px 12px;
   border-radius:20px;
   font-size:12px;
 }
@@ -212,61 +269,52 @@ body{
 .badge.Popular{background:#ffd700;}
 .badge.Off-Road{background:#4caf50;}
 
-.info{padding:20px;}
-.price{color:#e0ee22;margin:10px 0;}
+.info{padding:15px;}
+
+.price{
+  color:#e0ee22;
+  margin:10px 0;
+}
 
 /* MODAL */
-#modal-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.0); /* fully transparent background */
-  display: none;
-  justify-content: center;
-  align-items: center;
-  z-index: 1001;
+#modal-overlay{
+  position:fixed;
+  width:100%;
+  height:100%;
+  top:0;
+  left:0;
+  display:none;
+  justify-content:center;
+  align-items:center;
+  background:rgba(0,0,0,0.6);
 }
 
-#modal {
-  background: rgba(20, 20, 30, 0.95); /* darkish background with transparency */
-  padding: 25px;
-  border-radius: 15px;
-  max-width: 500px;
-  text-align: left;
-  color: #fff; /* white text for contrast */
-  animation: fade .3s;
-  box-shadow: 0 10px 40px rgba(0,0,0,0.7);
-  position: relative;
+#modal{
+  background:rgba(20,20,30,0.95);
+  padding:30px;
+  border-radius:20px;
+  max-width:500px;
+  animation:fade .3s;
 }
+
+.close-btn{
+  position:absolute;
+  right:20px;
+  top:15px;
+  font-size:25px;
+  cursor:pointer;
+}
+
 @keyframes fade{
   from{opacity:0;transform:scale(.9);}
   to{opacity:1;}
 }
 
-.close-btn{
-  position:absolute;
-  top:15px;
-  right:20px;
-  font-size:25px;
-  cursor:pointer;
-  color:#fff; /* make it visible on dark background */
-}
-
-
-@keyframes rainbow {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-/* SECTIONS */
-section{padding:60px 50px;}
+/* CONTACT */
 #contact{
   text-align:center;
+  padding:60px 20px;
   background:rgba(255,255,255,0.02);
-  border-top:1px solid rgba(255,255,255,0.05);
 }
 
 #contact h2{
@@ -278,19 +326,8 @@ section{padding:60px 50px;}
 }
 
 #contact p{
-  margin:10px 0;
   color:#94a3b8;
-  font-size:16px;
-}
-
-#contact a{
-  color:#22d3ee;
-  text-decoration:none;
-  font-weight:500;
-}
-
-#contact a:hover{
-  text-decoration:underline;
+  margin:8px 0;
 }
 
 footer{
@@ -298,93 +335,76 @@ footer{
   padding:20px;
   color:#64748b;
 }
-@media (max-width: 768px){
 
-/* NAVBAR */
-.navbar{
-  flex-direction: column;
-  align-items: center;
-  padding: 15px 20px;
-}
+/* MOBILE */
+@media(max-width:768px){
 
-.nav-links{
-  margin-top: 10px;
-}
-
-.nav-links a{
-  margin: 0 10px;
-  font-size: 14px;
-}
-
-/* HERO */
 .hero{
-  text-align: center;
-  padding: 100px 15px 40px;
-}
-
-.hero h1{
-  font-size: 28px;
-}
-
-.hero p{
-  font-size: 15px;
+  padding:0;
+  margin:0;
+  width:100vw;
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
 }
 
 .hero-content{
-  padding: 15px;
+  margin:0 15px;
+  padding:20px;
 }
 
-/* BUTTON */
-.btn{
-  width: 100%;
-  padding: 14px;
+.hero-slideshow{
+  width:100%;
+  height:100%;
 }
 
-/* ACTION BAR */
-.action-bar{
-  flex-wrap: wrap;
-  padding: 0 10px;
+.hero-slideshow img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
 }
 
-.action-bar .btn{
-  flex: 1 1 45%;
-  font-size: 14px;
-}
+.hero h1{font-size:30px;}
+.hero p{font-size:15px;}
 
-/* GRID FIX (CRITICAL) */
 .grid{
-  grid-template-columns: repeat(2, 1fr); /* ✅ 2 columns */
-  gap: 15px;   /* single column */
-  padding: 0 15px 40px;
-  justify-content: center;
+  grid-template-columns:repeat(auto-fill, minmax(140px, 1fr));
+  gap:8px;
+  padding:0 8px 30px;
 }
 
-/* CARD */
-.card{
-  width: 100%;
-  max-width: 100%;
+.card img{
+  height:120px;
 }
 
-/* SECTIONS */
-section{
-  padding: 40px 15px;
+.info{
+  padding:10px;
 }
 
-/* CONTACT */
-#contact h2{
-  font-size: 24px;
+.card h4{
+  font-size:13px;
 }
 
-#contact p{
-  font-size: 14px;
+.price{
+  font-size:12px;
 }
+
+.btn{
+  padding:8px;
+  font-size:12px;
+}
+.hero::before{
+  background:rgba(0,0,0,0.35); /* uniform overlay instead of split */
+}
+
 }
 </style>
 </head>
 
 <body>
 
-<!-- NAV -->
 <div class="navbar">
   <h2>AutoHub</h2>
   <div class="nav-links">
@@ -394,34 +414,49 @@ section{
   </div>
 </div>
 
-<!-- HERO FEATURE -->
 <section class="hero" id="home">
   <div class="hero-slideshow">
-    <img src="/assets/images/cayenne.jpg" class="slide active" alt="Porsche Cayenne Front View">
-    <img src="/assets/images/cayennerear.jpg" class="slide" alt="Porsche Cayenne Rear View">
-    <img src="/assets/images/cayenneinterior.jpg" class="slide" alt="Porsche Cayenne Interior">
+
+    <img 
+      src="/assets/images/cayenne.jpg"
+      srcset="/assets/images/cayenne.jpg 1x, /assets/images/cayenne.jpg 2x"
+      class="slide active"
+    >
+
+    <img 
+      src="/assets/images/cayennerear.jpg"
+      srcset="/assets/images/cayennerear.jpg 1x, /assets/images/cayennerear.jpg 2x"
+      class="slide"
+    >
+
+    <img 
+      src="/assets/images/cayenneinterior.jpg"
+      srcset="/assets/images/cayenneinterior.jpg 1x, /assets/images/cayenneinterior.jpg 2x"
+      class="slide"
+    >
+
   </div>
 
   <div class="hero-content">
     <h1>Featured Car: Porsche Cayenne</h1>
-    <p>
-      The Porsche Cayenne is a luxurious and powerful SUV, combining sleek design with top-tier performance.
-    </p>
-    <button class="btn" onclick="openModal('Porsche Cayenne','The Porsche Cayenne is a luxury SUV with a 3.0L V6 twin-turbo engine producing 335 hp, premium leather interior, advanced safety and infotainment, adaptive air suspension, optional AWD, and many off-road features. Perfect for both city driving and adventure.')">Explore</button>
+    <p>Luxury SUV with performance, comfort, and advanced technology.</p>
+    <button class="btn" onclick="openModal('Porsche Cayenne','Full specs and premium features included.')">Explore</button>
   </div>
+<div class="scroll-wrap">
+  <span>Scroll Down</span>
+  <div class="scroll-line"></div>
+</div>
 </section>
 
-<!-- FILTERS -->
 <div class="action-bar">
-  <button class="btn filter-btn" data-category="All">All</button>
-  <button class="btn filter-btn" data-category="Luxury">Luxury</button>
-  <button class="btn filter-btn" data-category="SUV">SUV</button>
-  <button class="btn filter-btn" data-category="Sport">Sport</button>
-  <button class="btn filter-btn" data-category="Popular">Popular</button>
-  <button class="btn filter-btn" data-category="Off-Road">Off-Road</button>
+  <button class="filter-btn active" data-category="All">All</button>
+  <button class="filter-btn" data-category="Luxury">Luxury</button>
+  <button class="filter-btn" data-category="SUV">SUV</button>
+  <button class="filter-btn" data-category="Sport">Sport</button>
+  <button class="filter-btn" data-category="Popular">Popular</button>
+  <button class="filter-btn" data-category="Off-Road">Off-Road</button>
 </div>
 
-<!-- GRID -->
 <section id="inventory" class="grid">
 
 <div class="card" data-category="Popular" data-details="The Toyota Prado is a durable and versatile SUV with a 4.0L V6 engine, seating for 7, and excellent off-road capability.">
@@ -507,26 +542,14 @@ section{
 </section>
 
 <section id="contact">
-  <h2>Contact Us</h2>
-
-  <p>
-    Phone: 
-    <a href="tel:0729709807">254729709807</a>
-  </p>
-
-  <p>
-    Address: Opp Westgate Mall, Nairobi
-  </p>
-
-  <p>
-    Email: 
-    <a href="mailto:info@autohubmotors.com">info@autohubmotors.com</a>
-  </p>
+<h2>Contact Us</h2>
+<p><a href="tel:+254729709807">+254729709807</a></p>
+<p>Opp Westgate Mall, Nairobi</p>
+<p><a href="mailto:info@autohubmotors.com">info@autohubmotors.com</a></p>
 </section>
 
 <footer>© 2026 AutoHub Motors</footer>
 
-<!-- MODAL -->
 <div id="modal-overlay">
 <div id="modal">
 <span class="close-btn">&times;</span>
@@ -536,12 +559,14 @@ section{
 </div>
 
 <script>
-// FILTER
 const filterButtons=document.querySelectorAll('.filter-btn');
 const cards=document.querySelectorAll('.card');
 
 filterButtons.forEach(btn=>{
 btn.addEventListener('click',()=>{
+filterButtons.forEach(b=>b.classList.remove('active'));
+btn.classList.add('active');
+
 const cat=btn.dataset.category;
 cards.forEach(card=>{
 card.style.display=(cat==='All'||card.dataset.category===cat)?'block':'none';
@@ -549,50 +574,69 @@ card.style.display=(cat==='All'||card.dataset.category===cat)?'block':'none';
 });
 });
 
-// MODAL
-const modalOverlay=document.getElementById('modal-overlay');
-const modalTitle=document.getElementById('modal-title');
-const modalContent=document.getElementById('modal-content');
+const modalOverlay = document.getElementById('modal-overlay');
+const modalTitle = document.getElementById('modal-title');
+const modalContent = document.getElementById('modal-content');
 
-document.querySelectorAll('.view-details-btn').forEach(btn=>{
-btn.onclick=(e)=>{
-const card=e.target.closest('.card');
-modalTitle.textContent=card.querySelector('h4').textContent;
-modalContent.textContent=card.dataset.details;
-modalOverlay.style.display='flex';
-};
+function openModal(title, content) {
+  modalTitle.textContent = title;
+  modalContent.textContent = content;
+  modalOverlay.style.display = 'flex';
+}
+
+document.addEventListener('click', (e) => {
+  const card = e.target.closest('.card');
+  if (!card) return;
+
+  // VIEW DETAILS BUTTON
+  if (e.target.classList.contains('view-details-btn')) {
+    openModal(
+      card.dataset.title,
+      card.dataset.details
+    );
+  }
+
+  // EXPLORE BUTTON (hero or reused button)
+  if (e.target.classList.contains('btn') && !e.target.classList.contains('view-details-btn')) {
+    openModal(
+      card.dataset.title || "Featured Car",
+      card.dataset.details || "No details available."
+    );
+  }
 });
 
-document.querySelector('.close-btn').onclick=()=>modalOverlay.style.display='none';
-
-modalOverlay.onclick=(e)=>{
-if(e.target===modalOverlay) modalOverlay.style.display='none';
+document.querySelector('.close-btn').onclick = () => {
+  modalOverlay.style.display = 'none';
 };
 
-// HERO BUTTON
+modalOverlay.onclick = (e) => {
+  if (e.target === modalOverlay) {
+    modalOverlay.style.display = 'none';
+  }
+};
+
 function openModal(title,text){
 modalTitle.textContent=title;
 modalContent.textContent=text;
 modalOverlay.style.display='flex';
 }
-// HERO SLIDESHOW
-const slides = document.querySelectorAll('.hero-slideshow .slide');
-let currentSlide = 0;
+
+const slides=document.querySelectorAll('.slide');
+let currentSlide=0;
 
 function showSlide(index){
-  slides.forEach((slide,i)=> slide.classList.toggle('active', i===index));
+slides.forEach((slide,i)=>slide.classList.toggle('active',i===index));
 }
 
 function nextSlide(){
-  currentSlide = (currentSlide + 1) % slides.length;
-  showSlide(currentSlide);
+currentSlide=(currentSlide+1)%slides.length;
+showSlide(currentSlide);
 }
 
-// 👉 First switch happens quickly, then normal speed
-setTimeout(() => {
-  nextSlide();
-  setInterval(nextSlide, 3000);
-}, 800);
+setTimeout(()=>{
+nextSlide();
+setInterval(nextSlide,3000);
+},800);
 </script>
 
 </body>
