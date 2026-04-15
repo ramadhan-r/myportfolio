@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Dr. John Doe| Therapist</title>
-
+<link rel="icon" type="image/png" href="/assets/images/therapyfavicon.png">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
@@ -19,6 +19,10 @@
 body{
   color:white;
   background:#020617;
+}
+
+#home, #services, #reviews, #contact {
+  scroll-margin-top: 100px;
 }
 
 /* NAVBAR */
@@ -87,7 +91,31 @@ nav a:hover{color:#22d3ee}
 
 /* SECTION */
 section{
-  padding:100px 5%;
+  padding:0 5%;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.hero,
+section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  scroll-snap-align: start;
+}
+
+.hero {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 /* CARDS */
@@ -292,10 +320,23 @@ section{
 <!-- SERVICES -->
 <section id="services">
   <h2 style="text-align:center;margin-bottom:40px;">Services</h2>
+
   <div class="cards">
-    <div class="card"><h3>Therapy</h3><p>Personalized sessions.</p></div>
-    <div class="card"><h3>Anxiety</h3><p>Manage stress effectively.</p></div>
-    <div class="card"><h3>Relationships</h3><p>Build stronger connections.</p></div>
+    <div class="card"><h3>Individual Therapy</h3><p>One-on-one sessions focused on personal mental health challenges.</p></div>
+
+    <div class="card"><h3>Anxiety Management</h3><p>Techniques and structured therapy to reduce anxiety and panic symptoms.</p></div>
+
+    <div class="card"><h3>Depression Support</h3><p>Clinical support for mood disorders and emotional recovery.</p></div>
+
+    <div class="card"><h3>Relationship Counseling</h3><p>Improving communication, trust, and emotional connection.</p></div>
+
+    <div class="card"><h3>Trauma Therapy</h3><p>Evidence-based approaches for processing and healing trauma.</p></div>
+
+    <div class="card"><h3>Stress & Burnout</h3><p>Work-life balance strategies and recovery from chronic stress.</p></div>
+
+    <div class="card"><h3>Teen Counseling</h3><p>Support for adolescents dealing with identity, pressure, and emotional development.</p></div>
+
+    <div class="card"><h3>Family Therapy</h3><p>Resolving family conflicts and improving household communication patterns.</p></div>
   </div>
 </section>
 
@@ -318,16 +359,19 @@ section{
   <button class="btn" onclick="openModal()">Book Now</button>
 </div>
 
-<!-- CONTACT -->
-<section id="contact" style="text-align:center;">
-  <h2>Contact</h2>
-  <p>Email: drjohndoe@email.com</p>
-  <p>Phone: +254 729 709807</p>
-</section>
+<section id="contact" style="text-align:center; min-height:100vh; display:flex; flex-direction:column;">
+  
+  <div style="flex:1; display:flex; flex-direction:column; justify-content:center; align-items:center;">
+    <h2>Contact</h2>
+    <p>Email: drjohndoe@email.com</p>
+    <p>Phone: +254 729 709807</p>
+  </div>
 
-<footer>
-  © 2026 Dr. John Doe. All rights reserved.
-</footer>
+  <footer style="padding:20px; color:#64748b; text-align:center;">
+    © 2026 Dr. John Doe. All rights reserved.
+  </footer>
+
+</section>
 
 <!-- MODAL -->
 <div id="bookingModal" onclick="outsideClick(event)">
