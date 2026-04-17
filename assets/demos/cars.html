@@ -516,6 +516,31 @@ footer{
   scroll-margin-top: 90px;
 }
 
+.nav-links a{
+  display: block;          /* IMPORTANT */
+  width: 100%;             /* full clickable width */
+  padding: 14px 20px;      /* expands clickable area */
+  text-align: center;
+}
+
+.nav-links{
+  gap: 0; /* remove spacing issues */
+}
+
+.nav-links a:hover{
+  background: rgba(34,211,238,0.08);
+}
+
+@media(max-width:768px){
+  section {
+    scroll-margin-top: 75px;
+  }
+}
+
+section {
+  scroll-snap-margin-top: 80px;
+}
+
 </style>
 </head>
 
