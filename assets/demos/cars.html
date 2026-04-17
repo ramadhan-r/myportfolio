@@ -171,7 +171,12 @@ body{
 }
 
 html {
-  scroll-padding-top: 100px;
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px; /* match navbar height */
+}
+
+section {
+  scroll-margin-top: 90px;
 }
 
 #contact{
@@ -465,6 +470,52 @@ footer{
 }
 
 }
+
+.menu-toggle {
+  display: none;
+  font-size: 26px;
+  cursor: pointer;
+  color: #fff;
+}
+
+/* MOBILE NAVBAR */
+@media(max-width:768px){
+
+  .navbar{
+    padding: 15px 20px;
+  }
+
+  .menu-toggle{
+    display: block;
+  }
+
+  .nav-links{
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 100%;
+    background: rgba(0,0,0,0.9);
+    backdrop-filter: blur(12px);
+    flex-direction: column;
+    align-items: center;
+    display: none;
+    padding: 20px 0;
+  }
+
+  .nav-links a{
+    margin: 15px 0;
+    font-size: 16px;
+  }
+
+  .nav-links.show{
+    display: flex;
+  }
+}
+
+#inventory {
+  scroll-margin-top: 90px;
+}
+
 </style>
 </head>
 
@@ -472,11 +523,15 @@ footer{
 
 <div class="navbar">
   <h2>AutoHub</h2>
+
   <div class="nav-links">
     <a href="#home">Home</a>
     <a href="#inventory">Inventory</a>
     <a href="#contact">Contact</a>
   </div>
+
+  <!-- ✅ ADD THIS RIGHT HERE -->
+  <div class="menu-toggle" id="menu-toggle">&#9776;</div>
 </div>
 
 <section class="hero" id="home">
@@ -505,7 +560,7 @@ footer{
   <div class="hero-content">
     <h1>Featured Car: Porsche Cayenne</h1>
     <p>Luxury SUV with performance, comfort, and advanced technology.</p>
-    <button class="btn" disabled>Explore</button>
+    <a href="#inventory" class="btn">Explore</a>
   </div>
 <div class="scroll-wrap">
   <span>Scroll Down</span>
@@ -677,6 +732,14 @@ function closeModal() {
   modalOverlay.style.display = 'none';
 }
 
+const toggle = document.getElementById("menu-toggle");
+const navLinks = document.querySelector(".nav-links");
+
+toggle.addEventListener("click", () => {
+  navLinks.classList.toggle("show");
+});
+
+
 /* OPEN: View Details */
 document.querySelectorAll('.view-details-btn').forEach(btn => {
   btn.addEventListener('click', (e) => {
@@ -714,6 +777,14 @@ setTimeout(()=>{
 nextSlide();
 setInterval(nextSlide,3000);
 },800);
+
+// close menu after clicking a nav link (mobile UX fix)
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', () => {
+    navLinks.classList.remove('show');
+  });
+});
+
 </script>
 
 </body>
