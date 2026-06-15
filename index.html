@@ -3,159 +3,340 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rioba R. Mwita | Portfolio</title>
 
-  <!-- SEO -->
-  <meta name="description" content="Geospatial Engineer specializing in Cartography, Land Surveying, Research Assistance and Web Development.">
-  <meta name="robots" content="index, follow">
+  <title>Rioba R. Mwita | Geospatial Engineer</title>
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Poppins:wght@500;600&display=swap" rel="stylesheet">
+  <meta name="description" content="Geospatial Engineer, Surveyor and Web Developer specializing in GIS, mapping, surveying and digital solutions.">
 
-  <!-- Favicon -->
-  <link rel="icon" href="assets/images/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <!-- CSS -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="css/style.css">
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-714XXLJ6NL"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'G-714XXLJ6NL');
-</script>
+  <link rel="icon" href="assets/images/favicon.png">
 </head>
 
 <body>
 
-  <!-- ================= NAVBAR ================= -->
+  <!-- NAVIGATION -->
   <header>
     <nav class="navbar">
+
+      <div class="logo">
+        Rioba Mwita
+      </div>
+
       <ul class="nav-links">
-        <li><a href="/" class="active">Home</a></li>
-        <li><a href="/about">About</a></li>
-        <li><a href="/portfolio">Portfolio</a></li>
-        <li><a href="/contact">Contact</a></li>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
+
     </nav>
   </header>
 
-  <!-- ================= INTRO ================= -->
-  <section class="intro">
-    <div class="intro-wrapper">
+  <!-- HERO -->
+  <section id="home" class="hero">
 
-      <img src="assets/images/me-icon.png" alt="Rioba Mwita" class="intro-image">
+    <img
+      src="assets/images/me-icon.png"
+      alt="Rioba Mwita"
+      class="hero-image"
+    >
 
-      <div class="intro-text">
-        <h1>Hello, I am <span>Rioba R. Mwita</span></h1>
-        <h2>A GEOSPATIAL ENGINEER WHO TURNS DATA AND IMAGINATION INTO REALITY</h2>
-      </div>
+    <h1>Rioba R. Mwita</h1>
 
-    </div>
-  </section>
+    <h2>
+      Geospatial Engineer • Surveyor • Web Developer
+    </h2>
 
-  <!-- ================= SERVICES ================= -->
-  <section class="services">
-
-    <p class="services-typing">
-      <span id="typingText"></span>
-    </p>
-    
-<div class="services-stats">
-  <div class="stat">
-    <h3><span class="counter" data-target="11">0</span>+</h3>
-    <p>Projects</p>
-  </div>
-  <div class="stat">
-    <h3><span class="counter" data-target="1">0</span></h3>
-    <p>Blog</p>
-  </div>
-  <div class="stat">
-    <h3><span class="counter" data-target="2">0</span></h3>
-    <p>Awards</p>
-  </div>
-  <div class="stat">
-    <h3><span class="counter" data-target="2">0</span>+</h3>
     <p>
-  <span class="desktop-text">Years Experience</span>
-  <span class="mobile-text">Yrs Exp</span>
-</p>
-  </div>
-</div>
+      Transforming geographic data into maps, insights
+      and digital solutions that support better decisions.
+    </p>
 
-<div class="services-vertical">
+    <a href="#about" class="hero-btn">
+      Explore My Work
+    </a>
 
-  <a href="portfolio/index.html#cartography" class="service-row">
-    <img src="assets/images/gismapping-icon.png" alt="Cartography">
-    <div class="service-info">
-      <h3>Cartography</h3>
-      <p>Spatial analysis and digital mapping to support planning, environmental management and decision making.</p>
-    </div>
-  </a>
-
-  <a href="portfolio/index.html#environmental-services" class="service-row">
-    <img src="assets/images/environmental-icon.png" alt="Environmental Services">
-    <div class="service-info">
-      <h3>Environmental Services</h3>
-      <p>Supporting with environmental planning, impact assessments, sustainability projects, and natural resource management.</p>
-    </div>
-  </a>
-
-  <a href="portfolio/index.html#land-survey" class="service-row">
-    <img src="assets/images/land-survey-icon.png" alt="Land Survey">
-    <div class="service-info">
-      <h3>Land Survey & Architectural Drafting</h3>
-      <p>Accurate land surveys and architectural drafting services using modern CAD tools.</p>
-    </div>
-  </a>
-
-  <a href="portfolio/index.html#research-assistance" class="service-row">
-    <img src="assets/images/research-assistant-icon.png" alt="Research Assistance">
-    <div class="service-info">
-      <h3>Research Assistance</h3>
-      <p>Data collection, GIS analysis, academic writing and technical research support.</p>
-    </div>
-  </a>
-
-  <a href="portfolio/index.html#web-development" class="service-row">
-    <img src="assets/images/web-developer-icon.png" alt="Web Development">
-    <div class="service-info">
-      <h3>Web & App Development</h3>
-      <p>Designing and developing responsive websites, web applications, and custom digital platforms for businesses and organizations.</p>
-    </div>
-  </a>
-
-</div>
   </section>
 
-  <!-- ================= FOOTER ================= -->
+  <!-- ABOUT PLACEHOLDER -->
+  <section id="about" class="about">
+
+    <div class="section-header">
+        <h2>About Me</h2>
+    </div>
+
+    <div class="about-content">
+
+        <p>
+            I'm a Geospatial Engineer with experience in GIS,
+            Remote Sensing, Land Surveying and Web Development.
+            I help organizations transform spatial data into
+            practical solutions for planning, environmental
+            management and decision-making.
+        </p>
+
+        <p>
+            My work combines field surveying, spatial analysis,
+            cartography and digital development to solve
+            real-world challenges across land, environment
+            and infrastructure projects.
+        </p>
+
+        <div class="about-buttons">
+
+            <a href="/assets/documents/cv.pdf"
+               target="_blank"
+               class="primary-btn">
+                View CV
+            </a>
+
+            <a href="/assets/images/recommendation.jpeg"
+               target="_blank"
+               class="secondary-btn">
+                Recommendation
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+  <!-- PROJECTS PLACEHOLDER -->
+  <section id="projects" class="section">
+    <h2>Projects</h2>
+    <p>
+      Project content goes here.
+    </p>
+  </section>
+
+
+  <!-- CONTACT PLACEHOLDER -->
+  <section id="contact" class="contact">
+
+    <div class="section-header">
+        <h2>Get In Touch</h2>
+        <p>
+            Interested in GIS, surveying, mapping,
+            web development or collaboration?
+            Feel free to reach out.
+        </p>
+    </div>
+
+    <div class="contact-container">
+
+        <a href="mailto:riobaramadhan@gmail.com"
+           class="contact-card">
+
+            <img src="assets/images/gmail-icon.png"
+                 alt="Email">
+
+            <h3>Email</h3>
+            <span>riobaramadhan@gmail.com</span>
+
+        </a>
+
+        <a href="https://wa.me/254729709807"
+           target="_blank"
+           class="contact-card">
+
+            <img src="assets/images/whatsapp-icon.png"
+                 alt="WhatsApp">
+
+            <h3>WhatsApp</h3>
+            <span>+254729709807</span>
+
+        </a>
+
+        <a href="https://www.linkedin.com/in/rioba-mwita-026019233"
+           target="_blank"
+           class="contact-card">
+
+            <img src="assets/images/linkedin-icon.png"
+                 alt="LinkedIn">
+
+            <h3>LinkedIn</h3>
+            <span>Connect with me</span>
+
+        </a>
+
+    </div>
+
+    <div class="contact-location">
+
+        <img src="assets/images/location-icon.png"
+             alt="Location">
+
+        <p>
+            Nairobi, Kenya
+        </p>
+
+    </div>
+
+</section>
+
+<!-- PROFESSIONAL REFERENCES & RECOMMENDATIONS -->
+<section class="references-section">
+
+    <div class="section-header">
+        <h2>Professional References & Recommendations</h2>
+
+        <p>
+            Professionals who have supervised, mentored,
+            or worked alongside me in geospatial projects,
+            surveying and software development applications.
+        </p>
+    </div>
+
+    <!-- RECOMMENDATIONS -->
+
+    <div class="recommendation-list">
+
+        <div class="recommendation-item">
+
+            <a href="https://www.linkedin.com/in/jotham-ayanga-b269a3268"
+               target="_blank">
+
+                <img src="/assets/images/jotham-ayanga.jpg"
+                     alt="Jotham Ayanga"
+                     class="recommender-img">
+
+            </a>
+
+            <div>
+
+                <h3>Jotham Ayanga</h3>
+                <span>Natural Resource Scientist, DRSRS</span>
+
+                <details>
+                    <summary>View Recommendation</summary>
+
+                    <p>
+                        I had the pleasure of supervising Mr. Rioba
+                        Mwita during his training at DRSRS. He
+                        demonstrated a strong grasp of GIS and Remote
+                        Sensing applications, excellent analytical
+                        thinking and consistently delivered quality
+                        spatial analysis work. I highly recommend him
+                        for opportunities in GIS, Remote Sensing and
+                        Hydrology.
+                    </p>
+
+                </details>
+
+            </div>
+
+        </div>
+
+        <div class="recommendation-item">
+
+            <a href="https://www.linkedin.com/in/louis-wambua-5a6b91226"
+               target="_blank">
+
+                <img src="/assets/images/louis-wambua.jpg"
+                     alt="Louis Wambua"
+                     class="recommender-img">
+
+            </a>
+
+            <div>
+
+                <h3>Louis Wambua</h3>
+                <span>GIS Professional</span>
+
+                <details>
+                    <summary>View Recommendation</summary>
+
+                    <p>
+                        Rioba transitioned seamlessly into a
+                        professional GIS specialist. His ability to
+                        integrate fieldwork with spatial analysis was
+                        impressive, particularly during environmental
+                        and waste management projects.
+                    </p>
+
+                </details>
+
+            </div>
+
+        </div>
+
+        <div class="recommendation-item">
+
+            <a href="https://www.linkedin.com/in/steve-jaguar-3a4391254"
+               target="_blank">
+
+                <img src="/assets/images/steve-jaguar.jpg"
+                     alt="Steve Jaguar"
+                     class="recommender-img">
+
+            </a>
+
+            <div>
+
+                <h3>Steve Jaguar</h3>
+                <span>Geospatial Expert & Land Surveyor</span>
+
+                <details>
+                    <summary>View Recommendation</summary>
+
+                    <p>
+                        Rioba proved to be reliable, disciplined and
+                        highly skilled in survey equipment handling
+                        and field operations. His additional strength
+                        in web development demonstrates rare
+                        versatility.
+                    </p>
+
+                </details>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- REFERENCES -->
+
+    <div class="reference-grid">
+
+        <div class="reference-card">
+            <strong>Dr. Salee Damaris</strong>
+            <span>Lecturer, Moi University</span>
+            <a href="tel:+254725540740">+254 725 540 740</a>
+        </div>
+
+        <div class="reference-card">
+            <strong>Jotham Ayanga</strong>
+            <span>Mentor, DRSRS</span>
+            <a href="tel:+254704537737">+254 704 537 737</a>
+        </div>
+
+        <div class="reference-card">
+            <strong>Maina Mwangi</strong>
+            <span>Supervisor, Homeland Surveyors</span>
+            <a href="tel:+254729247505">+254 729 247 505</a>
+        </div>
+
+        <div class="reference-card">
+            <strong>Peterson Macharia</strong>
+            <span>Colleague, Geolink Surveyors</span>
+            <a href="tel:+254723335815">+254 723 335 815</a>
+        </div>
+
+    </div>
+
+</section>
+
   <footer>
-    &copy; 2026 Rioba R. Mwita. All Rights Reserved.
+    © 2026 Rioba R. Mwita
   </footer>
 
-  <!-- JS -->
-  <script src="js/main.js"></script>
-<script>
-window.addEventListener('load', () => {  // ensures everything is loaded
-  const counters = document.querySelectorAll('.counter');
-
-  counters.forEach(counter => {
-    const target = parseInt(counter.getAttribute('data-target'), 10);
-    let current = 0;
-    const duration = 1500; // total duration in ms
-    const stepTime = Math.max(Math.floor(duration / target), 20); // min step 20ms
-
-    const timer = setInterval(() => {
-      current++;
-      counter.innerText = current;
-      if (current >= target) {
-        clearInterval(timer);
-      }
-    }, stepTime);
-  });
-});
-</script>
 </body>
 </html>
