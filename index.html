@@ -422,9 +422,14 @@
 
 </section>
 
-  <footer>
-    © 2026 Rioba R. Mwita
-  </footer>
+<footer>
+  © 2026 Rioba R. Mwita
+</footer>
+
+
+<button id="scrollTopBtn" class="scroll-top-btn">
+    ▲
+</button>
 
 <script>
 
@@ -494,6 +499,34 @@ shareCard.addEventListener('click', async () => {
 
         alert('Portfolio link copied.');
     }
+
+});
+
+const scrollTopBtn =
+document.getElementById('scrollTopBtn');
+
+window.addEventListener('scroll', () => {
+
+    const scrollPosition =
+        window.innerHeight + window.scrollY;
+
+    const pageHeight =
+        document.documentElement.scrollHeight;
+
+    if(scrollPosition >= pageHeight - 100){
+        scrollTopBtn.classList.add('show');
+    }else{
+        scrollTopBtn.classList.remove('show');
+    }
+
+});
+
+scrollTopBtn.addEventListener('click', () => {
+
+    window.scrollTo({
+        top:0,
+        behavior:'smooth'
+    });
 
 });
 
