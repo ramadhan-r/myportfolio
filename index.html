@@ -276,7 +276,7 @@
 
     <div class="recommendation-list">
 
-        <div class="recommendation-item">
+        <div class="recommendation-item rec-1">
 
             <a href="https://www.linkedin.com/in/jotham-ayanga-b269a3268"
                target="_blank">
@@ -293,7 +293,9 @@
                 <span>Natural Resource Scientist, DRSRS</span>
 
                 <details>
-                    <summary>View Recommendation</summary>
+                    <summary>
+                     <span class="summary-text">View Recommendation</span>
+                    </summary>
 
                     <p>
                         I had the pleasure of supervising Mr. Rioba
@@ -312,7 +314,7 @@
 
         </div>
 
-        <div class="recommendation-item">
+        <div class="recommendation-item rec-2">
 
             <a href="https://www.linkedin.com/in/louis-wambua-5a6b91226"
                target="_blank">
@@ -329,7 +331,9 @@
                 <span>Alumni of The Technical University of Kenya</span>
 
                 <details>
-                    <summary>View Recommendation</summary>
+                    <summary>
+                     <span class="summary-text">View Recommendation</span>
+                    </summary>
 
                     <p>
                         Rioba transitioned seamlessly into a
@@ -345,7 +349,7 @@
 
         </div>
 
-        <div class="recommendation-item">
+        <div class="recommendation-item rec-3">
 
             <a href="https://www.linkedin.com/in/steve-jaguar-3a4391254"
                target="_blank">
@@ -362,7 +366,9 @@
                 <span>Geospatial Expert, Land & Engineering Surveyor</span>
 
                 <details>
-                    <summary>View Recommendation</summary>
+                    <summary>
+                     <span class="summary-text">View Recommendation</span>
+                    </summary>
 
                     <p>
                         Rioba proved to be reliable, disciplined and
@@ -457,32 +463,32 @@ window.addEventListener('scroll', () => {
 
 });
 
-const shareCard =
-document.getElementById('shareCard');
+document.querySelectorAll('.recommendation-item details')
+.forEach(detail => {
 
-shareCard.addEventListener('click', async () => {
+    const text = detail.querySelector('.summary-text');
+    const parent = detail.closest('.recommendation-item');
 
-    if(navigator.share){
+    function updateText(){
 
-        try{
+        const isOpen = detail.open;
 
-            await navigator.share({
-                title:'Rioba Mwita',
-                text:'Geospatial Engineer, Surveyor and Web Developer',
-                url:'https://riobamwitagis.sevalla.page'
-            });
+        text.textContent = isOpen
+            ? 'Hide Recommendation'
+            : 'View Recommendation';
 
-        }catch(err){}
+        // reset classes
+        text.style.color = '';
 
-    }else{
-
-        navigator.clipboard.writeText(
-            'https://riobamwitagis.sevalla.page'
-        );
-
-        alert('Portfolio link copied.');
+        if(isOpen){
+            if(parent.classList.contains('rec-1')) text.style.color = '#2563eb';
+            if(parent.classList.contains('rec-2')) text.style.color = '#16a34a';
+            if(parent.classList.contains('rec-3')) text.style.color = '#d97706';
+        }
     }
 
+    updateText();
+    detail.addEventListener('toggle', updateText);
 });
 
 </script>
