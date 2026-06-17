@@ -1031,47 +1031,22 @@ body.dark-mode .accordion-section summary{
     --accent:#d97706;
 }
 
-.share-section{
-    margin-top:30px;
-    display:flex;
-    justify-content:center;
+.qr-card{
+    cursor:default;
 }
 
-.share-card{
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    gap:10px;
-
-    cursor:pointer;
-
-    transition:.3s;
+.qr-card img{
+    width:90px;
+    height:90px;
+    margin:auto;
 }
 
-.share-card img{
-    width:130px;
-    height:130px;
+@media(max-width:768px){
 
-    border-radius:12px;
+    .qr-card{
+        display:none;
+    }
 
-    border:1px solid #eee;
-    padding:8px;
-
-    background:#fff;
-}
-
-.share-card:hover{
-    transform:translateY(-4px);
-}
-
-.share-card span{
-    font-size:13px;
-    font-weight:500;
-}
-
-body.dark-mode .share-card img{
-    background:#1a1a1a;
-    border-color:#2a2a2a;
 }
 
 .scroll-top-btn{
