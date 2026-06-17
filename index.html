@@ -20,25 +20,26 @@
 
 <body>
 
-    <button id="themeToggle" class="theme-toggle">
-    ☾
-</button>
-
 <header>
     <nav class="navbar">
 
-        <div class="logo">
-            Rioba Mwita
-        </div>
+    <div class="logo">
+        Rioba Mwita
+    </div>
 
-        <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
+    <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
 
-    </nav>
+    <button id="themeToggle" class="theme-toggle">
+        ☾
+    </button>
+
+</nav>
+
 </header>
 
 <section id="home" class="hero">
@@ -240,6 +241,10 @@
 
 </section>
 
+<a href="#contact" class="hire-me-btn" id="hireMeBtn">
+    Hire Me
+</a>
+
 <section class="references-section">
 
     <div class="section-header">
@@ -408,6 +413,29 @@ toggle.addEventListener('click', () => {
         localStorage.setItem('theme','dark');
     }else{
         localStorage.setItem('theme','light');
+    }
+
+});
+
+const triggerSection =
+document.querySelector('.contact');
+
+const hireBtn =
+document.getElementById('hireMeBtn');
+
+window.addEventListener('scroll', () => {
+
+    const rect =
+    triggerSection.getBoundingClientRect();
+
+    const visible =
+    rect.top < window.innerHeight * 0.7 &&
+    rect.bottom > 200;
+
+    if(visible){
+        hireBtn.classList.add('show');
+    }else{
+        hireBtn.classList.remove('show');
     }
 
 });
