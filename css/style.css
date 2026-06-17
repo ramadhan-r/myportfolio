@@ -944,9 +944,9 @@ body.dark-mode .hire-btn{
 .accordion-section summary{
     list-style:none;
     cursor:pointer;
-    font-size:1.15rem;
+    font-size:0.8rem;
     font-weight:600;
-    text-align:center;
+    text-align:left;
     padding:16px 20px;
     border:1px solid var(--accent,#111);
     border-radius:6px;
@@ -991,12 +991,6 @@ body.dark-mode .hire-btn{
     border-top-right-radius:0;
 }
 
-body.dark-mode .accordion-section summary{
-    background:#1a1a1a;
-    border-color:#2a2a2a;
-    color:#f2f2f2;
-}
-
 /* PAGE ACCENTS */
 
 .web-page{
@@ -1033,55 +1027,30 @@ body.dark-mode .accordion-section summary{
 
 }
 
-.scroll-top-btn{
-    position:fixed;
-    right:20px;
-    bottom:80px;
 
-    width:45px;
-    height:45px;
-
-    border:none;
-    border-radius:50%;
-
-    background:#111;
-    color:#fff;
-
-    font-size:20px;
-    cursor:pointer;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    opacity:0;
-    visibility:hidden;
-
-    transition:.25s;
-
-    z-index:999;
+body.dark-mode .accordion-section summary {
+    position: relative;
 }
 
-.scroll-top-btn.show{
-    opacity:1;
-    visibility:visible;
+body.dark-mode .web-page .accordion-section summary,
+body.dark-mode .research-page .accordion-section summary,
+body.dark-mode .cartography-page .accordion-section summary,
+body.dark-mode .survey-page .accordion-section summary {
+    border-color: var(--accent);
+    color: #ffffff;
 }
 
-.scroll-top-btn:hover{
-    transform:translateY(-3px);
+body.dark-mode .accordion-section summary::after {
+    color: inherit;
+    opacity: 1;
 }
 
-body.dark-mode .scroll-top-btn{
-    background:#fff;
-    color:#111;
+body.dark-mode .accordion-section summary:hover {
+    background: #262626;
 }
 
-@media(max-width:768px){
-    .scroll-top-btn{
-        width:40px;
-        height:40px;
-        font-size:18px;
-        bottom:75px;
-        right:16px;
-    }
+body.dark-mode .accordion-section[open] summary {
+    background: var(--accent);
+    color: #ffffff;
+    border-color: var(--accent);
 }
