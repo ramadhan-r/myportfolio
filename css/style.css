@@ -1167,3 +1167,15 @@ body.dark-mode .rec-3 details[open] summary::after{
 body.dark-mode .contact-card:first-child img{
     filter: invert(1);
 }
+
+.rec-1 .summary-text{
+    color:#2563eb;
+}
+
+.rec-2 .summary-text{
+    color:#16a34a;
+}
+
+.rec-3 .summary-text{
+    color:#d97706;
+}
