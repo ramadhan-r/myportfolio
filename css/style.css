@@ -1129,7 +1129,7 @@ body.dark-mode .contact-card:first-child img{
 .sample-card{
     display:block;
     background:#fff;
-    border:1px solid #e5e5e5;
+    border:none;
     border-radius:0;
     overflow:hidden;
     text-decoration:none;
