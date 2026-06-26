@@ -1348,3 +1348,21 @@ body.dark-mode .brand-logo{
     }
 
 }
+
+.image-overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.9);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:99999;
+    cursor:zoom-out;
+}
+
+.overlay-image{
+    max-width:90vw;
+    max-height:90vh;
+    object-fit:contain;
+    border-radius:8px;
+}

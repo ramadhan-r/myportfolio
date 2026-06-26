@@ -103,10 +103,10 @@
     <div class="logo-showcase">
 
 
-        <img 
-        src="../assets/images/logo.jpeg"
-        alt="Logo Design"
-        class="brand-logo">
+        <img
+    src="../assets/images/logo.jpeg"
+    alt="Logo Design"
+    class="brand-logo zoom-toggle">
 
 
         <h3 class="business">
@@ -127,14 +127,15 @@
         <div class="business-images">
 
 
-            <img 
-            src="../assets/images/business-card-front.png"
-            alt="Business Card Front">
+            <img
+    src="../assets/images/business-card-front.png"
+    alt="Business Card Front"
+    class="zoom-toggle">
 
-
-            <img 
-            src="../assets/images/business-card-back.png"
-            alt="Business Card Back">
+<img
+    src="../assets/images/business-card-back.png"
+    alt="Business Card Back"
+    class="zoom-toggle">
 
 
         </div>
@@ -218,23 +219,41 @@
 </footer>
 
 <script>
-
+// Theme toggle
 const toggle = document.getElementById('themeToggle');
 
-if(localStorage.getItem('theme') === 'dark'){
+if (localStorage.getItem('theme') === 'dark') {
     document.body.classList.add('dark-mode');
 }
 
-toggle.addEventListener('click', () => {
+if (toggle) {
+    toggle.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
 
-    document.body.classList.toggle('dark-mode');
+        if (document.body.classList.contains('dark-mode')) {
+            localStorage.setItem('theme', 'dark');
+        } else {
+            localStorage.setItem('theme', 'light');
+        }
+    });
+}
 
-    if(document.body.classList.contains('dark-mode')){
-        localStorage.setItem('theme','dark');
-    }else{
-        localStorage.setItem('theme','light');
-    }
+document.querySelectorAll(".zoom-toggle").forEach(img => {
+    img.addEventListener("click", () => {
 
+        const overlay = document.createElement("div");
+        overlay.className = "image-overlay";
+
+        const clone = img.cloneNode();
+        clone.className = "overlay-image";
+
+        overlay.appendChild(clone);
+
+        overlay.onclick = () => overlay.remove();
+
+        document.body.appendChild(overlay);
+
+    });
 });
 
 </script>
