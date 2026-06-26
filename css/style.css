@@ -27,12 +27,12 @@ a{
 }
 
 section{
-    padding:55px 20px;
+    padding:35px 20px;
 }
 
 .section-header{
     text-align:center;
-    margin-bottom:30px;
+    margin-bottom:20px;
 }
 
 .section-header h2{
@@ -398,7 +398,7 @@ footer{
     }
 
     section{
-        padding:45px 16px;
+        padding:35px 16px;
     }
 
     .hero{
@@ -524,7 +524,7 @@ footer{
 .page-section h1{
     text-align:center;
     font-size:2rem;
-    margin-bottom:35px;
+    margin-bottom:5px;
     font-weight:700;
     position:relative;
 }
@@ -544,14 +544,14 @@ body.dark-mode .page-section h1::after{
 
 .page-section h2{
     font-size:1.35rem;
-    margin:30px 0 15px;
+    margin:0 0 15px;
     text-align:center;
     font-weight:600;
 }
 
 .page-section h3{
     font-size:1rem;
-    margin-bottom:10px;
+    margin-bottom:0;
     font-weight:600;
 }
 
