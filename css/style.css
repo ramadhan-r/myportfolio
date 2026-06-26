@@ -106,7 +106,7 @@ body.dark-mode .nav-links a::after{
 
 .hero{
     text-align:center;
-    padding:80px 20px 60px;
+    padding:80px 20px 80px;
 }
 
 .hero-image{
@@ -559,10 +559,10 @@ body.dark-mode .page-section h1::after{
 .section-title::after{
     content:"";
     display:block;
-    width:70px;
+    width:50px;
     height:2px;
-    background:#111;
-    margin:10px auto 0;
+    background:#86c246;
+    margin:0px auto 0;
 }
 
 .page-section h3{
