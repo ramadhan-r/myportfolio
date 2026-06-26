@@ -48,8 +48,6 @@ section{
     color:#666;
 }
 
-/* NAVBAR */
-
 header{
     position:sticky;
     top:0;
@@ -106,8 +104,6 @@ body.dark-mode .nav-links a::after{
     background:#fff;
 }
 
-/* HERO */
-
 .hero{
     text-align:center;
     padding:80px 20px 60px;
@@ -152,8 +148,6 @@ body.dark-mode .nav-links a::after{
     font-size:13px;
 }
 
-/* ABOUT */
-
 .about-content{
     max-width:750px;
     margin:auto;
@@ -189,8 +183,6 @@ body.dark-mode .nav-links a::after{
 .secondary-btn{
     border:1px solid #ddd;
 }
-
-/* PROJECTS */
 
 .projects-grid{
     max-width:1100px;
@@ -229,8 +221,6 @@ body.dark-mode .nav-links a::after{
     font-size:0.95rem;
     margin-bottom:10px;
 }
-
-/* CONTACT */
 
 .contact-container{
     display:flex;
@@ -271,8 +261,6 @@ body.dark-mode .nav-links a::after{
     width:22px;
     margin:auto auto 8px;
 }
-
-/* RECOMMENDATIONS */
 
 .recommendation-list{
     max-width:900px;
@@ -343,8 +331,6 @@ body.dark-mode .nav-links a::after{
     line-height:1.6;
 }
 
-/* REFERENCES */
-
 .reference-grid{
     display:grid;
     grid-template-columns:repeat(2,1fr);
@@ -377,8 +363,6 @@ body.dark-mode .nav-links a::after{
     font-size:12px;
 }
 
-/* FOOTER */
-
 footer{
     text-align:center;
     padding:25px;
@@ -387,8 +371,6 @@ footer{
     color:#666;
 }
 
-/* TABLETS */
-
 @media(max-width:992px){
 
     .projects-grid{
@@ -396,8 +378,6 @@ footer{
     }
 
 }
-
-/* PHONES */
 
 @media(max-width:768px){
 
@@ -511,8 +491,6 @@ footer{
 
 }
 
-/* VERY SMALL PHONES */
-
 @media(max-width:480px){
 
     body{
@@ -602,8 +580,6 @@ body.dark-mode .page-section h1::after{
     color:#444;
 }
 
-/* BACK BUTTON */
-
 .floating-back-btn{
     position:fixed;
     top:18px;
@@ -630,16 +606,12 @@ body.dark-mode .page-section h1::after{
     transform:translateY(-2px);
 }
 
-/* EXPERIENCE */
-
 .experience-item span{
     display:block;
     color:#666;
     font-size:13px;
     margin-bottom:12px;
 }
-
-/* IMAGES */
 
 .page-card img{
     width:100%;
@@ -653,15 +625,11 @@ body.dark-mode .page-section h1::after{
     transform:scale(1.01);
 }
 
-/* IFRAMES */
-
 iframe{
     width:100%;
     border-radius:6px;
     margin:12px 0;
 }
-
-/* SIDE BY SIDE IMAGES */
 
 .side-by-side-images{
     display:grid;
@@ -680,8 +648,6 @@ iframe{
     color:#666;
 }
 
-/* 3D BUTTON */
-
 #activate3DButton{
     border:none;
     background:#111;
@@ -690,8 +656,6 @@ iframe{
     font-size:13px;
     font-family:'Poppins',sans-serif;
 }
-
-/* IMAGE ZOOM MODAL */
 
 .zoomable{
     cursor:pointer;
@@ -718,8 +682,6 @@ iframe{
     display:none;
 }
 
-/* TABLETS */
-
 @media(max-width:992px){
 
     .page-section{
@@ -727,8 +689,6 @@ iframe{
     }
 
 }
-
-/* PHONES */
 
 @media(max-width:768px){
 
@@ -776,8 +736,6 @@ iframe{
 
 }
 
-/* VERY SMALL PHONES */
-
 @media(max-width:480px){
 
     .page-section h1{
@@ -797,8 +755,6 @@ iframe{
     }
 
 }
-
-/* DARK MODE BUTTON */
 
 .theme-toggle{
     width:36px;
@@ -820,8 +776,6 @@ iframe{
     background:#f5f5f5;
     color:#111;
 }
-
-/* DARK MODE */
 
 body.dark-mode{
     background:#121212;
@@ -935,8 +889,6 @@ body.dark-mode .hire-btn{
     border:1px solid rgba(255,255,255,.2);
 }
 
-/* ACCORDION SECTIONS */
-
 .accordion-section{
     margin-bottom:20px;
 }
@@ -990,8 +942,6 @@ body.dark-mode .hire-btn{
     border-top-left-radius:0;
     border-top-right-radius:0;
 }
-
-/* PAGE ACCENTS */
 
 .web-page{
     --accent:#2563eb;
@@ -1055,10 +1005,6 @@ body.dark-mode .accordion-section[open] summary {
     border-color: var(--accent);
 }
 
-/* =========================
-   RECOMMENDATION TOGGLE BASE
-   ========================= */
-
 .recommendation-item summary{
     list-style:none;
     cursor:pointer;
@@ -1080,7 +1026,6 @@ body.dark-mode .accordion-section[open] summary {
     display:none;
 }
 
-/* plus/minus icon */
 .recommendation-item summary::after{
     content:"+";
     font-size:18px;
@@ -1088,57 +1033,36 @@ body.dark-mode .accordion-section[open] summary {
     transition:.25s;
 }
 
-/* open state icon */
 .recommendation-item details[open] summary::after{
     content:"−";
 }
-
-/* =========================
-   DEFAULT TEXT COLORS
-   ========================= */
 
 .summary-text{
     color:#6b7280;
     transition:.25s;
 }
 
-/* =========================
-   ACTIVE STATE (OPEN)
-   NAME + ICON COLOR
-   ========================= */
-
-/* REC 1 */
 .rec-1 details[open] h3,
 .rec-1 details[open] summary::after{
     color:#2563eb;
     font-weight:600;
 }
 
-/* REC 2 */
 .rec-2 details[open] h3,
 .rec-2 details[open] summary::after{
     color:#16a34a;
     font-weight:600;
 }
 
-/* REC 3 */
 .rec-3 details[open] h3,
 .rec-3 details[open] summary::after{
     color:#d97706;
     font-weight:600;
 }
 
-/* =========================
-   HOVER EFFECT
-   ========================= */
-
 .recommendation-item summary:hover{
     opacity:.85;
 }
-
-/* =========================
-   DARK MODE
-   ========================= */
 
 body.dark-mode .recommendation-item summary{
     color:#d4d4d4;
@@ -1148,7 +1072,6 @@ body.dark-mode .recommendation-item details p{
     color:#bdbdbd;
 }
 
-/* dark active states */
 body.dark-mode .rec-1 details[open] h3,
 body.dark-mode .rec-1 details[open] summary::after{
     color:#60a5fa;
